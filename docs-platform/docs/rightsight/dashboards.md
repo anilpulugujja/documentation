@@ -2,7 +2,6 @@
 title: Dashboards
 description: Build cross-functional monitoring views that combine metrics, traces, and KPIs.
 sidebar_label: Dashboards
-slug: /rightsight/7.6/dashboards
 tags:
   - rightsight
   - dashboards

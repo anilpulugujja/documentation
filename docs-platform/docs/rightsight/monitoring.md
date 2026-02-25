@@ -2,7 +2,6 @@
 title: Monitoring Streams
 description: Build monitors over metrics, traces, and business KPIs from streaming pipelines.
 sidebar_label: Monitoring
-slug: /rightsight/7.6/monitoring
 tags:
   - rightsight
   - monitoring

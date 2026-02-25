@@ -2,7 +2,6 @@
 title: Marketplace Governance
 description: Apply policies, approvals, and audits to every transaction.
 sidebar_label: Governance
-slug: /datamarket/7.6/governance
 tags:
   - datamarket
   - governance

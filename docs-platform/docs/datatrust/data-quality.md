@@ -2,7 +2,6 @@
 title: Data Quality Policies
 description: Author, deploy, and monitor automated tests inside DataTrust.
 sidebar_label: Data Quality
-slug: /datatrust/7.6/data-quality
 tags:
   - datatrust
   - quality

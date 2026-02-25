@@ -2,7 +2,6 @@
 title: Consumer Experience
 description: Guide buyers through discovery, subscription, and delivery.
 sidebar_label: Data Consumption
-slug: /datamarket/7.6/data-consumption
 tags:
   - datamarket
   - consumption

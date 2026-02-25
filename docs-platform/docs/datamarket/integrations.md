@@ -2,7 +2,6 @@
 title: Integrations
 description: Connect DataMarket to billing, CRM, and delivery systems.
 sidebar_label: Integrations
-slug: /datamarket/7.6/integrations
 tags:
   - datamarket
   - integrations

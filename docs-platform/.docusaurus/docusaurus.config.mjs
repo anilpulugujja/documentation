@@ -58,27 +58,7 @@ export default {
     [
       "classic",
       {
-        "docs": {
-          "path": "docs",
-          "routeBasePath": "/",
-          "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars.js",
-          "editUrl": "https://github.com/GetRightData/docs/edit/main/",
-          "showLastUpdateAuthor": true,
-          "showLastUpdateTime": true,
-          "includeCurrentVersion": true,
-          "lastVersion": "current",
-          "versions": {
-            "current": {
-              "label": "7.6",
-              "path": ""
-            },
-            "7.0": {
-              "label": "7.0 (Archived)",
-              "path": "7.0",
-              "banner": "unmaintained"
-            }
-          }
-        },
+        "docs": false,
         "blog": false,
         "theme": {
           "customCss": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/src/css/custom.css"
@@ -91,7 +71,85 @@ export default {
       }
     ]
   ],
-  "plugins": [],
+  "plugins": [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "datatrust",
+        "path": "docs/datatrust",
+        "routeBasePath": "datatrust",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/datatrust.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "showLastUpdateAuthor": true,
+        "showLastUpdateTime": true,
+        "includeCurrentVersion": true,
+        "lastVersion": "current",
+        "versions": {
+          "current": {
+            "label": "7.6",
+            "path": "7.6"
+          },
+          "7.0": {
+            "label": "7.0 (Archived)",
+            "path": "7.0",
+            "banner": "unmaintained"
+          }
+        }
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "rightsight",
+        "path": "docs/rightsight",
+        "routeBasePath": "rightsight",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/rightsight.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "showLastUpdateAuthor": true,
+        "showLastUpdateTime": true
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "datamarket",
+        "path": "docs/datamarket",
+        "routeBasePath": "datamarket",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/datamarket.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "showLastUpdateAuthor": true,
+        "showLastUpdateTime": true
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "api",
+        "path": "docs/api",
+        "routeBasePath": "api",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/api.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "showLastUpdateAuthor": true,
+        "showLastUpdateTime": true
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "release-notes",
+        "path": "docs/release-notes",
+        "routeBasePath": "release-notes",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/release-notes.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "showLastUpdateAuthor": true,
+        "showLastUpdateTime": true
+      }
+    ],
+    [
+      "@docusaurus/plugin-client-redirects",
+      {}
+    ]
+  ],
   "themeConfig": {
     "image": "img/social-card.png",
     "breadcrumbs": {
@@ -118,6 +176,7 @@ export default {
       "items": [
         {
           "type": "docSidebar",
+          "docsPluginId": "datatrust",
           "sidebarId": "datatrustSidebar",
           "label": "DataTrust",
           "to": "/datatrust/7.6/getting-started",
@@ -125,20 +184,23 @@ export default {
         },
         {
           "type": "docSidebar",
+          "docsPluginId": "rightsight",
           "sidebarId": "rightsightSidebar",
           "label": "RightSight",
-          "to": "/rightsight/7.6/overview",
+          "to": "/rightsight/overview",
           "position": "left"
         },
         {
           "type": "docSidebar",
+          "docsPluginId": "datamarket",
           "sidebarId": "datamarketSidebar",
           "label": "DataMarket",
-          "to": "/datamarket/7.6/overview",
+          "to": "/datamarket/overview",
           "position": "left"
         },
         {
           "type": "docSidebar",
+          "docsPluginId": "api",
           "sidebarId": "apiSidebar",
           "label": "API",
           "to": "/api/authentication",
@@ -146,6 +208,7 @@ export default {
         },
         {
           "type": "docSidebar",
+          "docsPluginId": "release-notes",
           "sidebarId": "releaseNotesSidebar",
           "label": "Release Notes",
           "to": "/release-notes/7-6",
@@ -153,6 +216,7 @@ export default {
         },
         {
           "type": "docsVersionDropdown",
+          "docsPluginId": "datatrust",
           "position": "right",
           "dropdownItemsAfter": [
             {
@@ -181,11 +245,11 @@ export default {
             },
             {
               "label": "RightSight",
-              "to": "/rightsight/7.6/overview"
+              "to": "/rightsight/overview"
             },
             {
               "label": "DataMarket",
-              "to": "/datamarket/7.6/overview"
+              "to": "/datamarket/overview"
             }
           ]
         },

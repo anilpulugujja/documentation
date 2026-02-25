@@ -1,0 +1,41 @@
+{
+  "id": "configuration",
+  "title": "Platform Configuration",
+  "description": "Tune ingestion, retention, and tenant-level preferences for RightSight.",
+  "source": "@site/docs/rightsight/configuration.md",
+  "sourceDirName": ".",
+  "slug": "/configuration",
+  "permalink": "/rightsight/configuration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/rightsight/configuration.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/rightsight/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "configuration",
+      "permalink": "/rightsight/tags/configuration"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Platform Configuration",
+    "description": "Tune ingestion, retention, and tenant-level preferences for RightSight.",
+    "sidebar_label": "Configuration",
+    "tags": [
+      "rightsight",
+      "configuration"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Dashboards",
+    "permalink": "/rightsight/dashboards"
+  }
+}

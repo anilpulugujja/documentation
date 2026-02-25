@@ -2,7 +2,6 @@
 title: SDK Examples
 description: Quick starts for Python and TypeScript clients.
 sidebar_label: SDK Examples
-slug: /api/sdk-examples
 tags:
   - api
   - sdk

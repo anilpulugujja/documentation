@@ -51,27 +51,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          path: 'docs',
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-          showLastUpdateAuthor: true,
-          showLastUpdateTime: true,
-          includeCurrentVersion: true,
-          lastVersion: 'current',
-        versions: {
-          current: {
-            label: '7.6',
-            path: '',
-          },
-            '7.0': {
-              label: '7.0 (Archived)',
-              path: '7.0',
-              banner: 'unmaintained',
-            },
-          },
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -85,7 +65,102 @@ const config = {
       }),
     ],
   ],
-  plugins: [],
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'datatrust',
+        path: 'docs/datatrust',
+        routeBasePath: 'datatrust',
+        sidebarPath: require.resolve('./sidebars/datatrust.js'),
+        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        includeCurrentVersion: true,
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: '7.6',
+            path: '7.6',
+          },
+          '7.0': {
+            label: '7.0 (Archived)',
+            path: '7.0',
+            banner: 'unmaintained',
+          },
+        },
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'rightsight',
+        path: 'docs/rightsight',
+        routeBasePath: 'rightsight',
+        sidebarPath: require.resolve('./sidebars/rightsight.js'),
+        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'datamarket',
+        path: 'docs/datamarket',
+        routeBasePath: 'datamarket',
+        sidebarPath: require.resolve('./sidebars/datamarket.js'),
+        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'api',
+        path: 'docs/api',
+        routeBasePath: 'api',
+        sidebarPath: require.resolve('./sidebars/api.js'),
+        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'release-notes',
+        path: 'docs/release-notes',
+        routeBasePath: 'release-notes',
+        sidebarPath: require.resolve('./sidebars/release-notes.js'),
+        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath) {
+          const mappings = [
+            { legacyPrefixes: ['/rightsight/7.6', '/rightsight/7.0'], targetPrefix: '/rightsight' },
+            { legacyPrefixes: ['/datamarket/7.6', '/datamarket/7.0'], targetPrefix: '/datamarket' },
+          ];
+          const redirects = [];
+          mappings.forEach(({ legacyPrefixes, targetPrefix }) => {
+            if (existingPath.startsWith(targetPrefix)) {
+              const rest = existingPath.slice(targetPrefix.length);
+              legacyPrefixes.forEach((legacyPrefix) => {
+                redirects.push(`${legacyPrefix}${rest || ''}`);
+              });
+            }
+          });
+          return redirects;
+        },
+      },
+    ],
+  ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -108,6 +183,7 @@ const config = {
         items: [
           {
             type: 'docSidebar',
+            docsPluginId: 'datatrust',
             sidebarId: 'datatrustSidebar',
             label: 'DataTrust',
             to: '/datatrust/7.6/getting-started',
@@ -115,20 +191,23 @@ const config = {
           },
           {
             type: 'docSidebar',
+            docsPluginId: 'rightsight',
             sidebarId: 'rightsightSidebar',
             label: 'RightSight',
-            to: '/rightsight/7.6/overview',
+            to: '/rightsight/overview',
             position: 'left',
           },
           {
             type: 'docSidebar',
+            docsPluginId: 'datamarket',
             sidebarId: 'datamarketSidebar',
             label: 'DataMarket',
-            to: '/datamarket/7.6/overview',
+            to: '/datamarket/overview',
             position: 'left',
           },
           {
             type: 'docSidebar',
+            docsPluginId: 'api',
             sidebarId: 'apiSidebar',
             label: 'API',
             to: '/api/authentication',
@@ -136,6 +215,7 @@ const config = {
           },
           {
             type: 'docSidebar',
+            docsPluginId: 'release-notes',
             sidebarId: 'releaseNotesSidebar',
             label: 'Release Notes',
             to: '/release-notes/7-6',
@@ -143,6 +223,7 @@ const config = {
           },
           {
             type: 'docsVersionDropdown',
+            docsPluginId: 'datatrust',
             position: 'right',
             dropdownItemsAfter: [
               {
@@ -165,8 +246,8 @@ const config = {
             title: 'Products',
             items: [
               { label: 'DataTrust', to: '/datatrust/7.6/getting-started' },
-              { label: 'RightSight', to: '/rightsight/7.6/overview' },
-              { label: 'DataMarket', to: '/datamarket/7.6/overview' },
+              { label: 'RightSight', to: '/rightsight/overview' },
+              { label: 'DataMarket', to: '/datamarket/overview' },
             ],
           },
           {

@@ -2,7 +2,6 @@
 title: AI Enrichment
 description: Use AI-led investigations to summarize anomalies and suggest fixes.
 sidebar_label: AI Enrichment
-slug: /rightsight/7.6/ai-enrichment
 tags:
   - rightsight
   - ai

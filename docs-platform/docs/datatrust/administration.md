@@ -2,7 +2,6 @@
 title: Administration
 description: Manage access, notifications, and integrations for DataTrust.
 sidebar_label: Administration
-slug: /datatrust/7.6/administration
 tags:
   - datatrust
   - administration
@@ -22,7 +21,7 @@ Assign roles via **Administration → Access Control**. SCIM provisioning is sup
 - Map quality or governance notifications to channel presets (e.g., `trust-critical`).
 
 ## Integrations
-Enable outbound integrations for Data Catalogs, ServiceNow, or GRC tools via webhooks (see [Webhooks](../api/webhooks.md)).
+Enable outbound integrations for Data Catalogs, ServiceNow, or GRC tools via webhooks (see [Webhooks](/api/webhooks)).
 
 ```bash
 curl -X POST https://api.getrightdata.com/v1/integrations \

@@ -1,0 +1,11 @@
+{
+  "datatrustSidebar": [
+    { "type": "doc", "id": "getting-started" },
+    { "type": "doc", "id": "installation" },
+    { "type": "doc", "id": "metadata" },
+    { "type": "doc", "id": "data-quality" },
+    { "type": "doc", "id": "observability" },
+    { "type": "doc", "id": "administration" },
+    { "type": "doc", "id": "troubleshooting" }
+  ]
+}

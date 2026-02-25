@@ -22,8 +22,8 @@
     }
   ],
   "version": "7.0",
-  "lastUpdatedBy": "Anil Pulugujja",
-  "lastUpdatedAt": 1772042444000,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "Platform Configuration",
     "description": "Tune ingestion, retention, and tenant-level preferences for RightSight.",

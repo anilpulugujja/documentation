@@ -2,7 +2,6 @@
 title: DataTrust Installation Paths
 description: Deploy collectors and service connectors required to run DataTrust 7.6.
 sidebar_label: Installation
-slug: /datatrust/7.6/installation
 tags:
   - datatrust
   - installation

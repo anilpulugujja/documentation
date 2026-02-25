@@ -2,7 +2,6 @@
 title: Platform Configuration
 description: Tune ingestion, retention, and tenant-level preferences for RightSight.
 sidebar_label: Configuration
-slug: /rightsight/7.6/configuration
 tags:
   - rightsight
   - configuration

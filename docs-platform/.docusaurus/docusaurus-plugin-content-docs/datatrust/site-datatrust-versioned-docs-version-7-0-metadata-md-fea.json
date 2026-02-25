@@ -1,0 +1,45 @@
+{
+  "id": "metadata",
+  "title": "Metadata Modeling",
+  "description": "Align physical schemas and business context within DataTrust.",
+  "source": "@site/datatrust_versioned_docs/version-7.0/metadata.md",
+  "sourceDirName": ".",
+  "slug": "/metadata",
+  "permalink": "/datatrust/7.0/metadata",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/datatrust_versioned_docs/version-7.0/metadata.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/datatrust/7.0/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "metadata",
+      "permalink": "/datatrust/7.0/tags/metadata"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Metadata Modeling",
+    "description": "Align physical schemas and business context within DataTrust.",
+    "sidebar_label": "Metadata",
+    "tags": [
+      "datatrust",
+      "metadata"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Installation",
+    "permalink": "/datatrust/7.0/installation"
+  },
+  "next": {
+    "title": "Data Quality",
+    "permalink": "/datatrust/7.0/data-quality"
+  }
+}

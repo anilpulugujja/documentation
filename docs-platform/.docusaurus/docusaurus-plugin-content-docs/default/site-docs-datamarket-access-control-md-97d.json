@@ -22,8 +22,8 @@
     }
   ],
   "version": "current",
-  "lastUpdatedBy": "Anil Pulugujja",
-  "lastUpdatedAt": 1772042444000,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "Access Control Model",
     "description": "Manage roles, entitlements, and license keys for DataMarket.",

@@ -2,7 +2,6 @@
 title: Access Control Model
 description: Manage roles, entitlements, and license keys for DataMarket.
 sidebar_label: Access Control
-slug: /datamarket/7.6/access-control
 tags:
   - datamarket
   - access-control

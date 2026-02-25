@@ -2,7 +2,6 @@
 title: Publishing Data Products
 description: Turn curated datasets into catalog-ready offers with pricing and SLAs.
 sidebar_label: Data Publishing
-slug: /datamarket/7.6/data-publishing
 tags:
   - datamarket
   - publishing

@@ -2,7 +2,6 @@
 title: Webhooks
 description: Receive push events for governance, monitoring, and marketplace workflows.
 sidebar_label: Webhooks
-slug: /api/webhooks
 tags:
   - api
   - webhooks

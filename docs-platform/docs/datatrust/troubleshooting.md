@@ -2,7 +2,6 @@
 title: Troubleshooting Checklist
 description: Resolve the most common DataTrust onboarding issues.
 sidebar_label: Troubleshooting
-slug: /datatrust/7.6/troubleshooting
 tags:
   - datatrust
   - troubleshooting

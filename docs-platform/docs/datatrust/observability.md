@@ -2,7 +2,6 @@
 title: Observability
 description: Track scan health, connector uptime, and lineage events.
 sidebar_label: Observability
-slug: /datatrust/7.6/observability
 tags:
   - datatrust
   - observability

@@ -2,7 +2,6 @@
 title: RightSight Overview
 description: Unified observability for streaming data products and AI signals.
 sidebar_label: Overview
-slug: /rightsight/7.6/overview
 tags:
   - rightsight
   - overview

@@ -1,385 +1,43 @@
 {
-  "/-2e1": {
-    "__comp": "c4f5d8e4",
-    "__context": {
-      "plugin": "a7456010"
-    },
-    "config": "5e9f5e1a"
-  },
-  "/-305": {
+  "/api-4e8": {
     "__comp": "5e95c892",
     "__context": {
-      "plugin": "aba21aa0"
+      "plugin": "360dc931"
     }
   },
-  "/7.0-ac9": {
+  "/api-e65": {
     "__comp": "a7bd4aaa",
-    "__props": "e1ae2cc3"
+    "__props": "591f7a5f"
   },
-  "/7.0/tags-b4c": {
+  "/api/tags-91f": {
     "__comp": "3720c009",
-    "__props": "e3f7912a"
+    "__props": "a379a589"
   },
-  "/7.0/tags/access-control-4b2": {
+  "/api/tags/api-1c8": {
     "__comp": "df203c0f",
-    "__props": "2a536cb4"
+    "__props": "d0ef8bb4"
   },
-  "/7.0/tags/administration-046": {
+  "/api/tags/authentication-6d2": {
     "__comp": "df203c0f",
-    "__props": "b4ab82e0"
+    "__props": "4a36e112"
   },
-  "/7.0/tags/ai-680": {
+  "/api/tags/errors-05e": {
     "__comp": "df203c0f",
-    "__props": "306098de"
+    "__props": "43050bdf"
   },
-  "/7.0/tags/alerts-630": {
+  "/api/tags/rest-eda": {
     "__comp": "df203c0f",
-    "__props": "586cd2e1"
+    "__props": "4177ddb0"
   },
-  "/7.0/tags/api-766": {
+  "/api/tags/sdk-5b0": {
     "__comp": "df203c0f",
-    "__props": "3ac1d555"
+    "__props": "0e8a3457"
   },
-  "/7.0/tags/authentication-d68": {
+  "/api/tags/webhooks-39c": {
     "__comp": "df203c0f",
-    "__props": "c75c1cf1"
+    "__props": "8678a582"
   },
-  "/7.0/tags/configuration-0d8": {
-    "__comp": "df203c0f",
-    "__props": "6fb85d0f"
-  },
-  "/7.0/tags/consumption-1f5": {
-    "__comp": "df203c0f",
-    "__props": "fbf6abae"
-  },
-  "/7.0/tags/dashboards-06d": {
-    "__comp": "df203c0f",
-    "__props": "e0d3995a"
-  },
-  "/7.0/tags/datamarket-d19": {
-    "__comp": "df203c0f",
-    "__props": "db34950e"
-  },
-  "/7.0/tags/datatrust-dd9": {
-    "__comp": "df203c0f",
-    "__props": "6056e7b4"
-  },
-  "/7.0/tags/errors-ced": {
-    "__comp": "df203c0f",
-    "__props": "e43f07f6"
-  },
-  "/7.0/tags/governance-ccf": {
-    "__comp": "df203c0f",
-    "__props": "131f35fa"
-  },
-  "/7.0/tags/installation-9f6": {
-    "__comp": "df203c0f",
-    "__props": "de72eb16"
-  },
-  "/7.0/tags/integrations-605": {
-    "__comp": "df203c0f",
-    "__props": "c90eae5d"
-  },
-  "/7.0/tags/metadata-5d0": {
-    "__comp": "df203c0f",
-    "__props": "b77efd05"
-  },
-  "/7.0/tags/monitoring-54e": {
-    "__comp": "df203c0f",
-    "__props": "3f664a9e"
-  },
-  "/7.0/tags/observability-e12": {
-    "__comp": "df203c0f",
-    "__props": "38d538dc"
-  },
-  "/7.0/tags/onboarding-4c9": {
-    "__comp": "df203c0f",
-    "__props": "f4dba2ea"
-  },
-  "/7.0/tags/overview-f24": {
-    "__comp": "df203c0f",
-    "__props": "64ace438"
-  },
-  "/7.0/tags/publishing-638": {
-    "__comp": "df203c0f",
-    "__props": "9f14c76c"
-  },
-  "/7.0/tags/quality-52c": {
-    "__comp": "df203c0f",
-    "__props": "fffae4a6"
-  },
-  "/7.0/tags/release-notes-919": {
-    "__comp": "df203c0f",
-    "__props": "a8efc611"
-  },
-  "/7.0/tags/rest-c49": {
-    "__comp": "df203c0f",
-    "__props": "91402cd2"
-  },
-  "/7.0/tags/rightsight-67a": {
-    "__comp": "df203c0f",
-    "__props": "197dec17"
-  },
-  "/7.0/tags/sdk-ce9": {
-    "__comp": "df203c0f",
-    "__props": "4d476c74"
-  },
-  "/7.0/tags/setup-ded": {
-    "__comp": "df203c0f",
-    "__props": "35acd86a"
-  },
-  "/7.0/tags/troubleshooting-080": {
-    "__comp": "df203c0f",
-    "__props": "b67d3d60"
-  },
-  "/7.0/tags/webhooks-a03": {
-    "__comp": "df203c0f",
-    "__props": "867164cc"
-  },
-  "/7.0-a4c": {
-    "__comp": "a94703ab"
-  },
-  "/7.0/api/authentication-cf7": {
-    "__comp": "17896441",
-    "content": "6945db34"
-  },
-  "/7.0/api/error-codes-492": {
-    "__comp": "17896441",
-    "content": "7a917d45"
-  },
-  "/7.0/api/rest-endpoints-b77": {
-    "__comp": "17896441",
-    "content": "0ef3c49d"
-  },
-  "/7.0/api/sdk-examples-509": {
-    "__comp": "17896441",
-    "content": "8e546918"
-  },
-  "/7.0/api/webhooks-c98": {
-    "__comp": "17896441",
-    "content": "873b473c"
-  },
-  "/7.0/datamarket/7.0/access-control-afb": {
-    "__comp": "17896441",
-    "content": "47fdedd8"
-  },
-  "/7.0/datamarket/7.0/data-consumption-f39": {
-    "__comp": "17896441",
-    "content": "628293af"
-  },
-  "/7.0/datamarket/7.0/data-publishing-c1d": {
-    "__comp": "17896441",
-    "content": "9df6f79d"
-  },
-  "/7.0/datamarket/7.0/governance-0c5": {
-    "__comp": "17896441",
-    "content": "7598399a"
-  },
-  "/7.0/datamarket/7.0/integrations-719": {
-    "__comp": "17896441",
-    "content": "44b2c4b3"
-  },
-  "/7.0/datamarket/7.0/marketplace-setup-471": {
-    "__comp": "17896441",
-    "content": "c72aeb13"
-  },
-  "/7.0/datamarket/7.0/overview-4dd": {
-    "__comp": "17896441",
-    "content": "77b1f7b3"
-  },
-  "/7.0/datatrust/7.0/administration-8da": {
-    "__comp": "17896441",
-    "content": "92d137bf"
-  },
-  "/7.0/datatrust/7.0/data-quality-d23": {
-    "__comp": "17896441",
-    "content": "4b3e4121"
-  },
-  "/7.0/datatrust/7.0/getting-started-002": {
-    "__comp": "17896441",
-    "content": "4297618f"
-  },
-  "/7.0/datatrust/7.0/installation-5a2": {
-    "__comp": "17896441",
-    "content": "6b389f60"
-  },
-  "/7.0/datatrust/7.0/metadata-39e": {
-    "__comp": "17896441",
-    "content": "33d24670"
-  },
-  "/7.0/datatrust/7.0/observability-732": {
-    "__comp": "17896441",
-    "content": "751d85e4"
-  },
-  "/7.0/datatrust/7.0/troubleshooting-70c": {
-    "__comp": "17896441",
-    "content": "4b5b89ec"
-  },
-  "/7.0/release-notes/7-0-b49": {
-    "__comp": "17896441",
-    "content": "cfeea79c"
-  },
-  "/7.0/release-notes/7-5-d75": {
-    "__comp": "17896441",
-    "content": "eceb6c7e"
-  },
-  "/7.0/release-notes/7-6-2d7": {
-    "__comp": "17896441",
-    "content": "9d504214"
-  },
-  "/7.0/rightsight/7.0/ai-enrichment-77f": {
-    "__comp": "17896441",
-    "content": "6f1f34a0"
-  },
-  "/7.0/rightsight/7.0/alerts-0d4": {
-    "__comp": "17896441",
-    "content": "071e0ef5"
-  },
-  "/7.0/rightsight/7.0/configuration-52c": {
-    "__comp": "17896441",
-    "content": "c9dc4905"
-  },
-  "/7.0/rightsight/7.0/dashboards-5a6": {
-    "__comp": "17896441",
-    "content": "67a2be8b"
-  },
-  "/7.0/rightsight/7.0/monitoring-813": {
-    "__comp": "17896441",
-    "content": "5114c587"
-  },
-  "/7.0/rightsight/7.0/overview-073": {
-    "__comp": "17896441",
-    "content": "3ecabd38"
-  },
-  "/-7ac": {
-    "__comp": "a7bd4aaa",
-    "__props": "22dd74f7"
-  },
-  "/tags-ce1": {
-    "__comp": "3720c009",
-    "__props": "59af61a6"
-  },
-  "/tags/access-control-84f": {
-    "__comp": "df203c0f",
-    "__props": "cff3170e"
-  },
-  "/tags/administration-aaa": {
-    "__comp": "df203c0f",
-    "__props": "2d7ffbea"
-  },
-  "/tags/ai-144": {
-    "__comp": "df203c0f",
-    "__props": "12e42f72"
-  },
-  "/tags/alerts-8b3": {
-    "__comp": "df203c0f",
-    "__props": "b11175cd"
-  },
-  "/tags/api-042": {
-    "__comp": "df203c0f",
-    "__props": "30b7df4b"
-  },
-  "/tags/authentication-ae2": {
-    "__comp": "df203c0f",
-    "__props": "ab795768"
-  },
-  "/tags/configuration-781": {
-    "__comp": "df203c0f",
-    "__props": "7264f338"
-  },
-  "/tags/consumption-f64": {
-    "__comp": "df203c0f",
-    "__props": "a6105887"
-  },
-  "/tags/dashboards-f58": {
-    "__comp": "df203c0f",
-    "__props": "c80bf540"
-  },
-  "/tags/datamarket-f25": {
-    "__comp": "df203c0f",
-    "__props": "49ffd1d3"
-  },
-  "/tags/datatrust-a7c": {
-    "__comp": "df203c0f",
-    "__props": "873949b4"
-  },
-  "/tags/errors-0a7": {
-    "__comp": "df203c0f",
-    "__props": "75439ed1"
-  },
-  "/tags/governance-345": {
-    "__comp": "df203c0f",
-    "__props": "b0015e7b"
-  },
-  "/tags/installation-c74": {
-    "__comp": "df203c0f",
-    "__props": "9cc31a46"
-  },
-  "/tags/integrations-0d6": {
-    "__comp": "df203c0f",
-    "__props": "a487a7b8"
-  },
-  "/tags/metadata-08a": {
-    "__comp": "df203c0f",
-    "__props": "ea1f5ac0"
-  },
-  "/tags/monitoring-999": {
-    "__comp": "df203c0f",
-    "__props": "ecaaa484"
-  },
-  "/tags/observability-e51": {
-    "__comp": "df203c0f",
-    "__props": "3c6dcb86"
-  },
-  "/tags/onboarding-b8e": {
-    "__comp": "df203c0f",
-    "__props": "f371591c"
-  },
-  "/tags/overview-55f": {
-    "__comp": "df203c0f",
-    "__props": "b85a6672"
-  },
-  "/tags/publishing-1fd": {
-    "__comp": "df203c0f",
-    "__props": "905d67d9"
-  },
-  "/tags/quality-6ef": {
-    "__comp": "df203c0f",
-    "__props": "5e2dc9f5"
-  },
-  "/tags/release-notes-760": {
-    "__comp": "df203c0f",
-    "__props": "c17401aa"
-  },
-  "/tags/rest-cf9": {
-    "__comp": "df203c0f",
-    "__props": "0ee21320"
-  },
-  "/tags/rightsight-e0b": {
-    "__comp": "df203c0f",
-    "__props": "0764cefd"
-  },
-  "/tags/sdk-4e2": {
-    "__comp": "df203c0f",
-    "__props": "b5ebe99e"
-  },
-  "/tags/setup-848": {
-    "__comp": "df203c0f",
-    "__props": "68ee3bbe"
-  },
-  "/tags/template-d19": {
-    "__comp": "df203c0f",
-    "__props": "ffaa1e63"
-  },
-  "/tags/troubleshooting-220": {
-    "__comp": "df203c0f",
-    "__props": "04aa852f"
-  },
-  "/tags/webhooks-424": {
-    "__comp": "df203c0f",
-    "__props": "eec36551"
-  },
-  "/-016": {
+  "/api-401": {
     "__comp": "a94703ab"
   },
   "/api/authentication-af5": {
@@ -402,39 +60,204 @@
     "__comp": "17896441",
     "content": "ba827b61"
   },
-  "/contributing-3c3": {
-    "__comp": "17896441",
-    "content": "4d54d076"
+  "/datamarket-b79": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "e54cb561"
+    }
   },
-  "/datamarket/7.6/access-control-c29": {
+  "/datamarket-d1f": {
+    "__comp": "a7bd4aaa",
+    "__props": "4bf84150"
+  },
+  "/datamarket/tags-221": {
+    "__comp": "3720c009",
+    "__props": "918cdaa5"
+  },
+  "/datamarket/tags/access-control-9c4": {
+    "__comp": "df203c0f",
+    "__props": "31715f08"
+  },
+  "/datamarket/tags/consumption-22b": {
+    "__comp": "df203c0f",
+    "__props": "1eba83eb"
+  },
+  "/datamarket/tags/datamarket-d86": {
+    "__comp": "df203c0f",
+    "__props": "bef2e492"
+  },
+  "/datamarket/tags/governance-a25": {
+    "__comp": "df203c0f",
+    "__props": "8d228bf1"
+  },
+  "/datamarket/tags/integrations-bd0": {
+    "__comp": "df203c0f",
+    "__props": "6212b03c"
+  },
+  "/datamarket/tags/overview-988": {
+    "__comp": "df203c0f",
+    "__props": "1b206db1"
+  },
+  "/datamarket/tags/publishing-6d2": {
+    "__comp": "df203c0f",
+    "__props": "b28a0de2"
+  },
+  "/datamarket/tags/setup-b09": {
+    "__comp": "df203c0f",
+    "__props": "579e1c2f"
+  },
+  "/datamarket-179": {
+    "__comp": "a94703ab"
+  },
+  "/datamarket/access-control-99b": {
     "__comp": "17896441",
     "content": "97d06568"
   },
-  "/datamarket/7.6/data-consumption-5a1": {
+  "/datamarket/data-consumption-7fb": {
     "__comp": "17896441",
     "content": "63eaa550"
   },
-  "/datamarket/7.6/data-publishing-6a0": {
+  "/datamarket/data-publishing-30b": {
     "__comp": "17896441",
     "content": "ee0c7fc5"
   },
-  "/datamarket/7.6/governance-3d2": {
+  "/datamarket/governance-1fd": {
     "__comp": "17896441",
     "content": "94eed2e0"
   },
-  "/datamarket/7.6/integrations-5d1": {
+  "/datamarket/integrations-1cc": {
     "__comp": "17896441",
     "content": "f3587305"
   },
-  "/datamarket/7.6/marketplace-setup-0ef": {
+  "/datamarket/marketplace-setup-eb8": {
     "__comp": "17896441",
     "content": "00235112"
   },
-  "/datamarket/7.6/overview-497": {
+  "/datamarket/overview-863": {
     "__comp": "17896441",
     "content": "68b5ca21"
   },
-  "/datatrust/7.6/administration-73e": {
+  "/datatrust-74a": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "eccd6a89"
+    }
+  },
+  "/datatrust/7.0-461": {
+    "__comp": "a7bd4aaa",
+    "__props": "74b4427f"
+  },
+  "/datatrust/7.0/tags-57c": {
+    "__comp": "3720c009",
+    "__props": "ccc5e92e"
+  },
+  "/datatrust/7.0/tags/administration-db5": {
+    "__comp": "df203c0f",
+    "__props": "32847a9b"
+  },
+  "/datatrust/7.0/tags/datatrust-35f": {
+    "__comp": "df203c0f",
+    "__props": "25123777"
+  },
+  "/datatrust/7.0/tags/installation-7ba": {
+    "__comp": "df203c0f",
+    "__props": "e2273b26"
+  },
+  "/datatrust/7.0/tags/metadata-577": {
+    "__comp": "df203c0f",
+    "__props": "beb6d97f"
+  },
+  "/datatrust/7.0/tags/observability-5c7": {
+    "__comp": "df203c0f",
+    "__props": "1f0a7ec4"
+  },
+  "/datatrust/7.0/tags/onboarding-959": {
+    "__comp": "df203c0f",
+    "__props": "9c1dfb32"
+  },
+  "/datatrust/7.0/tags/quality-517": {
+    "__comp": "df203c0f",
+    "__props": "b5f6ed81"
+  },
+  "/datatrust/7.0/tags/troubleshooting-099": {
+    "__comp": "df203c0f",
+    "__props": "ed2a9322"
+  },
+  "/datatrust/7.0-d32": {
+    "__comp": "a94703ab"
+  },
+  "/datatrust/7.0/administration-fdf": {
+    "__comp": "17896441",
+    "content": "b2263e03"
+  },
+  "/datatrust/7.0/data-quality-37b": {
+    "__comp": "17896441",
+    "content": "10d606ec"
+  },
+  "/datatrust/7.0/getting-started-425": {
+    "__comp": "17896441",
+    "content": "284077f0"
+  },
+  "/datatrust/7.0/installation-9ea": {
+    "__comp": "17896441",
+    "content": "0e57957c"
+  },
+  "/datatrust/7.0/metadata-5d8": {
+    "__comp": "17896441",
+    "content": "fea2a9f0"
+  },
+  "/datatrust/7.0/observability-9a7": {
+    "__comp": "17896441",
+    "content": "60987e11"
+  },
+  "/datatrust/7.0/troubleshooting-f2e": {
+    "__comp": "17896441",
+    "content": "4ab2c352"
+  },
+  "/datatrust/7.6-5f2": {
+    "__comp": "a7bd4aaa",
+    "__props": "2a438c2f"
+  },
+  "/datatrust/7.6/tags-386": {
+    "__comp": "3720c009",
+    "__props": "b17b9ec5"
+  },
+  "/datatrust/7.6/tags/administration-93f": {
+    "__comp": "df203c0f",
+    "__props": "e0c68bb9"
+  },
+  "/datatrust/7.6/tags/datatrust-b29": {
+    "__comp": "df203c0f",
+    "__props": "27138090"
+  },
+  "/datatrust/7.6/tags/installation-6fc": {
+    "__comp": "df203c0f",
+    "__props": "bc8b01e5"
+  },
+  "/datatrust/7.6/tags/metadata-88d": {
+    "__comp": "df203c0f",
+    "__props": "9e4bdeac"
+  },
+  "/datatrust/7.6/tags/observability-3f5": {
+    "__comp": "df203c0f",
+    "__props": "fb341575"
+  },
+  "/datatrust/7.6/tags/onboarding-632": {
+    "__comp": "df203c0f",
+    "__props": "9c42f207"
+  },
+  "/datatrust/7.6/tags/quality-5f2": {
+    "__comp": "df203c0f",
+    "__props": "5f51f5dc"
+  },
+  "/datatrust/7.6/tags/troubleshooting-44a": {
+    "__comp": "df203c0f",
+    "__props": "8a38c01e"
+  },
+  "/datatrust/7.6-d6d": {
+    "__comp": "a94703ab"
+  },
+  "/datatrust/7.6/administration-c62": {
     "__comp": "17896441",
     "content": "7f6eae42"
   },
@@ -462,6 +285,27 @@
     "__comp": "17896441",
     "content": "ad08fb26"
   },
+  "/release-notes-8b4": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "2c5dd2b0"
+    }
+  },
+  "/release-notes-684": {
+    "__comp": "a7bd4aaa",
+    "__props": "90184e6d"
+  },
+  "/release-notes/tags-425": {
+    "__comp": "3720c009",
+    "__props": "2c731329"
+  },
+  "/release-notes/tags/release-notes-2eb": {
+    "__comp": "df203c0f",
+    "__props": "9375f2b9"
+  },
+  "/release-notes-8bd": {
+    "__comp": "a94703ab"
+  },
   "/release-notes/7-0-192": {
     "__comp": "17896441",
     "content": "d431065d"
@@ -474,40 +318,80 @@
     "__comp": "17896441",
     "content": "1da3ff1d"
   },
-  "/rightsight/7.6/ai-enrichment-598": {
+  "/rightsight-3e7": {
+    "__comp": "5e95c892",
+    "__context": {
+      "plugin": "b808002d"
+    }
+  },
+  "/rightsight-3f4": {
+    "__comp": "a7bd4aaa",
+    "__props": "0edf8275"
+  },
+  "/rightsight/tags-d86": {
+    "__comp": "3720c009",
+    "__props": "6d23cefa"
+  },
+  "/rightsight/tags/ai-828": {
+    "__comp": "df203c0f",
+    "__props": "2b1f0925"
+  },
+  "/rightsight/tags/alerts-db1": {
+    "__comp": "df203c0f",
+    "__props": "4577ca24"
+  },
+  "/rightsight/tags/configuration-a8f": {
+    "__comp": "df203c0f",
+    "__props": "4c9ea8b9"
+  },
+  "/rightsight/tags/dashboards-ebe": {
+    "__comp": "df203c0f",
+    "__props": "94b86b46"
+  },
+  "/rightsight/tags/monitoring-986": {
+    "__comp": "df203c0f",
+    "__props": "61ff6f1f"
+  },
+  "/rightsight/tags/overview-d89": {
+    "__comp": "df203c0f",
+    "__props": "6eb00dc9"
+  },
+  "/rightsight/tags/rightsight-814": {
+    "__comp": "df203c0f",
+    "__props": "1e3e2dd0"
+  },
+  "/rightsight-523": {
+    "__comp": "a94703ab"
+  },
+  "/rightsight/ai-enrichment-ef2": {
     "__comp": "17896441",
     "content": "5dccb478"
   },
-  "/rightsight/7.6/alerts-e0e": {
+  "/rightsight/alerts-d44": {
     "__comp": "17896441",
     "content": "509a796f"
   },
-  "/rightsight/7.6/configuration-dbe": {
+  "/rightsight/configuration-757": {
     "__comp": "17896441",
     "content": "83bbb6a2"
   },
-  "/rightsight/7.6/dashboards-cab": {
+  "/rightsight/dashboards-a26": {
     "__comp": "17896441",
     "content": "a5505dd7"
   },
-  "/rightsight/7.6/monitoring-70d": {
+  "/rightsight/monitoring-bac": {
     "__comp": "17896441",
     "content": "ef033a55"
   },
-  "/rightsight/7.6/overview-d30": {
+  "/rightsight/overview-a5d": {
     "__comp": "17896441",
     "content": "db4355b0"
   },
-  "/templates/api-d99": {
-    "__comp": "17896441",
-    "content": "b55f7453"
-  },
-  "/templates/feature-d71": {
-    "__comp": "17896441",
-    "content": "3734e020"
-  },
-  "/templates/release-notes-6d6": {
-    "__comp": "17896441",
-    "content": "f1052e01"
+  "/-2e1": {
+    "__comp": "c4f5d8e4",
+    "__context": {
+      "plugin": "a7456010"
+    },
+    "config": "5e9f5e1a"
   }
 }

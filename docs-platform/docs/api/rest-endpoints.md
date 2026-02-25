@@ -2,7 +2,6 @@
 title: REST Endpoints
 description: Reference for core REST resources across DataTrust, RightSight, and DataMarket.
 sidebar_label: REST Endpoints
-slug: /api/rest-endpoints
 tags:
   - api
   - rest

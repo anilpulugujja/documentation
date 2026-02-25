@@ -1,0 +1,41 @@
+{
+  "id": "integrations",
+  "title": "Integrations",
+  "description": "Connect DataMarket to billing, CRM, and delivery systems.",
+  "source": "@site/docs/datamarket/integrations.md",
+  "sourceDirName": ".",
+  "slug": "/integrations",
+  "permalink": "/datamarket/integrations",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datamarket/integrations.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/datamarket/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "integrations",
+      "permalink": "/datamarket/tags/integrations"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Integrations",
+    "description": "Connect DataMarket to billing, CRM, and delivery systems.",
+    "sidebar_label": "Integrations",
+    "tags": [
+      "datamarket",
+      "integrations"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Access Control",
+    "permalink": "/datamarket/access-control"
+  }
+}

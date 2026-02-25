@@ -2,7 +2,6 @@
 title: DataMarket Overview
 description: Launch curated data exchanges for internal and external consumers.
 sidebar_label: Overview
-slug: /datamarket/7.6/overview
 tags:
   - datamarket
   - overview

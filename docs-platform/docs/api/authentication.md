@@ -2,7 +2,6 @@
 title: Authentication
 description: Authenticate against the GetRightData API for all products.
 sidebar_label: Authentication
-slug: /api/authentication
 tags:
   - api
   - authentication

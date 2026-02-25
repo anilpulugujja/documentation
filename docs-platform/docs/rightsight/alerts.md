@@ -2,7 +2,6 @@
 title: Alerting & Routing
 description: Send actionable notifications when monitors detect anomalies.
 sidebar_label: Alerts
-slug: /rightsight/7.6/alerts
 tags:
   - rightsight
   - alerts

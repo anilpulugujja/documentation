@@ -2,7 +2,6 @@
 title: Getting Started with DataTrust
 description: Prepare your tenant, connect sources, and unlock trusted datasets in minutes.
 sidebar_label: Getting Started
-slug: /datatrust/7.6/getting-started
 tags:
   - datatrust
   - onboarding

@@ -31,6 +31,14 @@ type FrontmatterState = {
   [key: string]: unknown;
 };
 
+type ImportMetadata = {
+  title?: string;
+  description?: string;
+  sidebar_label?: string;
+  slug?: string;
+  filename?: string;
+};
+
 const primaryFields: { key: string; label: string; multiline?: boolean }[] = [
   { key: "title", label: "Title" },
   { key: "description", label: "Description", multiline: true },
@@ -68,7 +76,7 @@ const DashboardApp = () => {
     templateId: "",
   });
   const [loadingState, setLoadingState] = useState<
-    "idle" | "loading" | "saving" | "creating"
+    "idle" | "loading" | "saving" | "creating" | "importing"
   >("idle");
   const [notification, setNotification] = useState<string>("");
   const [error, setError] = useState<string>("");
@@ -262,6 +270,7 @@ const DashboardApp = () => {
           .map((tag) => tag.trim())
           .filter(Boolean),
       },
+      content: !selectedFile && body.trim() ? body : undefined,
       overwrite: false,
     };
 
@@ -302,6 +311,70 @@ const DashboardApp = () => {
       filename: value,
       slug: prev.slug || computedSlug,
     }));
+  };
+
+  const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
+    setFrontmatter((prev) => ({
+      ...prev,
+      title: prev.title || metadata.title || "",
+      description: prev.description || metadata.description || "",
+      sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
+      slug: prev.slug || metadata.slug || "",
+    }));
+    setNewDoc((prev) => ({
+      ...prev,
+      title: prev.title || metadata.title || "",
+      description: prev.description || metadata.description || "",
+      sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
+      slug: prev.slug || metadata.slug || "",
+      filename: prev.filename || metadata.filename || prev.filename,
+    }));
+  };
+
+  const handleWordUpload = async (file: File) => {
+    setLoadingState("importing");
+    setNotification("");
+    setError("");
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await fetch("/api/import-docx", {
+        method: "POST",
+        body: formData,
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        setError(data.error ?? "Unable to convert the Word document.");
+      } else {
+        const payload: { markdown?: string; metadata?: ImportMetadata } = await res.json();
+        if (payload.markdown) {
+          setBody(payload.markdown);
+        }
+        mergeImportedMetadata(payload.metadata ?? {});
+        let targetPath = selectedFile;
+        if (selectedFile) {
+          const replace = window.confirm(
+            `Replace ${selectedFile} with the imported content? Click “Cancel” to stage it as a new unsaved document.`,
+          );
+          if (!replace) {
+            setSelectedFile("");
+            targetPath = "";
+          }
+        }
+        if (targetPath) {
+          setNotification(
+            `Imported content loaded into ${targetPath}. Save to overwrite or create a new file below.`,
+          );
+        } else {
+          setNotification(
+            "Word document converted. Review the markdown, set a filename, and click “Create document.”",
+          );
+        }
+      }
+    } catch {
+      setError("Unable to convert the Word document. Please try again.");
+    }
+    setLoadingState("idle");
   };
 
   const advancedFrontmatterPlaceholder = useMemo(
@@ -420,7 +493,10 @@ const DashboardApp = () => {
             <button
               onClick={handleSave}
               disabled={
-                !selectedFile || loadingState === "saving" || loadingState === "loading"
+                !selectedFile ||
+                loadingState === "saving" ||
+                loadingState === "loading" ||
+                loadingState === "importing"
               }
               className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-200 disabled:cursor-not-allowed disabled:opacity-70"
             >
@@ -611,7 +687,7 @@ const DashboardApp = () => {
             <button
               type="submit"
               className="w-full rounded-xl bg-slate-900 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 disabled:opacity-70"
-              disabled={loadingState === "creating"}
+              disabled={loadingState === "creating" || loadingState === "importing"}
             >
               {loadingState === "creating" ? "Creating…" : "Create document"}
             </button>
@@ -623,6 +699,32 @@ const DashboardApp = () => {
               documentation/docs-platform
             </span>
           </p>
+          <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white/70 p-4">
+            <h3 className="text-sm font-semibold text-slate-700">Import from Word</h3>
+            <p className="mt-1 text-sm text-slate-500">
+              Upload a .docx file and we&apos;ll convert it to Markdown, preserving headings,
+              tables, lists, and styling. The converted content will appear in the editor so you can review it before saving.
+            </p>
+            <label className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-xl border border-indigo-200 bg-indigo-50 px-4 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-white">
+              {loadingState === "importing" ? "Converting…" : "Choose .docx file"}
+              <input
+                type="file"
+                accept=".docx"
+                className="hidden"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+                  if (file) {
+                    handleWordUpload(file);
+                  }
+                  event.target.value = "";
+                }}
+              />
+            </label>
+            <p className="muted mt-3 text-xs">
+              Tip: Fill in the directory + filename above, then import your Word document and click
+              “Create document.” You can also overwrite an open doc by importing and clicking “Save changes.”
+            </p>
+          </div>
         </section>
       </main>
     </div>

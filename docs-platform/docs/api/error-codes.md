@@ -2,7 +2,6 @@
 title: Error Codes
 description: Understand API and delivery error responses with remediation tips.
 sidebar_label: Error Codes
-slug: /api/error-codes
 tags:
   - api
   - errors

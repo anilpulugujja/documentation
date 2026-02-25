@@ -2,7 +2,6 @@
 title: Marketplace Setup
 description: Configure your storefront, brand, billing, and domains.
 sidebar_label: Marketplace Setup
-slug: /datamarket/7.6/marketplace-setup
 tags:
   - datamarket
   - setup

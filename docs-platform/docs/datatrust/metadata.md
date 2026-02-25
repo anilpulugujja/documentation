@@ -2,7 +2,6 @@
 title: Metadata Modeling
 description: Align physical schemas and business context within DataTrust.
 sidebar_label: Metadata
-slug: /datatrust/7.6/metadata
 tags:
   - datatrust
   - metadata

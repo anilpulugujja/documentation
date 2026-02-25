@@ -1,0 +1,41 @@
+{
+  "id": "troubleshooting",
+  "title": "Troubleshooting Checklist",
+  "description": "Resolve the most common DataTrust onboarding issues.",
+  "source": "@site/docs/datatrust/troubleshooting.md",
+  "sourceDirName": ".",
+  "slug": "/troubleshooting",
+  "permalink": "/datatrust/7.6/troubleshooting",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datatrust/troubleshooting.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/datatrust/7.6/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "troubleshooting",
+      "permalink": "/datatrust/7.6/tags/troubleshooting"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Troubleshooting Checklist",
+    "description": "Resolve the most common DataTrust onboarding issues.",
+    "sidebar_label": "Troubleshooting",
+    "tags": [
+      "datatrust",
+      "troubleshooting"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Administration",
+    "permalink": "/datatrust/7.6/administration"
+  }
+}

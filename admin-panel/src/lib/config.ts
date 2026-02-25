@@ -22,16 +22,16 @@ export const defaultCollections = [
   },
   {
     id: 'rightsight-current',
-    label: 'RightSight (7.6 current)',
+    label: 'RightSight (Latest)',
     relativePath: 'docs/rightsight',
-    version: '7.6',
+    version: 'Latest',
     product: 'RightSight',
   },
   {
     id: 'datamarket-current',
-    label: 'DataMarket (7.6 current)',
+    label: 'DataMarket (Latest)',
     relativePath: 'docs/datamarket',
-    version: '7.6',
+    version: 'Latest',
     product: 'DataMarket',
   },
   {
@@ -54,20 +54,6 @@ export const defaultCollections = [
     relativePath: 'versioned_docs/version-7.0/datatrust',
     version: '7.0',
     product: 'DataTrust',
-  },
-  {
-    id: 'rightsight-7-0',
-    label: 'RightSight (7.0 archived)',
-    relativePath: 'versioned_docs/version-7.0/rightsight',
-    version: '7.0',
-    product: 'RightSight',
-  },
-  {
-    id: 'datamarket-7-0',
-    label: 'DataMarket (7.0 archived)',
-    relativePath: 'versioned_docs/version-7.0/datamarket',
-    version: '7.0',
-    product: 'DataMarket',
   },
   {
     id: 'templates',
