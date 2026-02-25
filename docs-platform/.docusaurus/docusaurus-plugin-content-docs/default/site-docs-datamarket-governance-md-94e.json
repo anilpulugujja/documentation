@@ -1,0 +1,46 @@
+{
+  "id": "datamarket/governance",
+  "title": "Marketplace Governance",
+  "description": "Apply policies, approvals, and audits to every transaction.",
+  "source": "@site/docs/datamarket/governance.md",
+  "sourceDirName": "datamarket",
+  "slug": "/datamarket/7.6/governance",
+  "permalink": "/datamarket/7.6/governance",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datamarket/governance.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "governance",
+      "permalink": "/tags/governance"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Marketplace Governance",
+    "description": "Apply policies, approvals, and audits to every transaction.",
+    "sidebar_label": "Governance",
+    "slug": "/datamarket/7.6/governance",
+    "tags": [
+      "datamarket",
+      "governance"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Data Consumption",
+    "permalink": "/datamarket/7.6/data-consumption"
+  },
+  "next": {
+    "title": "Access Control",
+    "permalink": "/datamarket/7.6/access-control"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "release-notes/7-0",
+  "title": "Release Notes 7.0",
+  "description": "Archived release information for version 7.0.",
+  "source": "@site/versioned_docs/version-7.0/release-notes/7-0.md",
+  "sourceDirName": "release-notes",
+  "slug": "/release-notes/7-0",
+  "permalink": "/7.0/release-notes/7-0",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/versioned_docs/version-7.0/release-notes/7-0.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/7.0/tags/release-notes"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Release Notes 7.0",
+    "description": "Archived release information for version 7.0.",
+    "sidebar_label": "7",
+    "slug": "/release-notes/7-0",
+    "tags": [
+      "release-notes"
+    ]
+  },
+  "sidebar": "releaseNotesSidebar",
+  "previous": {
+    "title": "7.5",
+    "permalink": "/7.0/release-notes/7-5"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "id": "datatrust/data-quality",
+  "title": "Data Quality Policies",
+  "description": "Author, deploy, and monitor automated tests inside DataTrust.",
+  "source": "@site/versioned_docs/version-7.0/datatrust/data-quality.md",
+  "sourceDirName": "datatrust",
+  "slug": "/datatrust/7.0/data-quality",
+  "permalink": "/7.0/datatrust/7.0/data-quality",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/versioned_docs/version-7.0/datatrust/data-quality.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/7.0/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "quality",
+      "permalink": "/7.0/tags/quality"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Data Quality Policies",
+    "description": "Author, deploy, and monitor automated tests inside DataTrust.",
+    "sidebar_label": "Data Quality",
+    "slug": "/datatrust/7.0/data-quality",
+    "tags": [
+      "datatrust",
+      "quality"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Metadata",
+    "permalink": "/7.0/datatrust/7.0/metadata"
+  },
+  "next": {
+    "title": "Observability",
+    "permalink": "/7.0/datatrust/7.0/observability"
+  }
+}

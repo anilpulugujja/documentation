@@ -1,0 +1,46 @@
+{
+  "id": "api/webhooks",
+  "title": "Webhooks",
+  "description": "Receive push events for governance, monitoring, and marketplace workflows.",
+  "source": "@site/versioned_docs/version-7.0/api/webhooks.md",
+  "sourceDirName": "api",
+  "slug": "/api/webhooks",
+  "permalink": "/7.0/api/webhooks",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/versioned_docs/version-7.0/api/webhooks.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "api",
+      "permalink": "/7.0/tags/api"
+    },
+    {
+      "inline": true,
+      "label": "webhooks",
+      "permalink": "/7.0/tags/webhooks"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Webhooks",
+    "description": "Receive push events for governance, monitoring, and marketplace workflows.",
+    "sidebar_label": "Webhooks",
+    "slug": "/api/webhooks",
+    "tags": [
+      "api",
+      "webhooks"
+    ]
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "REST Endpoints",
+    "permalink": "/7.0/api/rest-endpoints"
+  },
+  "next": {
+    "title": "SDK Examples",
+    "permalink": "/7.0/api/sdk-examples"
+  }
+}

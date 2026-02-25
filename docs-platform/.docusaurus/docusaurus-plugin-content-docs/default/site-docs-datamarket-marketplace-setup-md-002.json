@@ -1,0 +1,46 @@
+{
+  "id": "datamarket/marketplace-setup",
+  "title": "Marketplace Setup",
+  "description": "Configure your storefront, brand, billing, and domains.",
+  "source": "@site/docs/datamarket/marketplace-setup.md",
+  "sourceDirName": "datamarket",
+  "slug": "/datamarket/7.6/marketplace-setup",
+  "permalink": "/datamarket/7.6/marketplace-setup",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datamarket/marketplace-setup.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "setup",
+      "permalink": "/tags/setup"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Marketplace Setup",
+    "description": "Configure your storefront, brand, billing, and domains.",
+    "sidebar_label": "Marketplace Setup",
+    "slug": "/datamarket/7.6/marketplace-setup",
+    "tags": [
+      "datamarket",
+      "setup"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/datamarket/7.6/overview"
+  },
+  "next": {
+    "title": "Data Publishing",
+    "permalink": "/datamarket/7.6/data-publishing"
+  }
+}

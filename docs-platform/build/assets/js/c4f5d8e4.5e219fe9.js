@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_platform=self.webpackChunkdocs_platform||[]).push([[2634],{192(t,r,s){s.r(r),s.d(r,{default:()=>u});s(6540);var a=s(6347),e=s(4848);function u(){return(0,e.jsx)(a.rd,{to:"/7.6/datatrust/getting-started"})}}}]);

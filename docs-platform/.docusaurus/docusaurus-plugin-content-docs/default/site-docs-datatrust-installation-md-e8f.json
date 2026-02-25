@@ -1,0 +1,46 @@
+{
+  "id": "datatrust/installation",
+  "title": "DataTrust Installation Paths",
+  "description": "Deploy collectors and service connectors required to run DataTrust 7.6.",
+  "source": "@site/docs/datatrust/installation.md",
+  "sourceDirName": "datatrust",
+  "slug": "/datatrust/7.6/installation",
+  "permalink": "/datatrust/7.6/installation",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datatrust/installation.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "installation",
+      "permalink": "/tags/installation"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "DataTrust Installation Paths",
+    "description": "Deploy collectors and service connectors required to run DataTrust 7.6.",
+    "sidebar_label": "Installation",
+    "slug": "/datatrust/7.6/installation",
+    "tags": [
+      "datatrust",
+      "installation"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Getting Started",
+    "permalink": "/datatrust/7.6/getting-started"
+  },
+  "next": {
+    "title": "Metadata",
+    "permalink": "/datatrust/7.6/metadata"
+  }
+}

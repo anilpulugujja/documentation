@@ -1,6 +1,7 @@
 // @ts-check
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const { themes } = require('prism-react-renderer');
+const lightCodeTheme = themes.github;
+const darkCodeTheme = themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -27,6 +28,22 @@ const config = {
   ],
   customFields: {
     legacyZendeskBaseUrl: 'https://getrightdata.zendesk.com/hc/en-us',
+    askPageUrl: process.env.DOCS_ASK_URL || 'https://getrightdata.com/contact',
+    rawContentBaseUrl:
+      process.env.DOCS_RAW_BASE_URL ||
+      'https://raw.githubusercontent.com/GetRightData/docs/main/',
+    localeOptions: {
+      regions: [
+        { code: 'us', label: 'United States' },
+        { code: 'eu', label: 'Europe' },
+      ],
+      languages: [
+        { code: 'en', label: 'English (United States)' },
+        { code: 'en-gb', label: 'English (United Kingdom)' },
+      ],
+      defaultRegion: 'us',
+      defaultLanguage: 'en',
+    },
   },
   themes: [],
   presets: [
@@ -43,11 +60,11 @@ const config = {
           showLastUpdateTime: true,
           includeCurrentVersion: true,
           lastVersion: 'current',
-          versions: {
-            current: {
-              label: '7.6',
-              path: '7.6',
-            },
+        versions: {
+          current: {
+            label: '7.6',
+            path: '',
+          },
             '7.0': {
               label: '7.0 (Archived)',
               path: '7.0',
@@ -64,20 +81,18 @@ const config = {
           priority: 0.5,
           filename: 'sitemap.xml',
         },
-        gtag: {
-          trackingID: 'G-XXXXXXXXXX',
-          anonymizeIP: true,
-        },
+        // gtag: { trackingID: 'G-XXXXXXXXXX', anonymizeIP: true }, // Enable when you have a real GA4 ID
       }),
     ],
   ],
-  plugins: [
-    '@docusaurus/plugin-google-gtag',
-  ],
+  plugins: [],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/social-card.png',
+      breadcrumbs: {
+        barStyle: 'default',
+      },
       metadata: [
         { name: 'keywords', content: 'DataTrust, RightSight, DataMarket, governance, monitoring' },
         { name: 'theme-color', content: '#1d2cf3' },
@@ -187,12 +202,6 @@ const config = {
         sidebar: {
           hideable: false,
         },
-      },
-      algolia: {
-        appId: 'APPID',
-        apiKey: 'SEARCH_API_KEY',
-        indexName: 'getrightdata_docs',
-        contextualSearch: true,
       },
     }),
 };

@@ -1,0 +1,46 @@
+{
+  "id": "api/sdk-examples",
+  "title": "SDK Examples",
+  "description": "Quick starts for Python and TypeScript clients.",
+  "source": "@site/versioned_docs/version-7.0/api/sdk-examples.md",
+  "sourceDirName": "api",
+  "slug": "/api/sdk-examples",
+  "permalink": "/7.0/api/sdk-examples",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/versioned_docs/version-7.0/api/sdk-examples.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "api",
+      "permalink": "/7.0/tags/api"
+    },
+    {
+      "inline": true,
+      "label": "sdk",
+      "permalink": "/7.0/tags/sdk"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "SDK Examples",
+    "description": "Quick starts for Python and TypeScript clients.",
+    "sidebar_label": "SDK Examples",
+    "slug": "/api/sdk-examples",
+    "tags": [
+      "api",
+      "sdk"
+    ]
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Webhooks",
+    "permalink": "/7.0/api/webhooks"
+  },
+  "next": {
+    "title": "Error Codes",
+    "permalink": "/7.0/api/error-codes"
+  }
+}

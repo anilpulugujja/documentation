@@ -1,0 +1,42 @@
+{
+  "id": "datamarket/overview",
+  "title": "DataMarket Overview",
+  "description": "Launch curated data exchanges for internal and external consumers.",
+  "source": "@site/docs/datamarket/overview.md",
+  "sourceDirName": "datamarket",
+  "slug": "/datamarket/7.6/overview",
+  "permalink": "/datamarket/7.6/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/datamarket/overview.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "overview",
+      "permalink": "/tags/overview"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "DataMarket Overview",
+    "description": "Launch curated data exchanges for internal and external consumers.",
+    "sidebar_label": "Overview",
+    "slug": "/datamarket/7.6/overview",
+    "tags": [
+      "datamarket",
+      "overview"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "next": {
+    "title": "Marketplace Setup",
+    "permalink": "/datamarket/7.6/marketplace-setup"
+  }
+}

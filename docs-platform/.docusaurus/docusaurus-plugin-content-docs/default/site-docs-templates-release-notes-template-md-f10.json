@@ -1,0 +1,32 @@
+{
+  "id": "templates/release-notes-template",
+  "title": "Release Notes Template",
+  "description": "Template for new release notes.",
+  "source": "@site/docs/templates/release-notes-template.md",
+  "sourceDirName": "templates",
+  "slug": "/templates/release-notes",
+  "permalink": "/templates/release-notes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/templates/release-notes-template.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "template",
+      "permalink": "/tags/template"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Release Notes Template",
+    "description": "Template for new release notes.",
+    "slug": "/templates/release-notes",
+    "sidebar_label": "Release Notes Template",
+    "hide_table_of_contents": false,
+    "tags": [
+      "template"
+    ]
+  }
+}

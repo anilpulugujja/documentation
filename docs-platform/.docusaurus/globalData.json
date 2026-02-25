@@ -1,0 +1,390 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "7.6",
+          "isLast": true,
+          "path": "/",
+          "mainDocId": "datatrust/getting-started",
+          "docs": [
+            {
+              "id": "api/authentication",
+              "path": "/api/authentication",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/error-codes",
+              "path": "/api/error-codes",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/rest-endpoints",
+              "path": "/api/rest-endpoints",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/sdk-examples",
+              "path": "/api/sdk-examples",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/webhooks",
+              "path": "/api/webhooks",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "contributing",
+              "path": "/contributing"
+            },
+            {
+              "id": "datamarket/access-control",
+              "path": "/datamarket/7.6/access-control",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/data-consumption",
+              "path": "/datamarket/7.6/data-consumption",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/data-publishing",
+              "path": "/datamarket/7.6/data-publishing",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/governance",
+              "path": "/datamarket/7.6/governance",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/integrations",
+              "path": "/datamarket/7.6/integrations",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/marketplace-setup",
+              "path": "/datamarket/7.6/marketplace-setup",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/overview",
+              "path": "/datamarket/7.6/overview",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datatrust/administration",
+              "path": "/datatrust/7.6/administration",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/data-quality",
+              "path": "/datatrust/7.6/data-quality",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/getting-started",
+              "path": "/datatrust/7.6/getting-started",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/installation",
+              "path": "/datatrust/7.6/installation",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/metadata",
+              "path": "/datatrust/7.6/metadata",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/observability",
+              "path": "/datatrust/7.6/observability",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/troubleshooting",
+              "path": "/datatrust/7.6/troubleshooting",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "release-notes/7-0",
+              "path": "/release-notes/7-0",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "release-notes/7-5",
+              "path": "/release-notes/7-5",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "release-notes/7-6",
+              "path": "/release-notes/7-6",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "rightsight/ai-enrichment",
+              "path": "/rightsight/7.6/ai-enrichment",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/alerts",
+              "path": "/rightsight/7.6/alerts",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/configuration",
+              "path": "/rightsight/7.6/configuration",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/dashboards",
+              "path": "/rightsight/7.6/dashboards",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/monitoring",
+              "path": "/rightsight/7.6/monitoring",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/overview",
+              "path": "/rightsight/7.6/overview",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "templates/api-template",
+              "path": "/templates/api"
+            },
+            {
+              "id": "templates/feature-template",
+              "path": "/templates/feature"
+            },
+            {
+              "id": "templates/release-notes-template",
+              "path": "/templates/release-notes"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "datatrustSidebar": {
+              "link": {
+                "path": "/datatrust/7.6/getting-started",
+                "label": "datatrust/getting-started"
+              }
+            },
+            "rightsightSidebar": {
+              "link": {
+                "path": "/rightsight/7.6/overview",
+                "label": "rightsight/overview"
+              }
+            },
+            "datamarketSidebar": {
+              "link": {
+                "path": "/datamarket/7.6/overview",
+                "label": "datamarket/overview"
+              }
+            },
+            "apiSidebar": {
+              "link": {
+                "path": "/api/authentication",
+                "label": "api/authentication"
+              }
+            },
+            "releaseNotesSidebar": {
+              "link": {
+                "path": "/release-notes/7-6",
+                "label": "release-notes/7-6"
+              }
+            }
+          }
+        },
+        {
+          "name": "7.0",
+          "label": "7.0 (Archived)",
+          "isLast": false,
+          "path": "/7.0",
+          "mainDocId": "datatrust/getting-started",
+          "docs": [
+            {
+              "id": "api/authentication",
+              "path": "/7.0/api/authentication",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/error-codes",
+              "path": "/7.0/api/error-codes",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/rest-endpoints",
+              "path": "/7.0/api/rest-endpoints",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/sdk-examples",
+              "path": "/7.0/api/sdk-examples",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "api/webhooks",
+              "path": "/7.0/api/webhooks",
+              "sidebar": "apiSidebar"
+            },
+            {
+              "id": "datamarket/access-control",
+              "path": "/7.0/datamarket/7.0/access-control",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/data-consumption",
+              "path": "/7.0/datamarket/7.0/data-consumption",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/data-publishing",
+              "path": "/7.0/datamarket/7.0/data-publishing",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/governance",
+              "path": "/7.0/datamarket/7.0/governance",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/integrations",
+              "path": "/7.0/datamarket/7.0/integrations",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/marketplace-setup",
+              "path": "/7.0/datamarket/7.0/marketplace-setup",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datamarket/overview",
+              "path": "/7.0/datamarket/7.0/overview",
+              "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "datatrust/administration",
+              "path": "/7.0/datatrust/7.0/administration",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/data-quality",
+              "path": "/7.0/datatrust/7.0/data-quality",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/getting-started",
+              "path": "/7.0/datatrust/7.0/getting-started",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/installation",
+              "path": "/7.0/datatrust/7.0/installation",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/metadata",
+              "path": "/7.0/datatrust/7.0/metadata",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/observability",
+              "path": "/7.0/datatrust/7.0/observability",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "datatrust/troubleshooting",
+              "path": "/7.0/datatrust/7.0/troubleshooting",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "release-notes/7-0",
+              "path": "/7.0/release-notes/7-0",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "release-notes/7-5",
+              "path": "/7.0/release-notes/7-5",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "release-notes/7-6",
+              "path": "/7.0/release-notes/7-6",
+              "sidebar": "releaseNotesSidebar"
+            },
+            {
+              "id": "rightsight/ai-enrichment",
+              "path": "/7.0/rightsight/7.0/ai-enrichment",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/alerts",
+              "path": "/7.0/rightsight/7.0/alerts",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/configuration",
+              "path": "/7.0/rightsight/7.0/configuration",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/dashboards",
+              "path": "/7.0/rightsight/7.0/dashboards",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/monitoring",
+              "path": "/7.0/rightsight/7.0/monitoring",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "rightsight/overview",
+              "path": "/7.0/rightsight/7.0/overview",
+              "sidebar": "rightsightSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "datatrustSidebar": {
+              "link": {
+                "path": "/7.0/datatrust/7.0/getting-started",
+                "label": "datatrust/getting-started"
+              }
+            },
+            "rightsightSidebar": {
+              "link": {
+                "path": "/7.0/rightsight/7.0/overview",
+                "label": "rightsight/overview"
+              }
+            },
+            "datamarketSidebar": {
+              "link": {
+                "path": "/7.0/datamarket/7.0/overview",
+                "label": "datamarket/overview"
+              }
+            },
+            "apiSidebar": {
+              "link": {
+                "path": "/7.0/api/authentication",
+                "label": "api/authentication"
+              }
+            },
+            "releaseNotesSidebar": {
+              "link": {
+                "path": "/7.0/release-notes/7-6",
+                "label": "release-notes/7-6"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}

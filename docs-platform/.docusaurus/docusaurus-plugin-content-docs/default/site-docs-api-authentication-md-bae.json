@@ -1,0 +1,42 @@
+{
+  "id": "api/authentication",
+  "title": "Authentication",
+  "description": "Authenticate against the GetRightData API for all products.",
+  "source": "@site/docs/api/authentication.md",
+  "sourceDirName": "api",
+  "slug": "/api/authentication",
+  "permalink": "/api/authentication",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/api/authentication.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "api",
+      "permalink": "/tags/api"
+    },
+    {
+      "inline": true,
+      "label": "authentication",
+      "permalink": "/tags/authentication"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Authentication",
+    "description": "Authenticate against the GetRightData API for all products.",
+    "sidebar_label": "Authentication",
+    "slug": "/api/authentication",
+    "tags": [
+      "api",
+      "authentication"
+    ]
+  },
+  "sidebar": "apiSidebar",
+  "next": {
+    "title": "REST Endpoints",
+    "permalink": "/api/rest-endpoints"
+  }
+}

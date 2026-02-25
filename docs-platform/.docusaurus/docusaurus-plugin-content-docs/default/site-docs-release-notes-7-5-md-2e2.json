@@ -1,0 +1,40 @@
+{
+  "id": "release-notes/7-5",
+  "title": "Release Notes 7.5",
+  "description": "Release recap for version 7.5.",
+  "source": "@site/docs/release-notes/7-5.md",
+  "sourceDirName": "release-notes",
+  "slug": "/release-notes/7-5",
+  "permalink": "/release-notes/7-5",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/docs/release-notes/7-5.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/tags/release-notes"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Anil Pulugujja",
+  "lastUpdatedAt": 1772042444000,
+  "frontMatter": {
+    "title": "Release Notes 7.5",
+    "description": "Release recap for version 7.5.",
+    "sidebar_label": "7.5",
+    "slug": "/release-notes/7-5",
+    "tags": [
+      "release-notes"
+    ]
+  },
+  "sidebar": "releaseNotesSidebar",
+  "previous": {
+    "title": "7.6",
+    "permalink": "/release-notes/7-6"
+  },
+  "next": {
+    "title": "7",
+    "permalink": "/release-notes/7-0"
+  }
+}

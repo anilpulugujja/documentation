@@ -1,0 +1,632 @@
+"use client";
+
+import { useCallback, useEffect, useMemo, useState } from "react";
+import slugify from "slugify";
+
+type Collection = {
+  id: string;
+  label: string;
+  version: string;
+  product: string;
+  relativePath: string;
+};
+
+type TreeNode = {
+  name: string;
+  path: string;
+  type: "file" | "directory";
+};
+
+type Template = {
+  id: string;
+  name: string;
+};
+
+type FrontmatterState = {
+  title: string;
+  description: string;
+  sidebar_label: string;
+  slug: string;
+  tags: string[] | string;
+  [key: string]: unknown;
+};
+
+const primaryFields: { key: string; label: string; multiline?: boolean }[] = [
+  { key: "title", label: "Title" },
+  { key: "description", label: "Description", multiline: true },
+  { key: "sidebar_label", label: "Sidebar Label" },
+  { key: "slug", label: "Slug" },
+  { key: "tags", label: "Tags (comma separated)" },
+];
+
+const defaultFrontmatter: FrontmatterState = {
+  title: "",
+  description: "",
+  sidebar_label: "",
+  slug: "",
+  tags: [],
+};
+
+const DashboardApp = () => {
+  const [collections, setCollections] = useState<Collection[]>([]);
+  const [selectedCollection, setSelectedCollection] = useState<string>();
+  const [tree, setTree] = useState<TreeNode[]>([]);
+  const [currentDir, setCurrentDir] = useState("");
+  const [selectedFile, setSelectedFile] = useState<string>("");
+  const [frontmatter, setFrontmatter] = useState<FrontmatterState>(defaultFrontmatter);
+  const [body, setBody] = useState("");
+  const [advancedFrontmatter, setAdvancedFrontmatter] = useState("{}");
+  const [templates, setTemplates] = useState<Template[]>([]);
+  const [newDoc, setNewDoc] = useState({
+    filename: "",
+    directory: "",
+    title: "",
+    description: "",
+    sidebar_label: "",
+    slug: "",
+    tags: "",
+    templateId: "",
+  });
+  const [loadingState, setLoadingState] = useState<
+    "idle" | "loading" | "saving" | "creating"
+  >("idle");
+  const [notification, setNotification] = useState<string>("");
+  const [error, setError] = useState<string>("");
+
+  const formatFieldValue = (key: string) => {
+    if (key === "tags") {
+      const tagsValue = frontmatter.tags;
+      if (Array.isArray(tagsValue)) {
+        return tagsValue.join(", ");
+      }
+      return (tagsValue as string) ?? "";
+    }
+    const value = frontmatter[key];
+    return typeof value === "string" ? value : "";
+  };
+
+  const updateFrontmatterField = (key: string, value: string) => {
+    setFrontmatter((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  const fetchCollections = useCallback(async () => {
+    const res = await fetch("/api/collections");
+    if (res.ok) {
+      const data = await res.json();
+      setCollections(data.collections);
+      if (!selectedCollection && data.collections.length) {
+        setSelectedCollection(data.collections[0].id);
+      }
+    }
+  }, [selectedCollection]);
+
+  useEffect(() => {
+    fetchCollections();
+    fetch("/api/templates")
+      .then((res) => res.json())
+      .then((data) => setTemplates(data.templates ?? []))
+      .catch(() => setTemplates([]));
+  }, [fetchCollections]);
+
+  const fetchTree = useCallback(
+    async (collectionId: string, dir = "") => {
+      setLoadingState("loading");
+      setError("");
+      const params = new URLSearchParams({
+        collectionId,
+        path: dir,
+      });
+      const res = await fetch(`/api/tree?${params.toString()}`);
+      if (res.ok) {
+        const data = await res.json();
+        setTree(data.nodes);
+        setCurrentDir(dir);
+        setSelectedFile("");
+      } else {
+        setError("Unable to load directory");
+      }
+      setLoadingState("idle");
+    },
+    [],
+  );
+
+  useEffect(() => {
+    if (selectedCollection) {
+      fetchTree(selectedCollection, "");
+      setNewDoc((prev) => ({
+        ...prev,
+        directory: "",
+      }));
+    }
+  }, [selectedCollection, fetchTree]);
+
+  useEffect(() => {
+    setNewDoc((prev) => ({
+      ...prev,
+      directory: currentDir,
+    }));
+  }, [currentDir]);
+
+  const fetchDocument = async (collectionId: string, filePath: string) => {
+    setLoadingState("loading");
+    const params = new URLSearchParams({
+      collectionId,
+      path: filePath,
+    });
+    const res = await fetch(`/api/content?${params.toString()}`);
+    if (res.ok) {
+      const data = (await res.json()) as {
+        frontmatter: Record<string, unknown>;
+        content: string;
+      };
+      const incoming = data.frontmatter as Partial<FrontmatterState>;
+      setFrontmatter({
+        ...defaultFrontmatter,
+        ...incoming,
+      });
+      const advancedEntries = Object.entries(data.frontmatter).filter(
+          ([key]) => !primaryFields.find((field) => field.key === key),
+      );
+      const advanced = Object.fromEntries(advancedEntries);
+      setAdvancedFrontmatter(
+        advancedEntries.length ? JSON.stringify(advanced, null, 2) : "{}",
+      );
+      setBody(data.content ?? "");
+      setSelectedFile(filePath);
+    } else {
+      setError("Unable to load document");
+    }
+    setLoadingState("idle");
+  };
+
+  const handleSave = async () => {
+    if (!selectedCollection || !selectedFile) return;
+    setLoadingState("saving");
+    setNotification("");
+    setError("");
+
+    let advanced: Record<string, unknown> = {};
+    if (advancedFrontmatter.trim()) {
+      try {
+        advanced = JSON.parse(advancedFrontmatter);
+      } catch {
+        setLoadingState("idle");
+        setError("Advanced frontmatter must be valid JSON");
+        return;
+      }
+    }
+    const tagsValue = frontmatter.tags;
+    const normalizedTags = Array.isArray(tagsValue)
+      ? tagsValue
+      : tagsValue
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean);
+    const frontmatterPayload: Record<string, unknown> = {
+      ...frontmatter,
+      tags: normalizedTags,
+    };
+
+    const payload = {
+      collectionId: selectedCollection,
+      path: selectedFile,
+      frontmatter: {
+        ...advanced,
+        ...frontmatterPayload,
+      },
+      content: body,
+    };
+
+    const res = await fetch("/api/content", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      setNotification("Document saved successfully");
+    } else {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error ?? "Failed to save document");
+    }
+    setLoadingState("idle");
+  };
+
+  const handleCreate = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!selectedCollection) return;
+    setLoadingState("creating");
+    setNotification("");
+    setError("");
+
+    const directory = newDoc.directory ? `${newDoc.directory}/` : "";
+    const filename = newDoc.filename.endsWith(".md")
+      ? newDoc.filename
+      : `${newDoc.filename}.md`;
+    const fullPath = `${directory}${filename}`;
+
+    const payload = {
+      collectionId: selectedCollection,
+      path: fullPath,
+      templateId: newDoc.templateId || undefined,
+      frontmatter: {
+        title: newDoc.title,
+        description: newDoc.description,
+        sidebar_label: newDoc.sidebar_label,
+        slug: newDoc.slug,
+        tags: newDoc.tags
+          .split(",")
+          .map((tag) => tag.trim())
+          .filter(Boolean),
+      },
+      overwrite: false,
+    };
+
+    const res = await fetch("/api/content", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    if (res.ok) {
+      setNotification("Document created");
+      fetchTree(selectedCollection, currentDir);
+      fetchDocument(selectedCollection, fullPath);
+      setNewDoc({
+        filename: "",
+        directory: currentDir,
+        title: "",
+        description: "",
+        sidebar_label: "",
+        slug: "",
+        tags: "",
+        templateId: newDoc.templateId,
+      });
+    } else {
+      const data = await res.json().catch(() => ({}));
+      setError(data.error ?? "Failed to create document");
+    }
+    setLoadingState("idle");
+  };
+
+  const handleFilenameChange = (value: string) => {
+    const sanitized = value.replace(/\.mdx?$/, "");
+    const computedSlug = sanitized
+      ? `/${slugify(sanitized, { lower: true, strict: true })}`
+      : "";
+    setNewDoc((prev) => ({
+      ...prev,
+      filename: value,
+      slug: prev.slug || computedSlug,
+    }));
+  };
+
+  const advancedFrontmatterPlaceholder = useMemo(
+    () => JSON.stringify({ hide_table_of_contents: false }, null, 2),
+    [],
+  );
+
+  const logout = async () => {
+    await fetch("/api/auth/logout", { method: "POST" });
+    window.location.href = "/login";
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-slate-100">
+      <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur-lg">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-indigo-500">
+              GetRightData
+            </p>
+            <h1 className="text-xl font-semibold text-slate-900">
+              Documentation Admin Panel
+            </h1>
+          </div>
+          <button
+            onClick={logout}
+            className="rounded-full border border-slate-300 px-4 py-2 text-sm font-medium text-slate-600 hover:bg-slate-50"
+          >
+            Logout
+          </button>
+        </div>
+      </header>
+
+      <main className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 py-8 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
+        <section className="glass-panel h-fit p-5">
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
+            Collections
+          </h2>
+          <div className="mt-4 space-y-2">
+            {collections.map((collection) => (
+              <button
+                key={collection.id}
+                onClick={() => setSelectedCollection(collection.id)}
+                className={`w-full rounded-xl border px-4 py-3 text-left text-sm transition hover:border-indigo-200 ${
+                  selectedCollection === collection.id
+                    ? "border-indigo-400 bg-indigo-50 text-indigo-700"
+                    : "border-slate-200 bg-white text-slate-700"
+                }`}
+              >
+                <p className="font-medium">{collection.product}</p>
+                <p className="text-xs text-slate-500">{collection.label}</p>
+              </button>
+            ))}
+          </div>
+          <div className="mt-6">
+            <p className="text-xs uppercase tracking-widest text-slate-400">
+              Directory
+            </p>
+            <p className="mt-2 break-all text-sm text-slate-500">
+              {currentDir || "root"}
+            </p>
+            {currentDir && (
+              <button
+                onClick={() => {
+                  const parent = currentDir.split("/").slice(0, -1).join("/");
+                  fetchTree(selectedCollection!, parent);
+                }}
+                className="mt-3 text-xs font-semibold text-indigo-600"
+              >
+                ← Back one level
+              </button>
+            )}
+          </div>
+          <div className="mt-6 border-t border-slate-100 pt-4">
+            <h3 className="text-sm font-semibold text-slate-600">Files</h3>
+            <div className="mt-3 space-y-1">
+              {tree.map((node) => (
+                <button
+                  key={node.path}
+                  onClick={() => {
+                    if (node.type === "directory") {
+                      fetchTree(selectedCollection!, node.path);
+                    } else {
+                      fetchDocument(selectedCollection!, node.path);
+                    }
+                  }}
+                  className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm ${
+                    selectedFile === node.path && node.type === "file"
+                      ? "bg-indigo-100 text-indigo-700"
+                      : "bg-white text-slate-600 hover:bg-slate-50"
+                  }`}
+                >
+                  <span className="truncate">{node.name}</span>
+                  <span className="text-xs text-slate-400">
+                    {node.type === "directory" ? "DIR" : "MD"}
+                  </span>
+                </button>
+              ))}
+              {!tree.length && (
+                <p className="muted">No files in this directory.</p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section className="glass-panel p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                Editor
+              </p>
+              <h2 className="text-xl font-semibold text-slate-900">
+                {selectedFile || "Select a document"}
+              </h2>
+            </div>
+            <button
+              onClick={handleSave}
+              disabled={
+                !selectedFile || loadingState === "saving" || loadingState === "loading"
+              }
+              className="rounded-full bg-indigo-600 px-5 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-200 disabled:cursor-not-allowed disabled:opacity-70"
+            >
+              {loadingState === "saving" ? "Saving…" : "Save changes"}
+            </button>
+          </div>
+
+          {error && (
+            <div className="mt-4 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </div>
+          )}
+          {notification && (
+            <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+              {notification}
+            </div>
+          )}
+
+          <div className="mt-6 grid gap-6 lg:grid-cols-2">
+            <div className="space-y-4">
+              {primaryFields.map((field) => (
+                <div key={field.key}>
+                  <label className="text-sm font-medium text-slate-600">
+                    {field.label}
+                  </label>
+                  {field.multiline ? (
+                    <textarea
+                      className="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm shadow-sm focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-50"
+                      rows={4}
+                      value={formatFieldValue(field.key)}
+                      onChange={(e) => updateFrontmatterField(field.key, e.target.value)}
+                    />
+                  ) : (
+                    <input
+                      className="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm shadow-sm focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-50"
+                      value={formatFieldValue(field.key)}
+                      onChange={(e) => updateFrontmatterField(field.key, e.target.value)}
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div>
+              <label className="text-sm font-medium text-slate-600">
+                Advanced Frontmatter (JSON)
+              </label>
+              <textarea
+                className="mt-2 h-64 w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-mono text-slate-700"
+                placeholder={advancedFrontmatterPlaceholder}
+                value={advancedFrontmatter}
+                onChange={(e) => setAdvancedFrontmatter(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <label className="text-sm font-medium text-slate-600">
+              Markdown Body
+            </label>
+            <textarea
+              className="mt-2 h-[360px] w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 font-mono text-sm text-slate-800 shadow-inner focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-50"
+              value={body}
+              onChange={(e) => setBody(e.target.value)}
+            />
+          </div>
+        </section>
+
+        <section className="glass-panel h-fit p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+                Create
+              </p>
+              <h2 className="text-lg font-semibold text-slate-900">
+                New document
+              </h2>
+            </div>
+          </div>
+          <form className="mt-5 space-y-4" onSubmit={handleCreate}>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Directory
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.directory}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, directory: e.target.value }))
+                }
+                placeholder="e.g. datatrust"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Filename
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.filename}
+                onChange={(e) => handleFilenameChange(e.target.value)}
+                placeholder="getting-started.md"
+                required
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Template
+              </label>
+              <select
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.templateId}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, templateId: e.target.value }))
+                }
+              >
+                <option value="">Start blank</option>
+                {templates.map((template) => (
+                  <option key={template.id} value={template.id}>
+                    {template.name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Title
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.title}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, title: e.target.value }))
+                }
+                required
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Description
+              </label>
+              <textarea
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                rows={2}
+                value={newDoc.description}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, description: e.target.value }))
+                }
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Sidebar Label
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.sidebar_label}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, sidebar_label: e.target.value }))
+                }
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Slug
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.slug}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, slug: e.target.value }))
+                }
+                placeholder="/datatrust/7.6/new-page"
+              />
+            </div>
+            <div>
+              <label className="text-xs font-semibold uppercase text-slate-500">
+                Tags
+              </label>
+              <input
+                className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                value={newDoc.tags}
+                onChange={(e) =>
+                  setNewDoc((prev) => ({ ...prev, tags: e.target.value }))
+                }
+                placeholder="datatrust,onboarding"
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full rounded-xl bg-slate-900 py-3 text-sm font-semibold text-white shadow-lg shadow-slate-300 disabled:opacity-70"
+              disabled={loadingState === "creating"}
+            >
+              {loadingState === "creating" ? "Creating…" : "Create document"}
+            </button>
+          </form>
+          <p className="muted mt-4">
+            Files are written directly into the Git workspace under
+            <br />
+            <span className="font-mono text-xs text-slate-500">
+              documentation/docs-platform
+            </span>
+          </p>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default DashboardApp;

@@ -52,6 +52,26 @@ node scripts/check-slugs.mjs   # optional: verify product/version slugs
 - Sidebars are managed centrally in `sidebars.js`. Add new doc IDs there to surface new pages.
 - `docs/contributing.md` contains authoring guardrails plus templates for feature, API, and release notes content.
 
+### Browser Admin Panel
+- Location: `documentation/admin-panel` (Next.js).
+- Provides login-gated UI for browsing collections, editing Markdown/frontmatter, and creating docs from templates.
+- All writes go directly into this workspace—review diffs in Git as usual before merging.
+- To run locally:
+  ```bash
+  cd documentation/admin-panel
+  cp .env.example .env.local   # set password + secret
+  npm run dev
+  ```
+- Deploy it separately (Vercel or container). Protect with VPN/SSO and set the same env vars in production.
+
+### Stripe-inspired doc chrome
+- `src/theme/DocItem/Layout` + `src/components/BreadcrumbBar` + `src/components/RightRail` define the custom three-column article layout, DocSearch input, and “Ask / Copy / View” actions.
+- `src/theme/DocRoot/Layout/Sidebar` injects locale selectors (`siteConfig.customFields.localeOptions`) and support links at the bottom of the left rail.
+- Configure outgoing links via `customFields` in `docusaurus.config.js`:
+  - `askPageUrl` – destination for “Ask about this page”.
+  - `rawContentBaseUrl` – GitHub raw base for “View as Markdown”.
+  - `localeOptions` – region/language arrays rendered in the sidebar footer.
+
 ## Deployment (Vercel)
 1. Create a new Vercel project and connect it to the GitHub repo.
 2. Build settings:

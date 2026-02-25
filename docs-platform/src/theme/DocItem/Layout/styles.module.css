@@ -1,18 +1,43 @@
-.layoutShell {
-  width: 100%;
+.page {
+  padding: 0 0 3rem;
+}
+
+.versionBadge {
   display: flex;
-  justify-content: center;
-  background: transparent;
+  justify-content: flex-end;
+  margin-bottom: 0.25rem;
 }
 
-.layoutShell :global(.theme-doc-markdown) {
-  max-width: 960px;
+.pageGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.layoutShell :global(.theme-doc-breadcrumbs + article) {
-  margin-top: 1rem;
+.withRail {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 3rem;
 }
 
-.layoutShell :global(.breadcrumbs__link) {
-  font-weight: 500;
+.article {
+  flex: 1;
+  min-width: 0;
+}
+
+.article :global(.theme-doc-markdown) {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #0f172a;
+}
+
+.article :global(code) {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 1200px) {
+  .withRail {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
 }
