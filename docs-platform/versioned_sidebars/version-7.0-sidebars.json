@@ -1,0 +1,61 @@
+{
+  "datatrustSidebar": [
+    {
+      "type": "doc",
+      "id": "datatrust/getting-started"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/installation"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/metadata"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/data-quality"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/observability"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/administration"
+    },
+    {
+      "type": "doc",
+      "id": "datatrust/troubleshooting"
+    }
+  ],
+  "rightsightSidebar": [
+    { "type": "doc", "id": "rightsight/overview" },
+    { "type": "doc", "id": "rightsight/monitoring" },
+    { "type": "doc", "id": "rightsight/alerts" },
+    { "type": "doc", "id": "rightsight/ai-enrichment" },
+    { "type": "doc", "id": "rightsight/dashboards" },
+    { "type": "doc", "id": "rightsight/configuration" }
+  ],
+  "datamarketSidebar": [
+    { "type": "doc", "id": "datamarket/overview" },
+    { "type": "doc", "id": "datamarket/marketplace-setup" },
+    { "type": "doc", "id": "datamarket/data-publishing" },
+    { "type": "doc", "id": "datamarket/data-consumption" },
+    { "type": "doc", "id": "datamarket/governance" },
+    { "type": "doc", "id": "datamarket/access-control" },
+    { "type": "doc", "id": "datamarket/integrations" }
+  ],
+  "apiSidebar": [
+    { "type": "doc", "id": "api/authentication" },
+    { "type": "doc", "id": "api/rest-endpoints" },
+    { "type": "doc", "id": "api/webhooks" },
+    { "type": "doc", "id": "api/sdk-examples" },
+    { "type": "doc", "id": "api/error-codes" }
+  ],
+  "releaseNotesSidebar": [
+    { "type": "doc", "id": "release-notes/7-6" },
+    { "type": "doc", "id": "release-notes/7-5" },
+    { "type": "doc", "id": "release-notes/7-0" }
+  ]
+}

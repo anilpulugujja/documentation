@@ -1,0 +1,24 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "build",
+  "redirects": [
+    {
+      "source": "/hc/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/articles/:id/:slug*",
+      "destination": "/release-notes/7-6",
+      "permanent": true
+    },
+    {
+      "source": "/categories/:category*",
+      "destination": "/datatrust/7.6/getting-started",
+      "permanent": true
+    }
+  ]
+}

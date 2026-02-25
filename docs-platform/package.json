@@ -1,0 +1,31 @@
+{
+  "name": "docs-platform",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GetRightData multi-product documentation platform",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "serve": "docusaurus serve",
+    "docusaurus": "docusaurus",
+    "lint": "eslint --max-warnings=0 --ext .js,.jsx src"
+  },
+  "dependencies": {
+    "@docusaurus/core": "^3.1.1",
+    "@docusaurus/preset-classic": "^3.1.1",
+    "@docusaurus/theme-classic": "^3.1.1",
+    "@docusaurus/plugin-google-gtag": "^3.1.1",
+    "@fontsource/inter": "^5.1.0",
+    "clsx": "^2.1.0",
+    "prism-react-renderer": "^2.3.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.0"
+  }
+}
