@@ -4,7 +4,26 @@ import slugify from "slugify";
 import TurndownService from "turndown";
 import { gfm } from "turndown-plugin-gfm";
 
+export const runtime = "nodejs";
+
 const MAX_FILE_SIZE = 8 * 1024 * 1024; // 8 MB
+const MIN_TEXT_CHARACTERS = 32;
+
+const primaryMammothOptions: mammoth.Options = {
+  includeEmbeddedStyleMap: true,
+  styleMap: [
+    "p[style-name='Title'] => h1:fresh",
+    "p[style-name='Subtitle'] => h2:fresh",
+    "p[style-name='Heading 1'] => h1:fresh",
+    "p[style-name='Heading 2'] => h2:fresh",
+    "p[style-name='Heading 3'] => h3:fresh",
+  ],
+};
+
+const fallbackMammothOptions: mammoth.Options = {
+  ...primaryMammothOptions,
+  ignoreEmptyParagraphs: true,
+};
 
 const createTurndown = () => {
   const service = new TurndownService({
@@ -33,6 +52,47 @@ const summarize = (markdown: string) => {
   return snippet;
 };
 
+const convertDocxToHtml = async (arrayBuffer: ArrayBuffer, fileName: string) => {
+  try {
+    return await mammoth.convertToHtml({ arrayBuffer }, primaryMammothOptions);
+  } catch (primaryError) {
+    logDocxError(fileName, primaryError, "primary");
+    try {
+      return await mammoth.convertToHtml({ arrayBuffer }, fallbackMammothOptions);
+    } catch (fallbackError) {
+      logDocxError(fileName, fallbackError, "fallback");
+      throw fallbackError;
+    }
+  }
+};
+
+const normalizeErrorMessage = (error: unknown) => {
+  if (error instanceof Error && error.message) {
+    return error.message.split("\n")[0];
+  }
+  if (typeof error === "string" && error.trim()) {
+    return error.trim();
+  }
+  return "Unable to convert the document. Please verify the file isn't corrupted.";
+};
+
+const logDocxError = (fileName: string, error: unknown, phase: "primary" | "fallback") => {
+  console.error(
+    JSON.stringify({
+      scope: "docx-import",
+      phase,
+      fileName,
+      timestamp: new Date().toISOString(),
+      message: error instanceof Error ? error.message : String(error),
+    }),
+  );
+};
+
+const hasMinimumText = (markdown: string) => {
+  const plain = markdown.replace(/[#>*_`\-\d]+/g, "").replace(/\s+/g, "");
+  return plain.length >= MIN_TEXT_CHARACTERS;
+};
+
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.formData();
@@ -49,6 +109,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    if (file.size === 0) {
+      return NextResponse.json({ error: "File is empty." }, { status: 400 });
+    }
+
     if (file.size > MAX_FILE_SIZE) {
       return NextResponse.json(
         { error: "File exceeds the 8 MB limit. Please compress or split the document." },
@@ -57,9 +121,19 @@ export async function POST(request: NextRequest) {
     }
 
     const arrayBuffer = await file.arrayBuffer();
-    const { value: html } = await mammoth.convertToHtml({ arrayBuffer });
+    const { value: html } = await convertDocxToHtml(arrayBuffer, file.name);
     const turndown = createTurndown();
     const markdown = turndown.turndown(html).trim();
+
+    if (!hasMinimumText(markdown)) {
+      return NextResponse.json(
+        {
+          error:
+            "The converted file looks empty. Please ensure the document contains readable text before uploading.",
+        },
+        { status: 400 },
+      );
+    }
 
     const fallbackTitle = file.name.replace(/\.docx$/i, "").replace(/[-_]+/g, " ").trim() || "Imported Document";
     const title = extractTitle(html, fallbackTitle);
@@ -84,9 +158,8 @@ export async function POST(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error("DOCX import failed:", error);
     return NextResponse.json(
-      { error: "Unable to convert the document. Please verify the file isn't corrupted." },
+      { error: normalizeErrorMessage(error) },
       { status: 500 },
     );
   }

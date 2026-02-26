@@ -41,6 +41,10 @@
               "sidebar": "datatrustSidebar"
             },
             {
+              "id": "replace-with-page-title",
+              "path": "/datatrust/7.6/datatrust/7.6/replace-with-page-title"
+            },
+            {
               "id": "troubleshooting",
               "path": "/datatrust/7.6/troubleshooting",
               "sidebar": "datatrustSidebar"

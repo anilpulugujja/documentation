@@ -1,397 +1,452 @@
 {
-  "/api-4e8": {
-    "__comp": "5e95c892",
+  "/__docusaurus/debug-5ff": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
     "__context": {
-      "plugin": "360dc931"
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/api-e65": {
-    "__comp": "a7bd4aaa",
-    "__props": "591f7a5f"
+  "/__docusaurus/debug/config-5ba": {
+    "__comp": "__comp---theme-debug-config-23-a-2ff",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/content-a2b": {
+    "__comp": "__comp---theme-debug-contentba-8-ce7",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    },
+    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
+  },
+  "/__docusaurus/debug/globalData-c3c": {
+    "__comp": "__comp---theme-debug-global-dataede-0fa",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/metadata-156": {
+    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/registry-88c": {
+    "__comp": "__comp---theme-debug-registry-679-501",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/__docusaurus/debug/routes-000": {
+    "__comp": "__comp---theme-debug-routes-946-699",
+    "__context": {
+      "plugin": "plugin---docusaurus-debugb-38-ad3"
+    }
+  },
+  "/api-cac": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+    "__context": {
+      "plugin": "plugin---api-360-b07"
+    }
+  },
+  "/api-1b8": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---api-591-83c"
   },
   "/api/tags-91f": {
-    "__comp": "3720c009",
-    "__props": "a379a589"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---api-tagsa-37-2bf"
   },
   "/api/tags/api-1c8": {
-    "__comp": "df203c0f",
-    "__props": "d0ef8bb4"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-apid-0-e-6dd"
   },
   "/api/tags/authentication-6d2": {
-    "__comp": "df203c0f",
-    "__props": "4a36e112"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-authentication-4-a-3-469"
   },
   "/api/tags/errors-05e": {
-    "__comp": "df203c0f",
-    "__props": "43050bdf"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-errors-430-081"
   },
   "/api/tags/rest-eda": {
-    "__comp": "df203c0f",
-    "__props": "4177ddb0"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-rest-417-f6a"
   },
   "/api/tags/sdk-5b0": {
-    "__comp": "df203c0f",
-    "__props": "0e8a3457"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-sdk-0-e-8-d2e"
   },
   "/api/tags/webhooks-39c": {
-    "__comp": "df203c0f",
-    "__props": "8678a582"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---api-tags-webhooks-867-e42"
   },
-  "/api-401": {
-    "__comp": "a94703ab"
+  "/api-ad5": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/api/authentication-af5": {
-    "__comp": "17896441",
-    "content": "baeff1df"
+  "/api/authentication-ff5": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-authenticationbae-6a4"
   },
-  "/api/error-codes-a75": {
-    "__comp": "17896441",
-    "content": "e687f2b9"
+  "/api/error-codes-5ce": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-error-codese-68-e36"
   },
-  "/api/rest-endpoints-505": {
-    "__comp": "17896441",
-    "content": "2ca73dc2"
+  "/api/rest-endpoints-05d": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-rest-endpoints-2-ca-ab2"
   },
-  "/api/sdk-examples-7dd": {
-    "__comp": "17896441",
-    "content": "8754012b"
+  "/api/sdk-examples-903": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-sdk-examples-875-b4e"
   },
-  "/api/webhooks-9ed": {
-    "__comp": "17896441",
-    "content": "ba827b61"
+  "/api/webhooks-3e3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---api-webhooksba-8-28a"
   },
-  "/datamarket-b79": {
-    "__comp": "5e95c892",
+  "/datamarket-4eb": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "e54cb561"
+      "plugin": "plugin---datamarkete-54-de0"
     }
   },
-  "/datamarket-d1f": {
-    "__comp": "a7bd4aaa",
-    "__props": "4bf84150"
+  "/datamarket-8e4": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---datamarket-4-bf-299"
   },
   "/datamarket/tags-221": {
-    "__comp": "3720c009",
-    "__props": "918cdaa5"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---datamarket-tags-918-106"
   },
   "/datamarket/tags/access-control-9c4": {
-    "__comp": "df203c0f",
-    "__props": "31715f08"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-access-control-317-cfe"
   },
   "/datamarket/tags/consumption-22b": {
-    "__comp": "df203c0f",
-    "__props": "1eba83eb"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-consumption-1-eb-ba1"
   },
   "/datamarket/tags/datamarket-d86": {
-    "__comp": "df203c0f",
-    "__props": "bef2e492"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-datamarketbef-e45"
   },
   "/datamarket/tags/governance-a25": {
-    "__comp": "df203c0f",
-    "__props": "8d228bf1"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-governance-8-d-2-e88"
   },
   "/datamarket/tags/integrations-bd0": {
-    "__comp": "df203c0f",
-    "__props": "6212b03c"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-integrations-621-1f3"
   },
   "/datamarket/tags/overview-988": {
-    "__comp": "df203c0f",
-    "__props": "1b206db1"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-overview-1-b-2-997"
   },
   "/datamarket/tags/publishing-6d2": {
-    "__comp": "df203c0f",
-    "__props": "b28a0de2"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-publishingb-28-e64"
   },
   "/datamarket/tags/setup-b09": {
-    "__comp": "df203c0f",
-    "__props": "579e1c2f"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datamarket-tags-setup-579-b8e"
   },
-  "/datamarket-179": {
-    "__comp": "a94703ab"
+  "/datamarket-069": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/datamarket/access-control-99b": {
-    "__comp": "17896441",
-    "content": "97d06568"
+  "/datamarket/access-control-c7b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-access-control-97-d-a8c"
   },
-  "/datamarket/data-consumption-7fb": {
-    "__comp": "17896441",
-    "content": "63eaa550"
+  "/datamarket/data-consumption-592": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-data-consumption-63-e-eb3"
   },
-  "/datamarket/data-publishing-30b": {
-    "__comp": "17896441",
-    "content": "ee0c7fc5"
+  "/datamarket/data-publishing-788": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-data-publishingee-0-3af"
   },
-  "/datamarket/governance-1fd": {
-    "__comp": "17896441",
-    "content": "94eed2e0"
+  "/datamarket/governance-2c3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-governance-94-e-ad5"
   },
-  "/datamarket/integrations-1cc": {
-    "__comp": "17896441",
-    "content": "f3587305"
+  "/datamarket/integrations-24c": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-integrationsf-35-72e"
   },
-  "/datamarket/marketplace-setup-eb8": {
-    "__comp": "17896441",
-    "content": "00235112"
+  "/datamarket/marketplace-setup-804": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-marketplace-setup-002-d86"
   },
-  "/datamarket/overview-863": {
-    "__comp": "17896441",
-    "content": "68b5ca21"
+  "/datamarket/overview-309": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datamarket-overview-68-b-d1c"
   },
-  "/datatrust-74a": {
-    "__comp": "5e95c892",
+  "/datatrust-ef3": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "eccd6a89"
+      "plugin": "plugin---datatrustecc-873"
     }
   },
-  "/datatrust/7.0-461": {
-    "__comp": "a7bd4aaa",
-    "__props": "74b4427f"
+  "/datatrust/7.0-525": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---datatrust-7-074-b-538"
   },
   "/datatrust/7.0/tags-57c": {
-    "__comp": "3720c009",
-    "__props": "ccc5e92e"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---datatrust-7-0-tagsccc-0ca"
   },
   "/datatrust/7.0/tags/administration-db5": {
-    "__comp": "df203c0f",
-    "__props": "32847a9b"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-administration-328-f84"
   },
   "/datatrust/7.0/tags/datatrust-35f": {
-    "__comp": "df203c0f",
-    "__props": "25123777"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-datatrust-251-dbb"
   },
   "/datatrust/7.0/tags/installation-7ba": {
-    "__comp": "df203c0f",
-    "__props": "e2273b26"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-installatione-22-5e6"
   },
   "/datatrust/7.0/tags/metadata-577": {
-    "__comp": "df203c0f",
-    "__props": "beb6d97f"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-metadatabeb-da5"
   },
   "/datatrust/7.0/tags/observability-5c7": {
-    "__comp": "df203c0f",
-    "__props": "1f0a7ec4"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-observability-1-f-0-2f7"
   },
   "/datatrust/7.0/tags/onboarding-959": {
-    "__comp": "df203c0f",
-    "__props": "9c1dfb32"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-onboarding-9-c-1-80d"
   },
   "/datatrust/7.0/tags/quality-517": {
-    "__comp": "df203c0f",
-    "__props": "b5f6ed81"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-qualityb-5-f-691"
   },
   "/datatrust/7.0/tags/troubleshooting-099": {
-    "__comp": "df203c0f",
-    "__props": "ed2a9322"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-0-tags-troubleshootinged-2-773"
   },
-  "/datatrust/7.0-d32": {
-    "__comp": "a94703ab"
+  "/datatrust/7.0-adc": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/datatrust/7.0/administration-fdf": {
-    "__comp": "17896441",
-    "content": "b2263e03"
+  "/datatrust/7.0/administration-f67": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-administrationb-22-3be"
   },
-  "/datatrust/7.0/data-quality-37b": {
-    "__comp": "17896441",
-    "content": "10d606ec"
+  "/datatrust/7.0/data-quality-1c3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-data-quality-10-d-9a8"
   },
-  "/datatrust/7.0/getting-started-425": {
-    "__comp": "17896441",
-    "content": "284077f0"
+  "/datatrust/7.0/getting-started-8fe": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-getting-started-284-a99"
   },
-  "/datatrust/7.0/installation-9ea": {
-    "__comp": "17896441",
-    "content": "0e57957c"
+  "/datatrust/7.0/installation-675": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-installation-0-e-5-6f6"
   },
-  "/datatrust/7.0/metadata-5d8": {
-    "__comp": "17896441",
-    "content": "fea2a9f0"
+  "/datatrust/7.0/metadata-b27": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-metadatafea-627"
   },
-  "/datatrust/7.0/observability-9a7": {
-    "__comp": "17896441",
-    "content": "60987e11"
+  "/datatrust/7.0/observability-ce8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-observability-609-a4f"
   },
-  "/datatrust/7.0/troubleshooting-f2e": {
-    "__comp": "17896441",
-    "content": "4ab2c352"
+  "/datatrust/7.0/troubleshooting-6d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-0-troubleshooting-4-ab-ff6"
   },
-  "/datatrust/7.6-5f2": {
-    "__comp": "a7bd4aaa",
-    "__props": "2a438c2f"
+  "/datatrust/7.6-4ac": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---datatrust-7-62-a-4-e94"
   },
   "/datatrust/7.6/tags-386": {
-    "__comp": "3720c009",
-    "__props": "b17b9ec5"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---datatrust-7-6-tagsb-17-ae2"
   },
   "/datatrust/7.6/tags/administration-93f": {
-    "__comp": "df203c0f",
-    "__props": "e0c68bb9"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-administratione-0-c-2b6"
+  },
+  "/datatrust/7.6/tags/category-ba0": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-category-7-fb-1bf"
   },
   "/datatrust/7.6/tags/datatrust-b29": {
-    "__comp": "df203c0f",
-    "__props": "27138090"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-datatrust-271-c9e"
   },
   "/datatrust/7.6/tags/installation-6fc": {
-    "__comp": "df203c0f",
-    "__props": "bc8b01e5"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-installationbc-8-765"
   },
   "/datatrust/7.6/tags/metadata-88d": {
-    "__comp": "df203c0f",
-    "__props": "9e4bdeac"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-metadata-9-e-4-5d8"
   },
   "/datatrust/7.6/tags/observability-3f5": {
-    "__comp": "df203c0f",
-    "__props": "fb341575"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-observabilityfb-3-5b0"
   },
   "/datatrust/7.6/tags/onboarding-632": {
-    "__comp": "df203c0f",
-    "__props": "9c42f207"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-onboarding-9-c-4-f61"
+  },
+  "/datatrust/7.6/tags/product-406": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-productb-74-413"
   },
   "/datatrust/7.6/tags/quality-5f2": {
-    "__comp": "df203c0f",
-    "__props": "5f51f5dc"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-quality-5-f-5-0a7"
   },
   "/datatrust/7.6/tags/troubleshooting-44a": {
-    "__comp": "df203c0f",
-    "__props": "8a38c01e"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---datatrust-7-6-tags-troubleshooting-8-a-3-ca8"
   },
-  "/datatrust/7.6-d6d": {
-    "__comp": "a94703ab"
+  "/datatrust/7.6-e1c": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/datatrust/7.6/administration-c62": {
-    "__comp": "17896441",
-    "content": "7f6eae42"
+  "/datatrust/7.6/administration-910": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-administration-7-f-6-71b"
   },
-  "/datatrust/7.6/data-quality-042": {
-    "__comp": "17896441",
-    "content": "30f4457f"
+  "/datatrust/7.6/data-quality-159": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-data-quality-30-f-768"
   },
-  "/datatrust/7.6/getting-started-95e": {
-    "__comp": "17896441",
-    "content": "f8e91a3d"
+  "/datatrust/7.6/datatrust/7.6/replace-with-page-title-fda": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-product-feature-slug-455-1ed"
   },
-  "/datatrust/7.6/installation-57b": {
-    "__comp": "17896441",
-    "content": "e8fa6391"
+  "/datatrust/7.6/getting-started-c85": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-getting-startedf-8-e-b25"
   },
-  "/datatrust/7.6/metadata-63a": {
-    "__comp": "17896441",
-    "content": "d1a149ee"
+  "/datatrust/7.6/installation-8bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-installatione-8-f-dd8"
   },
-  "/datatrust/7.6/observability-64d": {
-    "__comp": "17896441",
-    "content": "7c23b94f"
+  "/datatrust/7.6/metadata-e76": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-metadatad-1-a-736"
   },
-  "/datatrust/7.6/troubleshooting-e0e": {
-    "__comp": "17896441",
-    "content": "ad08fb26"
+  "/datatrust/7.6/observability-155": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-observability-7-c-2-2b7"
   },
-  "/release-notes-8b4": {
-    "__comp": "5e95c892",
+  "/datatrust/7.6/troubleshooting-5bb": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-troubleshootingad-0-30a"
+  },
+  "/release-notes-427": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "2c5dd2b0"
+      "plugin": "plugin---release-notes-2-c-5-44e"
     }
   },
-  "/release-notes-684": {
-    "__comp": "a7bd4aaa",
-    "__props": "90184e6d"
+  "/release-notes-0e7": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---release-notes-901-7db"
   },
   "/release-notes/tags-425": {
-    "__comp": "3720c009",
-    "__props": "2c731329"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---release-notes-tags-2-c-7-530"
   },
   "/release-notes/tags/release-notes-2eb": {
-    "__comp": "df203c0f",
-    "__props": "9375f2b9"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---release-notes-tags-release-notes-937-62e"
   },
-  "/release-notes-8bd": {
-    "__comp": "a94703ab"
+  "/release-notes-b33": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/release-notes/7-0-192": {
-    "__comp": "17896441",
-    "content": "d431065d"
+  "/release-notes/7-0-cb3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---release-notes-7-0-d-43-353"
   },
-  "/release-notes/7-5-48f": {
-    "__comp": "17896441",
-    "content": "2e27b47c"
+  "/release-notes/7-5-6af": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---release-notes-7-52-e-2-ecc"
   },
-  "/release-notes/7-6-0d0": {
-    "__comp": "17896441",
-    "content": "1da3ff1d"
+  "/release-notes/7-6-941": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---release-notes-7-61-da-d60"
   },
-  "/rightsight-3e7": {
-    "__comp": "5e95c892",
+  "/rightsight-3f8": {
+    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
-      "plugin": "b808002d"
+      "plugin": "plugin---rightsightb-80-2e2"
     }
   },
-  "/rightsight-3f4": {
-    "__comp": "a7bd4aaa",
-    "__props": "0edf8275"
+  "/rightsight-cf5": {
+    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
+    "__props": "__props---rightsight-0-ed-2ae"
   },
   "/rightsight/tags-d86": {
-    "__comp": "3720c009",
-    "__props": "6d23cefa"
+    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
+    "__props": "__props---rightsight-tags-6-d-2-6d1"
   },
   "/rightsight/tags/ai-828": {
-    "__comp": "df203c0f",
-    "__props": "2b1f0925"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-ai-2-b-1-355"
   },
   "/rightsight/tags/alerts-db1": {
-    "__comp": "df203c0f",
-    "__props": "4577ca24"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-alerts-457-2a8"
   },
   "/rightsight/tags/configuration-a8f": {
-    "__comp": "df203c0f",
-    "__props": "4c9ea8b9"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-configuration-4-c-9-3e5"
   },
   "/rightsight/tags/dashboards-ebe": {
-    "__comp": "df203c0f",
-    "__props": "94b86b46"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-dashboards-94-b-4f8"
   },
   "/rightsight/tags/monitoring-986": {
-    "__comp": "df203c0f",
-    "__props": "61ff6f1f"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-monitoring-61-f-dff"
   },
   "/rightsight/tags/overview-d89": {
-    "__comp": "df203c0f",
-    "__props": "6eb00dc9"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-overview-6-eb-191"
   },
   "/rightsight/tags/rightsight-814": {
-    "__comp": "df203c0f",
-    "__props": "1e3e2dd0"
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---rightsight-tags-rightsight-1-e-3-12b"
   },
-  "/rightsight-523": {
-    "__comp": "a94703ab"
+  "/rightsight-7f4": {
+    "__comp": "__comp---theme-doc-roota-94-67a"
   },
-  "/rightsight/ai-enrichment-ef2": {
-    "__comp": "17896441",
-    "content": "5dccb478"
+  "/rightsight/ai-enrichment-d63": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-ai-enrichment-5-dc-7f2"
   },
-  "/rightsight/alerts-d44": {
-    "__comp": "17896441",
-    "content": "509a796f"
+  "/rightsight/alerts-683": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-alerts-509-af4"
   },
-  "/rightsight/configuration-757": {
-    "__comp": "17896441",
-    "content": "83bbb6a2"
+  "/rightsight/configuration-4d0": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-configuration-83-b-cb7"
   },
-  "/rightsight/dashboards-a26": {
-    "__comp": "17896441",
-    "content": "a5505dd7"
+  "/rightsight/dashboards-5ca": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-dashboardsa-55-dcb"
   },
-  "/rightsight/monitoring-bac": {
-    "__comp": "17896441",
-    "content": "ef033a55"
+  "/rightsight/monitoring-e99": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-monitoringef-0-fbb"
   },
-  "/rightsight/overview-a5d": {
-    "__comp": "17896441",
-    "content": "db4355b0"
+  "/rightsight/overview-e59": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---rightsight-overviewdb-4-9c3"
   },
   "/-2e1": {
-    "__comp": "c4f5d8e4",
+    "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",
     "__context": {
-      "plugin": "a7456010"
+      "plugin": "plugin---a-74-9d6"
     },
-    "config": "5e9f5e1a"
+    "config": "config---5-e-9-4f3"
   }
 }

@@ -10,12 +10,13 @@ export async function GET() {
   }
 
   const collections = getCollections().map(
-    ({ id, label, version, product, relativePath }) => ({
+    ({ id, label, version, product, relativePath, slugPrefix }) => ({
       id,
       label,
       version,
       product,
       relativePath,
+      slugPrefix,
     }),
   );
   return NextResponse.json({ collections });

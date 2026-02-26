@@ -11,6 +11,7 @@ export type Collection = {
   product: string;
   relativePath: string;
   absolutePath: string;
+  slugPrefix?: string;
 };
 
 const collectionCache: Record<string, Collection> = {};

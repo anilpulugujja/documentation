@@ -9,6 +9,7 @@ type Collection = {
   version: string;
   product: string;
   relativePath: string;
+  slugPrefix?: string;
 };
 
 type TreeNode = {
@@ -37,6 +38,7 @@ type ImportMetadata = {
   sidebar_label?: string;
   slug?: string;
   filename?: string;
+  tags?: string[] | string;
 };
 
 const primaryFields: { key: string; label: string; multiline?: boolean }[] = [
@@ -80,6 +82,56 @@ const DashboardApp = () => {
   >("idle");
   const [notification, setNotification] = useState<string>("");
   const [error, setError] = useState<string>("");
+  const [warnings, setWarnings] = useState<string[]>([]);
+  const currentCollection = useMemo(
+    () => collections.find((collection) => collection.id === selectedCollection),
+    [collections, selectedCollection],
+  );
+
+  const buildSlugSegment = useCallback((value?: string) => {
+    if (!value) return "";
+    return value
+      .split("/")
+      .filter(Boolean)
+      .map((segment) =>
+        slugify(segment.replace(/\.mdx?$/, ""), {
+          lower: true,
+          strict: true,
+        }),
+      )
+      .filter(Boolean)
+      .join("/");
+  }, []);
+
+  const normalizeSlug = useCallback(
+    (incoming?: string, fallback?: string) => {
+      const prefix = (currentCollection?.slugPrefix ?? "").replace(/\/$/, "");
+      const fallbackSegment = buildSlugSegment(fallback) || `doc-${Date.now()}`;
+
+      if (incoming && incoming.trim()) {
+        const normalized = incoming.startsWith("/") ? incoming : `/${incoming}`;
+        if (prefix && normalized.startsWith(prefix)) {
+          return normalized;
+        }
+        const trimmed = normalized.replace(/^\//, "") || fallbackSegment;
+        return prefix ? `${prefix}/${trimmed}` : `/${trimmed}`;
+      }
+
+      return prefix ? `${prefix}/${fallbackSegment}` : `/${fallbackSegment}`;
+    },
+    [buildSlugSegment, currentCollection?.slugPrefix],
+  );
+
+  const prepareMetadata = useCallback(
+    (metadata: ImportMetadata = {}) => {
+      const fallback = metadata.slug || metadata.filename || metadata.title;
+      return {
+        ...metadata,
+        slug: normalizeSlug(metadata.slug, fallback),
+      };
+    },
+    [normalizeSlug],
+  );
 
   const formatFieldValue = (key: string) => {
     if (key === "tags") {
@@ -303,38 +355,49 @@ const DashboardApp = () => {
 
   const handleFilenameChange = (value: string) => {
     const sanitized = value.replace(/\.mdx?$/, "");
-    const computedSlug = sanitized
-      ? `/${slugify(sanitized, { lower: true, strict: true })}`
-      : "";
-    setNewDoc((prev) => ({
-      ...prev,
-      filename: value,
-      slug: prev.slug || computedSlug,
-    }));
+    setNewDoc((prev) => {
+      const fallbackPath = [prev.directory, sanitized].filter(Boolean).join("/");
+      const computedSlug = sanitized ? normalizeSlug(undefined, fallbackPath) : "";
+      return {
+        ...prev,
+        filename: value,
+        slug: prev.slug || computedSlug,
+      };
+    });
   };
 
-  const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
-    setFrontmatter((prev) => ({
-      ...prev,
-      title: prev.title || metadata.title || "",
-      description: prev.description || metadata.description || "",
-      sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
-      slug: prev.slug || metadata.slug || "",
-    }));
-    setNewDoc((prev) => ({
-      ...prev,
-      title: prev.title || metadata.title || "",
-      description: prev.description || metadata.description || "",
-      sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
-      slug: prev.slug || metadata.slug || "",
-      filename: prev.filename || metadata.filename || prev.filename,
-    }));
-  };
+const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
+  setFrontmatter((prev) => ({
+    ...prev,
+    title: prev.title || metadata.title || "",
+    description: prev.description || metadata.description || "",
+    sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
+    slug: prev.slug || metadata.slug || "",
+    tags:
+      prev.tags && prev.tags.length
+        ? prev.tags
+        : Array.isArray(metadata.tags)
+          ? metadata.tags
+          : metadata.tags || [],
+  }));
+  setNewDoc((prev) => ({
+    ...prev,
+    title: prev.title || metadata.title || "",
+    description: prev.description || metadata.description || "",
+    sidebar_label: prev.sidebar_label || metadata.sidebar_label || metadata.title || "",
+    slug: prev.slug || metadata.slug || "",
+    filename: prev.filename || metadata.filename || prev.filename,
+    tags:
+      prev.tags ||
+      (Array.isArray(metadata.tags) ? metadata.tags.join(", ") : (metadata.tags as string) || ""),
+  }));
+};
 
   const handleWordUpload = async (file: File) => {
     setLoadingState("importing");
     setNotification("");
     setError("");
+    setWarnings([]);
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -350,7 +413,8 @@ const DashboardApp = () => {
         if (payload.markdown) {
           setBody(payload.markdown);
         }
-        mergeImportedMetadata(payload.metadata ?? {});
+        mergeImportedMetadata(prepareMetadata(payload.metadata ?? {}));
+        setWarnings([]);
         let targetPath = selectedFile;
         if (selectedFile) {
           const replace = window.confirm(
@@ -373,6 +437,64 @@ const DashboardApp = () => {
       }
     } catch {
       setError("Unable to convert the Word document. Please try again.");
+    }
+    setLoadingState("idle");
+  };
+
+  const handleMarkdownUpload = async (file: File) => {
+    setLoadingState("importing");
+    setNotification("");
+    setError("");
+    setWarnings([]);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+      const res = await fetch("/api/import-markdown", {
+        method: "POST",
+        body: formData,
+      });
+      const payload = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(payload.error ?? "Unable to import the markdown file.");
+      } else {
+        if (typeof payload.body === "string") {
+          setBody(payload.body);
+        }
+        const normalizedMetadata = prepareMetadata({
+          ...(payload.frontmatter ?? {}),
+          filename: payload.filename ?? payload.frontmatter?.filename,
+        });
+        mergeImportedMetadata(normalizedMetadata);
+        const baseWarnings = Array.isArray(payload.warnings) ? payload.warnings : [];
+        const slugWarning =
+          payload.frontmatter?.slug && payload.frontmatter.slug !== normalizedMetadata.slug
+            ? [
+                `Slug updated to ${normalizedMetadata.slug} to match the ${currentCollection?.product ?? "current"} collection.`,
+              ]
+            : [];
+        setWarnings([...baseWarnings, ...slugWarning]);
+        let targetPath = selectedFile;
+        if (selectedFile) {
+          const replace = window.confirm(
+            `Replace ${selectedFile} with the imported content? Click “Cancel” to stage it as a new unsaved document.`,
+          );
+          if (!replace) {
+            setSelectedFile("");
+            targetPath = "";
+          }
+        }
+        if (targetPath) {
+          setNotification(
+            `Imported markdown loaded into ${targetPath}. Save to overwrite or create a new file below.`,
+          );
+        } else {
+          setNotification(
+            "Markdown file imported. Review the content, set a filename, and click “Create document.”",
+          );
+        }
+      }
+    } catch {
+      setError("Unable to import the markdown file. Please try again.");
     }
     setLoadingState("idle");
   };
@@ -514,6 +636,24 @@ const DashboardApp = () => {
               {notification}
             </div>
           )}
+          {!!warnings.length && (
+            <div className="mt-4 rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
+              <div className="flex items-center justify-between">
+                <p className="font-semibold">Import warnings</p>
+                <button
+                  className="text-xs font-semibold uppercase text-amber-700"
+                  onClick={() => setWarnings([])}
+                >
+                  Dismiss
+                </button>
+              </div>
+              <ul className="mt-2 list-disc space-y-1 pl-5">
+                {warnings.map((warning) => (
+                  <li key={warning}>{warning}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div className="mt-6 grid gap-6 lg:grid-cols-2">
             <div className="space-y-4">
@@ -586,8 +726,12 @@ const DashboardApp = () => {
                 onChange={(e) =>
                   setNewDoc((prev) => ({ ...prev, directory: e.target.value }))
                 }
-                placeholder="e.g. datatrust"
+                placeholder="e.g. observability"
               />
+              <p className="mt-1 text-xs text-slate-500">
+                Leave blank to create at the {currentCollection?.product ?? "collection"} root.
+                Only add nested folders like <code>observability/alerts</code>.
+              </p>
             </div>
             <div>
               <label className="text-xs font-semibold uppercase text-slate-500">
@@ -723,6 +867,48 @@ const DashboardApp = () => {
             <p className="muted mt-3 text-xs">
               Tip: Fill in the directory + filename above, then import your Word document and click
               “Create document.” You can also overwrite an open doc by importing and clicking “Save changes.”
+            </p>
+          </div>
+          <div className="mt-6 rounded-2xl border border-dashed border-slate-300 bg-white/70 p-4">
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <h3 className="text-sm font-semibold text-slate-700">Import Markdown</h3>
+                <p className="mt-1 text-sm text-slate-500">
+                  Skip conversion by uploading a ready-to-publish .md or .mdx file. We&apos;ll merge the
+                  frontmatter and body directly into the editor.
+                </p>
+              </div>
+              <a
+                href="/templates/markdown-upload-template.md"
+                download
+                className="rounded-full border border-indigo-200 px-3 py-1 text-xs font-semibold text-indigo-700 hover:bg-indigo-50"
+              >
+                Download template
+              </a>
+            </div>
+            <ol className="mt-3 list-inside list-decimal space-y-1 text-sm text-slate-600">
+              <li>Duplicate the template file and update the frontmatter fields.</li>
+              <li>Keep slugs kebab-case (e.g., /datatrust/7.6/metadata-sync).</li>
+              <li>Paste screenshots into <code>static/img</code> and reference as <code>![alt](/img/...)</code>.</li>
+              <li>Ask Cursor/AI to fill each section, then proofread before upload.</li>
+            </ol>
+            <label className="mt-4 inline-flex w-full cursor-pointer items-center justify-center rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-white">
+              {loadingState === "importing" ? "Uploading…" : "Choose .md or .mdx file"}
+              <input
+                type="file"
+                accept=".md,.mdx"
+                className="hidden"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+                  if (file) {
+                    handleMarkdownUpload(file);
+                  }
+                  event.target.value = "";
+                }}
+              />
+            </label>
+            <p className="muted mt-3 text-xs">
+              Tip: Share the template with AI tools to draft content, then upload here to merge it into the Git workspace.
             </p>
           </div>
         </section>
