@@ -159,6 +159,11 @@
               "id": "overview",
               "path": "/getrightdata/rightsight/latest/overview",
               "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "system-preferences-rightsight",
+              "path": "/getrightdata/rightsight/latest/getrightdata/rightsight/7.6/rightsight/admin-system-preferences",
+              "sidebar": "rightsightSidebar"
             }
           ],
           "draftIds": [],

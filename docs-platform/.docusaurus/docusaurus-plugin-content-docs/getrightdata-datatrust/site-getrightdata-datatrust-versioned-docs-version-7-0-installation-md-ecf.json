@@ -22,8 +22,8 @@
     }
   ],
   "version": "7.0",
-  "lastUpdatedBy": null,
-  "lastUpdatedAt": null,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "DataTrust Installation Paths",
     "description": "Deploy collectors and service connectors required to run DataTrust 7.0.",

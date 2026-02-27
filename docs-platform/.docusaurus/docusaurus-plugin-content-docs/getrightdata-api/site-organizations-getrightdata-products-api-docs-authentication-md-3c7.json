@@ -22,8 +22,8 @@
     }
   ],
   "version": "current",
-  "lastUpdatedBy": null,
-  "lastUpdatedAt": null,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "Authentication",
     "description": "Authenticate against the GetRightData API for all products.",

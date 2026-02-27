@@ -22,8 +22,8 @@
     }
   ],
   "version": "current",
-  "lastUpdatedBy": null,
-  "lastUpdatedAt": null,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "Platform Configuration",
     "description": "Tune ingestion, retention, and tenant-level preferences for RightSight.",
@@ -37,5 +37,9 @@
   "previous": {
     "title": "Dashboards",
     "permalink": "/getrightdata/rightsight/latest/dashboards"
+  },
+  "next": {
+    "title": "System Preferences",
+    "permalink": "/getrightdata/rightsight/latest/getrightdata/rightsight/7.6/rightsight/admin-system-preferences"
   }
 }

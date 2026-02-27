@@ -53,7 +53,9 @@
       "type": "category",
       "id": "admin-console",
       "label": "Admin Console",
-      "items": []
+      "items": [
+        "system-preferences-rightsight"
+      ]
     }
   ]
 }

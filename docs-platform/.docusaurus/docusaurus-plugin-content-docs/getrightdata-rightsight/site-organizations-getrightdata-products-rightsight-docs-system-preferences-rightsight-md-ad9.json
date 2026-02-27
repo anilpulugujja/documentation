@@ -1,0 +1,48 @@
+{
+  "id": "system-preferences-rightsight",
+  "title": "System Preferences",
+  "description": "Configure global platform settings for RightSight: general settings, license, integrations, and audit logs. For administrators.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/system-preferences-rightsight.md",
+  "sourceDirName": ".",
+  "slug": "/getrightdata/rightsight/7.6/rightsight/admin-system-preferences",
+  "permalink": "/getrightdata/rightsight/latest/getrightdata/rightsight/7.6/rightsight/admin-system-preferences",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/system-preferences-rightsight.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "administration",
+      "permalink": "/getrightdata/rightsight/latest/tags/administration"
+    },
+    {
+      "inline": true,
+      "label": "admin-console",
+      "permalink": "/getrightdata/rightsight/latest/tags/admin-console"
+    },
+    {
+      "inline": true,
+      "label": "platform-settings",
+      "permalink": "/getrightdata/rightsight/latest/tags/platform-settings"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "System Preferences",
+    "description": "Configure global platform settings for RightSight: general settings, license, integrations, and audit logs. For administrators.",
+    "sidebar_label": "System Preferences",
+    "slug": "/getrightdata/rightsight/7.6/rightsight/admin-system-preferences",
+    "tags": [
+      "administration",
+      "admin-console",
+      "platform-settings"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Configuration",
+    "permalink": "/getrightdata/rightsight/latest/configuration"
+  }
+}

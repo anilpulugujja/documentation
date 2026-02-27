@@ -22,8 +22,8 @@
     }
   ],
   "version": "current",
-  "lastUpdatedBy": null,
-  "lastUpdatedAt": null,
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
   "frontMatter": {
     "title": "Administration",
     "description": "Manage access, notifications, and integrations for DataTrust.",
