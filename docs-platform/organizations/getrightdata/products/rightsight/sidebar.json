@@ -54,7 +54,23 @@
       "id": "admin-console",
       "label": "Admin Console",
       "items": [
-        "system-preferences-rightsight"
+        "system-preferences-rightsight",
+        {
+          "type": "category",
+          "id": "catalog",
+          "label": "Catalog",
+          "items": [
+            "domains"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "id": "release-notes",
+      "label": "Release Notes",
+      "items": [
+        "release-notes/latest"
       ]
     }
   ]

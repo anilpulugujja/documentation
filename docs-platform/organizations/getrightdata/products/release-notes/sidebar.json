@@ -1,11 +1,8 @@
 {
   "sidebarId": "releaseNotesSidebar",
   "items": [
-    {
-      "type": "category",
-      "id": "release-notes",
-      "label": "Release Notes",
-      "items": ["7-6", "7-5", "7-0"]
-    }
+    { "type": "doc", "id": "7-6" },
+    { "type": "doc", "id": "7-5" },
+    { "type": "doc", "id": "7-0" }
   ]
 }

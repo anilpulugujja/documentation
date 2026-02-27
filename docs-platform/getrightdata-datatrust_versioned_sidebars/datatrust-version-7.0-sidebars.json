@@ -6,6 +6,7 @@
     { "type": "doc", "id": "datatrust/data-quality" },
     { "type": "doc", "id": "datatrust/observability" },
     { "type": "doc", "id": "datatrust/administration" },
-    { "type": "doc", "id": "datatrust/troubleshooting" }
+    { "type": "doc", "id": "datatrust/troubleshooting" },
+    { "type": "doc", "id": "datatrust/release-notes/7-0" }
   ]
 }

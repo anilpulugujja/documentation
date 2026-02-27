@@ -1,0 +1,41 @@
+{
+  "id": "release-notes/latest",
+  "title": "RightSight Release Notes",
+  "description": "Highlights and fixes in the latest RightSight cloud update.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/release-notes/latest.md",
+  "sourceDirName": "release-notes",
+  "slug": "/release-notes/latest",
+  "permalink": "/getrightdata/rightsight/latest/release-notes/latest",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/release-notes/latest.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/getrightdata/rightsight/latest/tags/release-notes"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "RightSight Release Notes",
+    "description": "Highlights and fixes in the latest RightSight cloud update.",
+    "sidebar_label": "Latest",
+    "tags": [
+      "rightsight",
+      "release-notes"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Domains",
+    "permalink": "/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains"
+  }
+}

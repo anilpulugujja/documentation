@@ -12,7 +12,7 @@
     },
     {
       "source": "/articles/:id/:slug*",
-      "destination": "/release-notes/7-6",
+      "destination": "/getrightdata/datatrust/7.6/release-notes/7-6",
       "permanent": true
     },
     {

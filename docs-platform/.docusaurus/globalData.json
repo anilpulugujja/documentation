@@ -41,6 +41,16 @@
               "sidebar": "datatrustSidebar"
             },
             {
+              "id": "release-notes/7-5",
+              "path": "/getrightdata/datatrust/7.6/release-notes/7-5",
+              "sidebar": "datatrustSidebar"
+            },
+            {
+              "id": "release-notes/7-6",
+              "path": "/getrightdata/datatrust/7.6/release-notes/7-6",
+              "sidebar": "datatrustSidebar"
+            },
+            {
               "id": "replace-with-page-title",
               "path": "/getrightdata/datatrust/7.6/getrightdata/datatrust/7.6/replace-with-page-title"
             },
@@ -102,6 +112,11 @@
               "sidebar": "datatrustSidebar"
             },
             {
+              "id": "release-notes/7-0",
+              "path": "/getrightdata/datatrust/7.0/release-notes/7-0",
+              "sidebar": "datatrustSidebar"
+            },
+            {
               "id": "troubleshooting",
               "path": "/getrightdata/datatrust/7.0/troubleshooting",
               "sidebar": "datatrustSidebar"
@@ -151,6 +166,11 @@
               "sidebar": "rightsightSidebar"
             },
             {
+              "id": "domains",
+              "path": "/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains",
+              "sidebar": "rightsightSidebar"
+            },
+            {
               "id": "monitoring",
               "path": "/getrightdata/rightsight/latest/monitoring",
               "sidebar": "rightsightSidebar"
@@ -158,6 +178,11 @@
             {
               "id": "overview",
               "path": "/getrightdata/rightsight/latest/overview",
+              "sidebar": "rightsightSidebar"
+            },
+            {
+              "id": "release-notes/latest",
+              "path": "/getrightdata/rightsight/latest/release-notes/latest",
               "sidebar": "rightsightSidebar"
             },
             {
@@ -223,6 +248,11 @@
               "id": "overview",
               "path": "/getrightdata/datamarket/latest/overview",
               "sidebar": "datamarketSidebar"
+            },
+            {
+              "id": "release-notes/latest",
+              "path": "/getrightdata/datamarket/latest/release-notes/latest",
+              "sidebar": "datamarketSidebar"
             }
           ],
           "draftIds": [],
@@ -231,94 +261,6 @@
               "link": {
                 "path": "/getrightdata/datamarket/latest/overview",
                 "label": "overview"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
-    "getrightdata-api": {
-      "path": "/getrightdata/api",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Latest",
-          "isLast": true,
-          "path": "/getrightdata/api/latest",
-          "mainDocId": "authentication",
-          "docs": [
-            {
-              "id": "authentication",
-              "path": "/getrightdata/api/latest/authentication",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "error-codes",
-              "path": "/getrightdata/api/latest/error-codes",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "rest-endpoints",
-              "path": "/getrightdata/api/latest/rest-endpoints",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "sdk-examples",
-              "path": "/getrightdata/api/latest/sdk-examples",
-              "sidebar": "apiSidebar"
-            },
-            {
-              "id": "webhooks",
-              "path": "/getrightdata/api/latest/webhooks",
-              "sidebar": "apiSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "apiSidebar": {
-              "link": {
-                "path": "/getrightdata/api/latest/authentication",
-                "label": "authentication"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
-    "getrightdata-release-notes": {
-      "path": "/getrightdata/release-notes",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Latest",
-          "isLast": true,
-          "path": "/getrightdata/release-notes/latest",
-          "mainDocId": "7-6",
-          "docs": [
-            {
-              "id": "7-0",
-              "path": "/getrightdata/release-notes/latest/7-0",
-              "sidebar": "releaseNotesSidebar"
-            },
-            {
-              "id": "7-5",
-              "path": "/getrightdata/release-notes/latest/7-5",
-              "sidebar": "releaseNotesSidebar"
-            },
-            {
-              "id": "7-6",
-              "path": "/getrightdata/release-notes/latest/7-6",
-              "sidebar": "releaseNotesSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "releaseNotesSidebar": {
-              "link": {
-                "path": "/getrightdata/release-notes/latest/7-6",
-                "label": "7-6"
               }
             }
           }

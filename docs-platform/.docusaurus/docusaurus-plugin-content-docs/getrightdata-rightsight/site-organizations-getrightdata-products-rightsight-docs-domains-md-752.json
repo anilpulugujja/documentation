@@ -1,0 +1,58 @@
+{
+  "id": "domains",
+  "title": "Domains",
+  "description": "Organize data assets and business terms by business domain (e.g. Customer, Finance). Create, edit, and manage domains in RightSight.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/domains.md",
+  "sourceDirName": ".",
+  "slug": "/getrightdata/rightsight/latest/domains",
+  "permalink": "/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/domains.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "business-semantics",
+      "permalink": "/getrightdata/rightsight/latest/tags/business-semantics"
+    },
+    {
+      "inline": true,
+      "label": "domains",
+      "permalink": "/getrightdata/rightsight/latest/tags/domains"
+    },
+    {
+      "inline": true,
+      "label": "governance",
+      "permalink": "/getrightdata/rightsight/latest/tags/governance"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Domains",
+    "description": "Organize data assets and business terms by business domain (e.g. Customer, Finance). Create, edit, and manage domains in RightSight.",
+    "sidebar_label": "Domains",
+    "slug": "/getrightdata/rightsight/latest/domains",
+    "tags": [
+      "rightsight",
+      "business-semantics",
+      "domains",
+      "governance"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "System Preferences",
+    "permalink": "/getrightdata/rightsight/latest/getrightdata/rightsight/7.6/rightsight/admin-system-preferences"
+  },
+  "next": {
+    "title": "Latest",
+    "permalink": "/getrightdata/rightsight/latest/release-notes/latest"
+  }
+}

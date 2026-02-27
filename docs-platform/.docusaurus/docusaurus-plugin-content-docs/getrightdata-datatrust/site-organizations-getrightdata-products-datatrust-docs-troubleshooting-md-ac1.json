@@ -37,5 +37,9 @@
   "previous": {
     "title": "Administration",
     "permalink": "/getrightdata/datatrust/7.6/administration"
+  },
+  "next": {
+    "title": "7.6",
+    "permalink": "/getrightdata/datatrust/7.6/release-notes/7-6"
   }
 }

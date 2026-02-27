@@ -1,0 +1,41 @@
+{
+  "id": "release-notes/latest",
+  "title": "DataMarket Release Notes",
+  "description": "Latest marketplace capabilities, fixes, and rollout guidance.",
+  "source": "@site/organizations/getrightdata/products/datamarket/docs/release-notes/latest.md",
+  "sourceDirName": "release-notes",
+  "slug": "/release-notes/latest",
+  "permalink": "/getrightdata/datamarket/latest/release-notes/latest",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datamarket/docs/organizations/getrightdata/products/datamarket/docs/release-notes/latest.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/getrightdata/datamarket/latest/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/getrightdata/datamarket/latest/tags/release-notes"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "DataMarket Release Notes",
+    "description": "Latest marketplace capabilities, fixes, and rollout guidance.",
+    "sidebar_label": "Latest",
+    "tags": [
+      "datamarket",
+      "release-notes"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Integrations",
+    "permalink": "/getrightdata/datamarket/latest/integrations"
+  }
+}

@@ -30,25 +30,5 @@
       "type": "latest",
       "label": "Latest"
     }
-  },
-  {
-    "id": "api",
-    "displayName": "API Reference",
-    "slug": "api",
-    "entryDoc": "authentication",
-    "versioning": {
-      "type": "latest",
-      "label": "Latest"
-    }
-  },
-  {
-    "id": "release-notes",
-    "displayName": "Release Notes",
-    "slug": "release-notes",
-    "entryDoc": "7-6",
-    "versioning": {
-      "type": "latest",
-      "label": "Latest"
-    }
   }
 ]

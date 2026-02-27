@@ -67,9 +67,7 @@ export default {
         "products": [
           "datatrust",
           "rightsight",
-          "datamarket",
-          "api",
-          "release-notes"
+          "datamarket"
         ]
       }
     ],
@@ -103,26 +101,6 @@ export default {
         "displayName": "DataMarket",
         "slug": "datamarket",
         "entryDoc": "overview",
-        "versioning": {
-          "type": "latest",
-          "label": "Latest"
-        }
-      },
-      {
-        "id": "api",
-        "displayName": "API Reference",
-        "slug": "api",
-        "entryDoc": "authentication",
-        "versioning": {
-          "type": "latest",
-          "label": "Latest"
-        }
-      },
-      {
-        "id": "release-notes",
-        "displayName": "Release Notes",
-        "slug": "release-notes",
-        "entryDoc": "7-6",
         "versioning": {
           "type": "latest",
           "label": "Latest"
@@ -216,46 +194,6 @@ export default {
       }
     ],
     [
-      "@docusaurus/plugin-content-docs",
-      {
-        "id": "getrightdata-api",
-        "path": "organizations/getrightdata/products/api/docs",
-        "routeBasePath": "getrightdata/api",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/api/sidebar.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/api/docs/",
-        "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true,
-        "includeCurrentVersion": true,
-        "lastVersion": "current",
-        "versions": {
-          "current": {
-            "label": "Latest",
-            "path": "latest"
-          }
-        }
-      }
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        "id": "getrightdata-release-notes",
-        "path": "organizations/getrightdata/products/release-notes/docs",
-        "routeBasePath": "getrightdata/release-notes",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/release-notes/sidebar.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/release-notes/docs/",
-        "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true,
-        "includeCurrentVersion": true,
-        "lastVersion": "current",
-        "versions": {
-          "current": {
-            "label": "Latest",
-            "path": "latest"
-          }
-        }
-      }
-    ],
-    [
       "@docusaurus/plugin-client-redirects",
       {}
     ]
@@ -309,22 +247,6 @@ export default {
           "position": "left"
         },
         {
-          "type": "docSidebar",
-          "docsPluginId": "getrightdata-api",
-          "sidebarId": "apiSidebar",
-          "label": "API",
-          "to": "/getrightdata/api/latest/authentication",
-          "position": "left"
-        },
-        {
-          "type": "docSidebar",
-          "docsPluginId": "getrightdata-release-notes",
-          "sidebarId": "releaseNotesSidebar",
-          "label": "Release Notes",
-          "to": "/getrightdata/release-notes/latest/7-6",
-          "position": "left"
-        },
-        {
           "type": "docsVersionDropdown",
           "docsPluginId": "getrightdata-datatrust",
           "position": "right",
@@ -366,14 +288,6 @@ export default {
         {
           "title": "Resources",
           "items": [
-            {
-              "label": "API Reference",
-              "to": "/getrightdata/api/latest/authentication"
-            },
-            {
-              "label": "Release Notes",
-              "to": "/getrightdata/release-notes/latest/7-6"
-            },
             {
               "label": "Status",
               "href": "https://status.getrightdata.com"

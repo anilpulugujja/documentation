@@ -1,0 +1,39 @@
+{
+  "id": "release-notes/7-6",
+  "title": "Release Notes 7.6",
+  "description": "Highlights for the 7.6 platform release.",
+  "source": "@site/organizations/getrightdata/products/datatrust/docs/release-notes/7-6.md",
+  "sourceDirName": "release-notes",
+  "slug": "/release-notes/7-6",
+  "permalink": "/getrightdata/datatrust/7.6/release-notes/7-6",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/organizations/getrightdata/products/datatrust/docs/release-notes/7-6.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/getrightdata/datatrust/7.6/tags/release-notes"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": "Author",
+  "lastUpdatedAt": 1539502055000,
+  "frontMatter": {
+    "title": "Release Notes 7.6",
+    "description": "Highlights for the 7.6 platform release.",
+    "sidebar_label": "7.6",
+    "tags": [
+      "release-notes"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Troubleshooting",
+    "permalink": "/getrightdata/datatrust/7.6/troubleshooting"
+  },
+  "next": {
+    "title": "7.5",
+    "permalink": "/getrightdata/datatrust/7.6/release-notes/7-5"
+  }
+}

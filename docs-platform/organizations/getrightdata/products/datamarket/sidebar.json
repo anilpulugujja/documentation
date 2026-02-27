@@ -42,6 +42,12 @@
       "id": "integrations",
       "label": "Integrations",
       "items": ["integrations"]
+    },
+    {
+      "type": "category",
+      "id": "release-notes",
+      "label": "Release Notes",
+      "items": ["release-notes/latest"]
     }
   ]
 }

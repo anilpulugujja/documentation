@@ -56,6 +56,15 @@
       "items": [
         "troubleshooting"
       ]
+    },
+    {
+      "type": "category",
+      "id": "release-notes",
+      "label": "Release Notes",
+      "items": [
+        "release-notes/7-6",
+        "release-notes/7-5"
+      ]
     }
   ]
 }

@@ -5,8 +5,6 @@ import { useDocsSidebar } from '@docusaurus/plugin-content-docs/client';
 import { useLocation } from '@docusaurus/router';
 import DocSidebar from '@theme/DocSidebar';
 import ExpandButton from '@theme/DocRoot/Layout/Sidebar/ExpandButton';
-import LocaleSwitcher from '@site/src/components/LocaleSwitcher';
-
 import styles from './styles.module.css';
 
 function ResetOnSidebarChange({ children }) {
@@ -55,7 +53,6 @@ export default function DocRootLayoutSidebar({
           )}>
           <div className={styles.sidebarInner}>
             <DocSidebar sidebar={sidebar} path={pathname} onCollapse={toggleSidebar} isHidden={hiddenSidebar} />
-            <LocaleSwitcher />
             <div className={styles.supportLinks}>
               <a href="https://getrightdata.com" target="_blank" rel="noreferrer">
                 Main Site

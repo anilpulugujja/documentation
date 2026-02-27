@@ -87,7 +87,7 @@ export interface DashboardState {
   handlePublish: () => Promise<void>;
   handleUnpublish: () => Promise<void>;
   handleCreateModule: () => Promise<void>;
-  handleCreateSubmodule: () => Promise<void>;
+  handleCreateSubmodule: (moduleId?: string) => Promise<void>;
   handleRenameCategory: (path: string[], currentLabel: string) => Promise<void>;
   handleDeleteCategory: (path: string[]) => Promise<void>;
   logout: () => Promise<void>;
@@ -252,8 +252,12 @@ export function useDashboard(): DashboardState {
     }
   }, [sendCategoryRequest, selectedCollection, fetchSidebar]);
 
-  const handleCreateSubmodule = useCallback(async () => {
-    if (!selectedModuleId) {
+  const handleCreateSubmodule = useCallback(async (moduleId?: string) => {
+    const targetModuleId = moduleId ?? selectedModuleId;
+    if (moduleId) {
+      setSelectedModuleId(moduleId);
+    }
+    if (!targetModuleId) {
       setError("Choose a module before creating a submodule.");
       return;
     }
@@ -261,7 +265,7 @@ export function useDashboard(): DashboardState {
     if (!label?.trim()) return;
     const result = await sendCategoryRequest("POST", {
       action: "create",
-      parentPath: [selectedModuleId],
+      parentPath: [targetModuleId],
       label: label.trim(),
     });
     if (result && selectedCollection) {

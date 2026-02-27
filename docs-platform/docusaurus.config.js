@@ -116,18 +116,6 @@ const config = {
     rawContentBaseUrl:
       process.env.DOCS_RAW_BASE_URL ||
       'https://raw.githubusercontent.com/GetRightData/docs/main/',
-    localeOptions: {
-      regions: [
-        { code: 'us', label: 'United States' },
-        { code: 'eu', label: 'Europe' },
-      ],
-      languages: [
-        { code: 'en', label: 'English (United States)' },
-        { code: 'en-gb', label: 'English (United Kingdom)' },
-      ],
-      defaultRegion: 'us',
-      defaultLanguage: 'en',
-    },
     organizations,
     products,
     defaultOrgId: defaultOrg.id,
@@ -231,22 +219,6 @@ const config = {
           position: 'left',
         },
         {
-          type: 'docSidebar',
-          docsPluginId: 'getrightdata-api',
-          sidebarId: 'apiSidebar',
-          label: 'API',
-          to: getDefaultOrgProductLink('api'),
-          position: 'left',
-        },
-        {
-          type: 'docSidebar',
-          docsPluginId: 'getrightdata-release-notes',
-          sidebarId: 'releaseNotesSidebar',
-          label: 'Release Notes',
-          to: getDefaultOrgProductLink('release-notes'),
-          position: 'left',
-        },
-        {
           type: 'docsVersionDropdown',
           docsPluginId: 'getrightdata-datatrust',
           position: 'right',
@@ -278,8 +250,6 @@ const config = {
           {
             title: 'Resources',
             items: [
-              { label: 'API Reference', to: getDefaultOrgProductLink('api') },
-              { label: 'Release Notes', to: getDefaultOrgProductLink('release-notes') },
               { label: 'Status', href: 'https://status.getrightdata.com' },
             ],
           },

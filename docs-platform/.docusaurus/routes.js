@@ -38,95 +38,12 @@ export default [
     exact: true
   },
   {
-    path: '/getrightdata/api',
-    component: ComponentCreator('/getrightdata/api', '368'),
-    routes: [
-      {
-        path: '/getrightdata/api/latest',
-        component: ComponentCreator('/getrightdata/api/latest', '627'),
-        routes: [
-          {
-            path: '/getrightdata/api/latest/tags',
-            component: ComponentCreator('/getrightdata/api/latest/tags', '777'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/api',
-            component: ComponentCreator('/getrightdata/api/latest/tags/api', 'd6b'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/authentication',
-            component: ComponentCreator('/getrightdata/api/latest/tags/authentication', '5b1'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/errors',
-            component: ComponentCreator('/getrightdata/api/latest/tags/errors', 'aeb'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/rest',
-            component: ComponentCreator('/getrightdata/api/latest/tags/rest', 'ad8'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/sdk',
-            component: ComponentCreator('/getrightdata/api/latest/tags/sdk', '191'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest/tags/webhooks',
-            component: ComponentCreator('/getrightdata/api/latest/tags/webhooks', 'c43'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/api/latest',
-            component: ComponentCreator('/getrightdata/api/latest', 'fad'),
-            routes: [
-              {
-                path: '/getrightdata/api/latest/authentication',
-                component: ComponentCreator('/getrightdata/api/latest/authentication', 'c9e'),
-                exact: true,
-                sidebar: "apiSidebar"
-              },
-              {
-                path: '/getrightdata/api/latest/error-codes',
-                component: ComponentCreator('/getrightdata/api/latest/error-codes', 'c18'),
-                exact: true,
-                sidebar: "apiSidebar"
-              },
-              {
-                path: '/getrightdata/api/latest/rest-endpoints',
-                component: ComponentCreator('/getrightdata/api/latest/rest-endpoints', '0fb'),
-                exact: true,
-                sidebar: "apiSidebar"
-              },
-              {
-                path: '/getrightdata/api/latest/sdk-examples',
-                component: ComponentCreator('/getrightdata/api/latest/sdk-examples', '53a'),
-                exact: true,
-                sidebar: "apiSidebar"
-              },
-              {
-                path: '/getrightdata/api/latest/webhooks',
-                component: ComponentCreator('/getrightdata/api/latest/webhooks', 'fcc'),
-                exact: true,
-                sidebar: "apiSidebar"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     path: '/getrightdata/datamarket',
-    component: ComponentCreator('/getrightdata/datamarket', '3cd'),
+    component: ComponentCreator('/getrightdata/datamarket', 'b72'),
     routes: [
       {
         path: '/getrightdata/datamarket/latest',
-        component: ComponentCreator('/getrightdata/datamarket/latest', '74f'),
+        component: ComponentCreator('/getrightdata/datamarket/latest', 'f48'),
         routes: [
           {
             path: '/getrightdata/datamarket/latest/tags',
@@ -169,13 +86,18 @@ export default [
             exact: true
           },
           {
+            path: '/getrightdata/datamarket/latest/tags/release-notes',
+            component: ComponentCreator('/getrightdata/datamarket/latest/tags/release-notes', 'be3'),
+            exact: true
+          },
+          {
             path: '/getrightdata/datamarket/latest/tags/setup',
             component: ComponentCreator('/getrightdata/datamarket/latest/tags/setup', 'e9c'),
             exact: true
           },
           {
             path: '/getrightdata/datamarket/latest',
-            component: ComponentCreator('/getrightdata/datamarket/latest', '05b'),
+            component: ComponentCreator('/getrightdata/datamarket/latest', '0e5'),
             routes: [
               {
                 path: '/getrightdata/datamarket/latest/access-control',
@@ -218,6 +140,12 @@ export default [
                 component: ComponentCreator('/getrightdata/datamarket/latest/overview', '934'),
                 exact: true,
                 sidebar: "datamarketSidebar"
+              },
+              {
+                path: '/getrightdata/datamarket/latest/release-notes/latest',
+                component: ComponentCreator('/getrightdata/datamarket/latest/release-notes/latest', 'efd'),
+                exact: true,
+                sidebar: "datamarketSidebar"
               }
             ]
           }
@@ -227,11 +155,11 @@ export default [
   },
   {
     path: '/getrightdata/datatrust',
-    component: ComponentCreator('/getrightdata/datatrust', '16e'),
+    component: ComponentCreator('/getrightdata/datatrust', '9c0'),
     routes: [
       {
         path: '/getrightdata/datatrust/7.0',
-        component: ComponentCreator('/getrightdata/datatrust/7.0', 'e12'),
+        component: ComponentCreator('/getrightdata/datatrust/7.0', '1aa'),
         routes: [
           {
             path: '/getrightdata/datatrust/7.0/tags',
@@ -274,13 +202,18 @@ export default [
             exact: true
           },
           {
+            path: '/getrightdata/datatrust/7.0/tags/release-notes',
+            component: ComponentCreator('/getrightdata/datatrust/7.0/tags/release-notes', '7fc'),
+            exact: true
+          },
+          {
             path: '/getrightdata/datatrust/7.0/tags/troubleshooting',
             component: ComponentCreator('/getrightdata/datatrust/7.0/tags/troubleshooting', 'ce8'),
             exact: true
           },
           {
             path: '/getrightdata/datatrust/7.0',
-            component: ComponentCreator('/getrightdata/datatrust/7.0', 'c5c'),
+            component: ComponentCreator('/getrightdata/datatrust/7.0', '023'),
             routes: [
               {
                 path: '/getrightdata/datatrust/7.0/administration',
@@ -319,6 +252,12 @@ export default [
                 sidebar: "datatrustSidebar"
               },
               {
+                path: '/getrightdata/datatrust/7.0/release-notes/7-0',
+                component: ComponentCreator('/getrightdata/datatrust/7.0/release-notes/7-0', 'e43'),
+                exact: true,
+                sidebar: "datatrustSidebar"
+              },
+              {
                 path: '/getrightdata/datatrust/7.0/troubleshooting',
                 component: ComponentCreator('/getrightdata/datatrust/7.0/troubleshooting', '912'),
                 exact: true,
@@ -330,7 +269,7 @@ export default [
       },
       {
         path: '/getrightdata/datatrust/7.6',
-        component: ComponentCreator('/getrightdata/datatrust/7.6', '0bb'),
+        component: ComponentCreator('/getrightdata/datatrust/7.6', '33f'),
         routes: [
           {
             path: '/getrightdata/datatrust/7.6/tags',
@@ -383,13 +322,18 @@ export default [
             exact: true
           },
           {
+            path: '/getrightdata/datatrust/7.6/tags/release-notes',
+            component: ComponentCreator('/getrightdata/datatrust/7.6/tags/release-notes', '3fa'),
+            exact: true
+          },
+          {
             path: '/getrightdata/datatrust/7.6/tags/troubleshooting',
             component: ComponentCreator('/getrightdata/datatrust/7.6/tags/troubleshooting', 'f19'),
             exact: true
           },
           {
             path: '/getrightdata/datatrust/7.6',
-            component: ComponentCreator('/getrightdata/datatrust/7.6', '347'),
+            component: ComponentCreator('/getrightdata/datatrust/7.6', '313'),
             routes: [
               {
                 path: '/getrightdata/datatrust/7.6/administration',
@@ -438,6 +382,18 @@ export default [
                 sidebar: "datatrustSidebar"
               },
               {
+                path: '/getrightdata/datatrust/7.6/release-notes/7-5',
+                component: ComponentCreator('/getrightdata/datatrust/7.6/release-notes/7-5', '268'),
+                exact: true,
+                sidebar: "datatrustSidebar"
+              },
+              {
+                path: '/getrightdata/datatrust/7.6/release-notes/7-6',
+                component: ComponentCreator('/getrightdata/datatrust/7.6/release-notes/7-6', '75b'),
+                exact: true,
+                sidebar: "datatrustSidebar"
+              },
+              {
                 path: '/getrightdata/datatrust/7.6/troubleshooting',
                 component: ComponentCreator('/getrightdata/datatrust/7.6/troubleshooting', 'fd4'),
                 exact: true,
@@ -450,58 +406,12 @@ export default [
     ]
   },
   {
-    path: '/getrightdata/release-notes',
-    component: ComponentCreator('/getrightdata/release-notes', '3d4'),
-    routes: [
-      {
-        path: '/getrightdata/release-notes/latest',
-        component: ComponentCreator('/getrightdata/release-notes/latest', '5d5'),
-        routes: [
-          {
-            path: '/getrightdata/release-notes/latest/tags',
-            component: ComponentCreator('/getrightdata/release-notes/latest/tags', '184'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/release-notes/latest/tags/release-notes',
-            component: ComponentCreator('/getrightdata/release-notes/latest/tags/release-notes', 'e75'),
-            exact: true
-          },
-          {
-            path: '/getrightdata/release-notes/latest',
-            component: ComponentCreator('/getrightdata/release-notes/latest', '6df'),
-            routes: [
-              {
-                path: '/getrightdata/release-notes/latest/7-0',
-                component: ComponentCreator('/getrightdata/release-notes/latest/7-0', 'bf0'),
-                exact: true,
-                sidebar: "releaseNotesSidebar"
-              },
-              {
-                path: '/getrightdata/release-notes/latest/7-5',
-                component: ComponentCreator('/getrightdata/release-notes/latest/7-5', 'c18'),
-                exact: true,
-                sidebar: "releaseNotesSidebar"
-              },
-              {
-                path: '/getrightdata/release-notes/latest/7-6',
-                component: ComponentCreator('/getrightdata/release-notes/latest/7-6', '7b8'),
-                exact: true,
-                sidebar: "releaseNotesSidebar"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
     path: '/getrightdata/rightsight',
-    component: ComponentCreator('/getrightdata/rightsight', 'c7d'),
+    component: ComponentCreator('/getrightdata/rightsight', '34f'),
     routes: [
       {
         path: '/getrightdata/rightsight/latest',
-        component: ComponentCreator('/getrightdata/rightsight/latest', '2e5'),
+        component: ComponentCreator('/getrightdata/rightsight/latest', '9f5'),
         routes: [
           {
             path: '/getrightdata/rightsight/latest/tags',
@@ -529,6 +439,11 @@ export default [
             exact: true
           },
           {
+            path: '/getrightdata/rightsight/latest/tags/business-semantics',
+            component: ComponentCreator('/getrightdata/rightsight/latest/tags/business-semantics', '68b'),
+            exact: true
+          },
+          {
             path: '/getrightdata/rightsight/latest/tags/configuration',
             component: ComponentCreator('/getrightdata/rightsight/latest/tags/configuration', 'd11'),
             exact: true
@@ -536,6 +451,16 @@ export default [
           {
             path: '/getrightdata/rightsight/latest/tags/dashboards',
             component: ComponentCreator('/getrightdata/rightsight/latest/tags/dashboards', 'a8c'),
+            exact: true
+          },
+          {
+            path: '/getrightdata/rightsight/latest/tags/domains',
+            component: ComponentCreator('/getrightdata/rightsight/latest/tags/domains', '6c6'),
+            exact: true
+          },
+          {
+            path: '/getrightdata/rightsight/latest/tags/governance',
+            component: ComponentCreator('/getrightdata/rightsight/latest/tags/governance', '6cf'),
             exact: true
           },
           {
@@ -554,13 +479,18 @@ export default [
             exact: true
           },
           {
+            path: '/getrightdata/rightsight/latest/tags/release-notes',
+            component: ComponentCreator('/getrightdata/rightsight/latest/tags/release-notes', 'a64'),
+            exact: true
+          },
+          {
             path: '/getrightdata/rightsight/latest/tags/rightsight',
             component: ComponentCreator('/getrightdata/rightsight/latest/tags/rightsight', '31b'),
             exact: true
           },
           {
             path: '/getrightdata/rightsight/latest',
-            component: ComponentCreator('/getrightdata/rightsight/latest', '78b'),
+            component: ComponentCreator('/getrightdata/rightsight/latest', '2b2'),
             routes: [
               {
                 path: '/getrightdata/rightsight/latest/ai-enrichment',
@@ -593,6 +523,12 @@ export default [
                 sidebar: "rightsightSidebar"
               },
               {
+                path: '/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains',
+                component: ComponentCreator('/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains', '894'),
+                exact: true,
+                sidebar: "rightsightSidebar"
+              },
+              {
                 path: '/getrightdata/rightsight/latest/monitoring',
                 component: ComponentCreator('/getrightdata/rightsight/latest/monitoring', '34d'),
                 exact: true,
@@ -601,6 +537,12 @@ export default [
               {
                 path: '/getrightdata/rightsight/latest/overview',
                 component: ComponentCreator('/getrightdata/rightsight/latest/overview', '185'),
+                exact: true,
+                sidebar: "rightsightSidebar"
+              },
+              {
+                path: '/getrightdata/rightsight/latest/release-notes/latest',
+                component: ComponentCreator('/getrightdata/rightsight/latest/release-notes/latest', '405'),
                 exact: true,
                 sidebar: "rightsightSidebar"
               }

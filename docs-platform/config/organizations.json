@@ -13,9 +13,7 @@
     "products": [
       "datatrust",
       "rightsight",
-      "datamarket",
-      "api",
-      "release-notes"
+      "datamarket"
     ]
   }
 ]

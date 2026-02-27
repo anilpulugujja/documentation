@@ -42,74 +42,13 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/getrightdata/api-368": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
-    "__context": {
-      "plugin": "plugin---getrightdata-api-334-29f"
-    }
-  },
-  "/getrightdata/api/latest-627": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---getrightdata-api-latest-599-2f5"
-  },
-  "/getrightdata/api/latest/tags-777": {
-    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
-    "__props": "__props---getrightdata-api-latest-tagsa-24-56a"
-  },
-  "/getrightdata/api/latest/tags/api-d6b": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-api-6-ba-3b0"
-  },
-  "/getrightdata/api/latest/tags/authentication-5b1": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-authentication-5-d-9-5c6"
-  },
-  "/getrightdata/api/latest/tags/errors-aeb": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-errors-92-f-662"
-  },
-  "/getrightdata/api/latest/tags/rest-ad8": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-rest-0-e-4-564"
-  },
-  "/getrightdata/api/latest/tags/sdk-191": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-sdk-265-b0d"
-  },
-  "/getrightdata/api/latest/tags/webhooks-c43": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-api-latest-tags-webhooks-72-a-fc7"
-  },
-  "/getrightdata/api/latest-fad": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
-  },
-  "/getrightdata/api/latest/authentication-c9e": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-api-latest-authentication-3-c-7-696"
-  },
-  "/getrightdata/api/latest/error-codes-c18": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-api-latest-error-codese-70-81e"
-  },
-  "/getrightdata/api/latest/rest-endpoints-0fb": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-api-latest-rest-endpointsd-7-f-55f"
-  },
-  "/getrightdata/api/latest/sdk-examples-53a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-api-latest-sdk-examples-80-b-261"
-  },
-  "/getrightdata/api/latest/webhooks-fcc": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-api-latest-webhooks-70-d-c3f"
-  },
-  "/getrightdata/datamarket-3cd": {
+  "/getrightdata/datamarket-b72": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---getrightdata-datamarkete-47-41b"
     }
   },
-  "/getrightdata/datamarket/latest-74f": {
+  "/getrightdata/datamarket/latest-f48": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---getrightdata-datamarket-latestf-35-64a"
   },
@@ -145,11 +84,15 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datamarket-latest-tags-publishingcf-7-bb9"
   },
+  "/getrightdata/datamarket/latest/tags/release-notes-be3": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-datamarket-latest-tags-release-notes-437-bc7"
+  },
   "/getrightdata/datamarket/latest/tags/setup-e9c": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datamarket-latest-tags-setup-332-90b"
   },
-  "/getrightdata/datamarket/latest-05b": {
+  "/getrightdata/datamarket/latest-0e5": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/getrightdata/datamarket/latest/access-control-940": {
@@ -180,13 +123,17 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-datamarket-latest-overview-245-ad8"
   },
-  "/getrightdata/datatrust-16e": {
+  "/getrightdata/datamarket/latest/release-notes/latest-efd": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-datamarket-latest-release-notes-latestfa-9-fbe"
+  },
+  "/getrightdata/datatrust-9c0": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---getrightdata-datatrust-52-c-7ff"
     }
   },
-  "/getrightdata/datatrust/7.0-e12": {
+  "/getrightdata/datatrust/7.0-1aa": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---getrightdata-datatrust-7-0-b-3-b-240"
   },
@@ -222,11 +169,15 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datatrust-7-0-tags-quality-34-d-332"
   },
+  "/getrightdata/datatrust/7.0/tags/release-notes-7fc": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-datatrust-7-0-tags-release-notes-40-b-481"
+  },
   "/getrightdata/datatrust/7.0/tags/troubleshooting-ce8": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datatrust-7-0-tags-troubleshootingf-39-5f1"
   },
-  "/getrightdata/datatrust/7.0-c5c": {
+  "/getrightdata/datatrust/7.0-023": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/getrightdata/datatrust/7.0/administration-5bd": {
@@ -253,11 +204,15 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-datatrust-7-0-observabilitydf-0-888"
   },
+  "/getrightdata/datatrust/7.0/release-notes/7-0-e43": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-datatrust-7-0-release-notes-7-0633-28d"
+  },
   "/getrightdata/datatrust/7.0/troubleshooting-912": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-datatrust-7-0-troubleshooting-6-ff-907"
   },
-  "/getrightdata/datatrust/7.6-0bb": {
+  "/getrightdata/datatrust/7.6-33f": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---getrightdata-datatrust-7-63-ad-37b"
   },
@@ -301,11 +256,15 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datatrust-7-6-tags-quality-4-a-6-637"
   },
+  "/getrightdata/datatrust/7.6/tags/release-notes-3fa": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-datatrust-7-6-tags-release-notese-43-fca"
+  },
   "/getrightdata/datatrust/7.6/tags/troubleshooting-f19": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-datatrust-7-6-tags-troubleshooting-140-b12"
   },
-  "/getrightdata/datatrust/7.6-347": {
+  "/getrightdata/datatrust/7.6-313": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/getrightdata/datatrust/7.6/administration-1cf": {
@@ -340,50 +299,25 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-datatrust-7-6-observability-15-b-384"
   },
+  "/getrightdata/datatrust/7.6/release-notes/7-5-268": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-datatrust-7-6-release-notes-7-5-b-60-386"
+  },
+  "/getrightdata/datatrust/7.6/release-notes/7-6-75b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-datatrust-7-6-release-notes-7-6170-daf"
+  },
   "/getrightdata/datatrust/7.6/troubleshooting-fd4": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-datatrust-7-6-troubleshootingac-1-eae"
   },
-  "/getrightdata/release-notes-3d4": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
-    "__context": {
-      "plugin": "plugin---getrightdata-release-notes-6-b-5-3f6"
-    }
-  },
-  "/getrightdata/release-notes/latest-5d5": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---getrightdata-release-notes-latest-884-b7e"
-  },
-  "/getrightdata/release-notes/latest/tags-184": {
-    "__comp": "__comp---theme-doc-tags-list-page-372-89e",
-    "__props": "__props---getrightdata-release-notes-latest-tags-05-c-2f6"
-  },
-  "/getrightdata/release-notes/latest/tags/release-notes-e75": {
-    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
-    "__props": "__props---getrightdata-release-notes-latest-tags-release-notes-18-e-709"
-  },
-  "/getrightdata/release-notes/latest-6df": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
-  },
-  "/getrightdata/release-notes/latest/7-0-bf0": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-release-notes-latest-7-0-b-5-b-b00"
-  },
-  "/getrightdata/release-notes/latest/7-5-c18": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-release-notes-latest-7-5897-218"
-  },
-  "/getrightdata/release-notes/latest/7-6-7b8": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---getrightdata-release-notes-latest-7-6857-ddb"
-  },
-  "/getrightdata/rightsight-c7d": {
+  "/getrightdata/rightsight-34f": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---getrightdata-rightsightc-1-d-f09"
     }
   },
-  "/getrightdata/rightsight/latest-2e5": {
+  "/getrightdata/rightsight/latest-9f5": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---getrightdata-rightsight-latest-38-d-2e8"
   },
@@ -407,6 +341,10 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-rightsight-latest-tags-alertsa-17-dde"
   },
+  "/getrightdata/rightsight/latest/tags/business-semantics-68b": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-rightsight-latest-tags-business-semantics-75-e-12e"
+  },
   "/getrightdata/rightsight/latest/tags/configuration-d11": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-rightsight-latest-tags-configuration-034-868"
@@ -414,6 +352,14 @@
   "/getrightdata/rightsight/latest/tags/dashboards-a8c": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-rightsight-latest-tags-dashboards-6-dc-655"
+  },
+  "/getrightdata/rightsight/latest/tags/domains-6c6": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-rightsight-latest-tags-domainsc-73-8ff"
+  },
+  "/getrightdata/rightsight/latest/tags/governance-6cf": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-rightsight-latest-tags-governance-203-f2a"
   },
   "/getrightdata/rightsight/latest/tags/monitoring-8c1": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
@@ -427,11 +373,15 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-rightsight-latest-tags-platform-settings-352-ceb"
   },
+  "/getrightdata/rightsight/latest/tags/release-notes-a64": {
+    "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
+    "__props": "__props---getrightdata-rightsight-latest-tags-release-notes-415-a80"
+  },
   "/getrightdata/rightsight/latest/tags/rightsight-31b": {
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---getrightdata-rightsight-latest-tags-rightsight-6-d-2-320"
   },
-  "/getrightdata/rightsight/latest-78b": {
+  "/getrightdata/rightsight/latest-2b2": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/getrightdata/rightsight/latest/ai-enrichment-d6c": {
@@ -454,6 +404,10 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-rightsight-latest-getrightdata-rightsight-7-6-rightsight-admin-system-preferencesad-9-968"
   },
+  "/getrightdata/rightsight/latest/getrightdata/rightsight/latest/domains-894": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-rightsight-latest-getrightdata-rightsight-latest-domains-752-6fc"
+  },
   "/getrightdata/rightsight/latest/monitoring-34d": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-rightsight-latest-monitoring-796-2fa"
@@ -461,6 +415,10 @@
   "/getrightdata/rightsight/latest/overview-185": {
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---getrightdata-rightsight-latest-overview-940-882"
+  },
+  "/getrightdata/rightsight/latest/release-notes/latest-405": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---getrightdata-rightsight-latest-release-notes-latest-6-f-5-bdd"
   },
   "/-2e1": {
     "__comp": "__comp---site-src-pages-index-jsc-4-f-f99",

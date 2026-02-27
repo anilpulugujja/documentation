@@ -12,10 +12,10 @@ const DashboardApp = () => {
   const dashboard = useDashboard();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-slate-100">
+    <div className="dashboard-shell">
       <DashboardHeader onLogout={dashboard.logout} />
 
-      <main className="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 py-8 lg:grid-cols-[260px_minmax(0,1fr)_320px]">
+      <main className="dashboard-grid mx-auto grid max-w-7xl gap-6 px-6 py-10 lg:gap-8 lg:items-start">
         <CollectionsSidebar
           collections={dashboard.collections}
           selectedCollection={dashboard.selectedCollection}
@@ -24,11 +24,13 @@ const DashboardApp = () => {
           tree={dashboard.tree}
           currentDir={dashboard.currentDir}
           selectedFile={dashboard.selectedFile}
+          currentDocId={dashboard.currentDocId}
           publishedDocs={dashboard.publishedDocs}
           sidebarItems={dashboard.sidebarItems}
           onNavigateDir={dashboard.fetchTree}
           onSelectFile={dashboard.fetchDocument}
           onCreateModule={dashboard.handleCreateModule}
+          onCreateSubmodule={dashboard.handleCreateSubmodule}
           onRenameCategory={dashboard.handleRenameCategory}
           onDeleteCategory={dashboard.handleDeleteCategory}
         />
@@ -61,7 +63,6 @@ const DashboardApp = () => {
           onFilenameChange={dashboard.handleFilenameChange}
           templates={dashboard.templates}
           currentCollection={dashboard.currentCollection}
-          currentDir={dashboard.currentDir}
           onWordUpload={dashboard.handleWordUpload}
           onMarkdownUpload={dashboard.handleMarkdownUpload}
           onCreate={dashboard.handleCreate}
@@ -85,6 +86,7 @@ const DashboardApp = () => {
           onUnpublish={dashboard.handleUnpublish}
           onCreateModule={dashboard.handleCreateModule}
           onCreateSubmodule={dashboard.handleCreateSubmodule}
+          currentSlug={dashboard.formatFieldValue("slug")}
         />
       </main>
     </div>

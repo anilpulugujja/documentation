@@ -37,5 +37,9 @@
   "previous": {
     "title": "Access Control",
     "permalink": "/getrightdata/datamarket/latest/access-control"
+  },
+  "next": {
+    "title": "Latest",
+    "permalink": "/getrightdata/datamarket/latest/release-notes/latest"
   }
 }
