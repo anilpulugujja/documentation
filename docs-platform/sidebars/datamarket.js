@@ -1,11 +1,5 @@
+const sidebar = require('./datamarket.json');
+
 module.exports = {
-  datamarketSidebar: [
-    'overview',
-    'marketplace-setup',
-    'data-publishing',
-    'data-consumption',
-    'governance',
-    'access-control',
-    'integrations',
-  ],
+  [sidebar.sidebarId]: sidebar.sections.flatMap((section) => section.items),
 };

@@ -180,7 +180,7 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---datamarket-overview-68-b-d1c"
   },
-  "/datatrust-ef3": {
+  "/datatrust-669": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",
     "__context": {
       "plugin": "plugin---datatrustecc-873"
@@ -257,7 +257,7 @@
     "__comp": "__comp---theme-doc-item-178-a40",
     "content": "content---datatrust-7-0-troubleshooting-4-ab-ff6"
   },
-  "/datatrust/7.6-4ac": {
+  "/datatrust/7.6-d80": {
     "__comp": "__comp---theme-doc-version-roota-7-b-5de",
     "__props": "__props---datatrust-7-62-a-4-e94"
   },
@@ -305,7 +305,7 @@
     "__comp": "__comp---theme-doc-tag-doc-list-pagedf-2-9f0",
     "__props": "__props---datatrust-7-6-tags-troubleshooting-8-a-3-ca8"
   },
-  "/datatrust/7.6-e1c": {
+  "/datatrust/7.6-2c4": {
     "__comp": "__comp---theme-doc-roota-94-67a"
   },
   "/datatrust/7.6/administration-910": {
@@ -318,7 +318,11 @@
   },
   "/datatrust/7.6/datatrust/7.6/replace-with-page-title-fda": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---datatrust-7-6-product-feature-slug-455-1ed"
+    "content": "content---datatrust-7-6-datatrust-7-6-replace-with-page-title-455-15f"
+  },
+  "/datatrust/7.6/datatrust/7.6/t-46f": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---datatrust-7-6-datatrust-7-6-t-8-d-0-86a"
   },
   "/datatrust/7.6/getting-started-c85": {
     "__comp": "__comp---theme-doc-item-178-a40",

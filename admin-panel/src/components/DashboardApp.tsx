@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import slugify from "slugify";
 
+import type { SidebarSection } from "@/types/sidebar";
+
 type Collection = {
   id: string;
   label: string;
@@ -57,6 +59,12 @@ const defaultFrontmatter: FrontmatterState = {
   tags: [],
 };
 
+const toDocId = (value: string) =>
+  value
+    .replace(/\\/g, "/")
+    .replace(/\.mdx?$/, "")
+    .replace(/^\/+/, "");
+
 const DashboardApp = () => {
   const [collections, setCollections] = useState<Collection[]>([]);
   const [selectedCollection, setSelectedCollection] = useState<string>();
@@ -83,9 +91,19 @@ const DashboardApp = () => {
   const [notification, setNotification] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [warnings, setWarnings] = useState<string[]>([]);
+  const [sidebarSections, setSidebarSections] = useState<SidebarSection[]>([]);
+  const [publishedDocs, setPublishedDocs] = useState<Record<string, string>>({});
+  const [selectedSectionId, setSelectedSectionId] = useState<string>("");
+  const [positionMode, setPositionMode] = useState<"end" | "top" | "before">("end");
+  const [beforeDocId, setBeforeDocId] = useState<string>("");
+  const [publishState, setPublishState] = useState<"idle" | "publishing" | "unpublishing">("idle");
   const currentCollection = useMemo(
     () => collections.find((collection) => collection.id === selectedCollection),
     [collections, selectedCollection],
+  );
+  const currentDocId = useMemo(
+    () => (selectedFile ? toDocId(selectedFile) : ""),
+    [selectedFile],
   );
 
   const buildSlugSegment = useCallback((value?: string) => {
@@ -163,6 +181,25 @@ const DashboardApp = () => {
     }
   }, [selectedCollection]);
 
+  const fetchSidebar = useCallback(async (collectionId: string) => {
+    if (!collectionId) return;
+    const params = new URLSearchParams({ collectionId });
+    try {
+      const res = await fetch(`/api/sidebars?${params.toString()}`);
+      if (res.ok) {
+        const data = await res.json();
+        setSidebarSections(data.sections ?? []);
+        setPublishedDocs(data.publishedDocs ?? {});
+      } else {
+        setSidebarSections([]);
+        setPublishedDocs({});
+      }
+    } catch {
+      setSidebarSections([]);
+      setPublishedDocs({});
+    }
+  }, []);
+
   useEffect(() => {
     fetchCollections();
     fetch("/api/templates")
@@ -196,12 +233,16 @@ const DashboardApp = () => {
   useEffect(() => {
     if (selectedCollection) {
       fetchTree(selectedCollection, "");
+      fetchSidebar(selectedCollection);
       setNewDoc((prev) => ({
         ...prev,
         directory: "",
       }));
+    } else {
+      setSidebarSections([]);
+      setPublishedDocs({});
     }
-  }, [selectedCollection, fetchTree]);
+  }, [selectedCollection, fetchTree, fetchSidebar]);
 
   useEffect(() => {
     setNewDoc((prev) => ({
@@ -209,6 +250,47 @@ const DashboardApp = () => {
       directory: currentDir,
     }));
   }, [currentDir]);
+
+  useEffect(() => {
+    if (!currentDocId) {
+      setSelectedSectionId("");
+      return;
+    }
+    const publishedSection = publishedDocs[currentDocId];
+    if (publishedSection) {
+      setSelectedSectionId(publishedSection);
+      if (positionMode === "before") {
+        setBeforeDocId("");
+        setPositionMode("end");
+      }
+      return;
+    }
+    if (!selectedSectionId && sidebarSections.length) {
+      setSelectedSectionId(sidebarSections[0].id);
+    }
+  }, [
+    currentDocId,
+    publishedDocs,
+    sidebarSections,
+    selectedSectionId,
+    positionMode,
+  ]);
+
+  useEffect(() => {
+    if (positionMode !== "before") {
+      if (beforeDocId) {
+        setBeforeDocId("");
+      }
+      return;
+    }
+    const sectionItems =
+      sidebarSections.find((section) => section.id === selectedSectionId)?.items ?? [];
+    if (sectionItems.length && !beforeDocId) {
+      setBeforeDocId(sectionItems[0]);
+    } else if (!sectionItems.length) {
+      setBeforeDocId("");
+    }
+  }, [beforeDocId, positionMode, selectedSectionId, sidebarSections]);
 
   const fetchDocument = async (collectionId: string, filePath: string) => {
     setLoadingState("loading");
@@ -336,6 +418,7 @@ const DashboardApp = () => {
       setNotification("Document created");
       fetchTree(selectedCollection, currentDir);
       fetchDocument(selectedCollection, fullPath);
+      fetchSidebar(selectedCollection);
       setNewDoc({
         filename: "",
         directory: currentDir,
@@ -441,6 +524,80 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
     setLoadingState("idle");
   };
 
+  const handlePublish = async () => {
+    if (!selectedCollection || !selectedFile || !currentDocId || !selectedSectionId) {
+      setError("Select a document and sidebar destination before publishing.");
+      return;
+    }
+    setPublishState("publishing");
+    setNotification("");
+    setError("");
+    const payload: Record<string, unknown> = {
+      collectionId: selectedCollection,
+      docId: currentDocId,
+      sectionId: selectedSectionId,
+      relativePath: selectedFile,
+    };
+    if (positionMode === "top") {
+      payload.position = "top";
+    } else if (positionMode === "before" && beforeDocId) {
+      payload.position = { type: "before", docId: beforeDocId };
+    } else {
+      payload.position = "end";
+    }
+    try {
+      const res = await fetch("/api/sidebars/publish", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        setPublishedDocs(data.publishedDocs ?? {});
+        setNotification(
+          `Published under ${
+            sidebarSections.find((section) => section.id === selectedSectionId)?.label ??
+            "selected section"
+          }.`,
+        );
+        fetchSidebar(selectedCollection);
+      } else {
+        setError(data.error ?? "Unable to publish document.");
+      }
+    } catch {
+      setError("Unable to publish document.");
+    }
+    setPublishState("idle");
+  };
+
+  const handleUnpublish = async () => {
+    if (!selectedCollection || !currentDocId) return;
+    setPublishState("unpublishing");
+    setNotification("");
+    setError("");
+    try {
+      const res = await fetch("/api/sidebars/publish", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          collectionId: selectedCollection,
+          docId: currentDocId,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        setPublishedDocs(data.publishedDocs ?? {});
+        setNotification("Document removed from sidebar.");
+        fetchSidebar(selectedCollection);
+      } else {
+        setError(data.error ?? "Unable to unpublish document.");
+      }
+    } catch {
+      setError("Unable to unpublish document.");
+    }
+    setPublishState("idle");
+  };
+
   const handleMarkdownUpload = async (file: File) => {
     setLoadingState("importing");
     setNotification("");
@@ -508,6 +665,11 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
     await fetch("/api/auth/logout", { method: "POST" });
     window.location.href = "/login";
   };
+
+  const publishedSectionId = currentDocId ? publishedDocs[currentDocId] : undefined;
+  const publishedSectionLabel = publishedSectionId
+    ? sidebarSections.find((section) => section.id === publishedSectionId)?.label
+    : undefined;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-slate-100">
@@ -590,8 +752,20 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
                   }`}
                 >
                   <span className="truncate">{node.name}</span>
-                  <span className="text-xs text-slate-400">
-                    {node.type === "directory" ? "DIR" : "MD"}
+                  <span
+                    className={`text-xs ${
+                      node.type === "directory"
+                        ? "text-slate-400"
+                        : publishedDocs[toDocId(node.path)]
+                        ? "text-emerald-600"
+                        : "text-slate-400"
+                    }`}
+                  >
+                    {node.type === "directory"
+                      ? "DIR"
+                      : publishedDocs[toDocId(node.path)]
+                      ? "LIVE"
+                      : "DRAFT"}
                   </span>
                 </button>
               ))}
@@ -604,15 +778,28 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
 
         <section className="glass-panel p-6">
           <div className="flex items-center justify-between">
-            <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
-                Editor
-              </p>
-              <h2 className="text-xl font-semibold text-slate-900">
-                {selectedFile || "Select a document"}
-              </h2>
-            </div>
-            <button
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-slate-400">
+              Editor
+            </p>
+            <h2 className="text-xl font-semibold text-slate-900">
+              {selectedFile || "Select a document"}
+            </h2>
+            {currentDocId && (
+              <span
+                className={`mt-1 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
+                  publishedSectionId
+                    ? "bg-emerald-50 text-emerald-700"
+                    : "bg-amber-50 text-amber-700"
+                }`}
+              >
+                {publishedSectionId
+                  ? `Published in ${publishedSectionLabel ?? publishedSectionId}`
+                  : "Draft"}
+              </span>
+            )}
+          </div>
+          <button
               onClick={handleSave}
               disabled={
                 !selectedFile ||
@@ -910,6 +1097,105 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
             <p className="muted mt-3 text-xs">
               Tip: Share the template with AI tools to draft content, then upload here to merge it into the Git workspace.
             </p>
+          </div>
+          <div className="mt-6 rounded-2xl border border-slate-200 bg-white/80 p-4">
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <h3 className="text-sm font-semibold text-slate-700">Sidebar placement</h3>
+                <p className="text-xs text-slate-500">
+                  Choose where this document appears in the Docs navigation.
+                </p>
+              </div>
+              {currentDocId && publishedSectionLabel && (
+                <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700">
+                  Live in {publishedSectionLabel}
+                </span>
+              )}
+            </div>
+            <div className="mt-4 space-y-3">
+              <div>
+                <label className="text-xs font-semibold uppercase text-slate-500">
+                  Section
+                </label>
+                <select
+                  className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                  value={selectedSectionId}
+                  onChange={(event) => setSelectedSectionId(event.target.value)}
+                >
+                  <option value="">Select a section</option>
+                  {sidebarSections.map((section) => (
+                    <option key={section.id} value={section.id}>
+                      {section.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="grid gap-3 md:grid-cols-2">
+                <div>
+                  <label className="text-xs font-semibold uppercase text-slate-500">
+                    Position
+                  </label>
+                  <select
+                    className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                    value={positionMode}
+                    onChange={(event) => setPositionMode(event.target.value as typeof positionMode)}
+                  >
+                    <option value="end">Bottom of section</option>
+                    <option value="top">Top of section</option>
+                    <option value="before">Before another doc</option>
+                  </select>
+                </div>
+                {positionMode === "before" && (
+                  <div>
+                    <label className="text-xs font-semibold uppercase text-slate-500">
+                      Before doc
+                    </label>
+                    <select
+                      className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={beforeDocId}
+                      onChange={(event) => setBeforeDocId(event.target.value)}
+                    >
+                      <option value="">Select reference doc</option>
+                      {(sidebarSections.find((section) => section.id === selectedSectionId)?.items ??
+                        []
+                      ).map((docId) => (
+                        <option key={docId} value={docId}>
+                          {docId}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                )}
+              </div>
+              <p className="text-xs text-slate-500">
+                Make sure you click “Save changes” above before publishing so the latest content is on disk.
+              </p>
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <button
+                  type="button"
+                  onClick={handlePublish}
+                  disabled={
+                    !currentDocId ||
+                    !selectedSectionId ||
+                    publishState !== "idle" ||
+                    !selectedCollection
+                  }
+                  className="flex-1 rounded-xl bg-indigo-600 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-200 disabled:opacity-60"
+                >
+                  {publishState === "publishing" ? "Publishing…" : publishedSectionId ? "Update placement" : "Publish"}
+                </button>
+                {publishedSectionId && (
+                  <button
+                    type="button"
+                    onClick={handleUnpublish}
+                    disabled={publishState !== "idle"}
+                    className="flex-1 rounded-xl border border-slate-300 py-2 text-sm font-semibold text-slate-600 disabled:opacity-60"
+                  >
+                    {publishState === "unpublishing" ? "Removing…" : "Unpublish"}
+                  </button>
+                )}
+              </div>
+            </div>
           </div>
         </section>
       </main>

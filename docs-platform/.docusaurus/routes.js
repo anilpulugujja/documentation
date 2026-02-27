@@ -227,7 +227,7 @@ export default [
   },
   {
     path: '/datatrust',
-    component: ComponentCreator('/datatrust', 'ef3'),
+    component: ComponentCreator('/datatrust', '669'),
     routes: [
       {
         path: '/datatrust/7.0',
@@ -330,7 +330,7 @@ export default [
       },
       {
         path: '/datatrust/7.6',
-        component: ComponentCreator('/datatrust/7.6', '4ac'),
+        component: ComponentCreator('/datatrust/7.6', 'd80'),
         routes: [
           {
             path: '/datatrust/7.6/tags',
@@ -389,7 +389,7 @@ export default [
           },
           {
             path: '/datatrust/7.6',
-            component: ComponentCreator('/datatrust/7.6', 'e1c'),
+            component: ComponentCreator('/datatrust/7.6', '2c4'),
             routes: [
               {
                 path: '/datatrust/7.6/administration',
@@ -407,6 +407,12 @@ export default [
                 path: '/datatrust/7.6/datatrust/7.6/replace-with-page-title',
                 component: ComponentCreator('/datatrust/7.6/datatrust/7.6/replace-with-page-title', 'fda'),
                 exact: true
+              },
+              {
+                path: '/datatrust/7.6/datatrust/7.6/t',
+                component: ComponentCreator('/datatrust/7.6/datatrust/7.6/t', '46f'),
+                exact: true,
+                sidebar: "datatrustSidebar"
               },
               {
                 path: '/datatrust/7.6/getting-started',

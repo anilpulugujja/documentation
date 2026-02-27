@@ -1,0 +1,55 @@
+{
+  "sidebarId": "datatrustSidebar",
+  "sections": [
+    {
+      "id": "getting-started",
+      "label": "Getting Started",
+      "items": [
+        "getting-started",
+        "test"
+      ]
+    },
+    {
+      "id": "installation",
+      "label": "Installation",
+      "items": [
+        "installation"
+      ]
+    },
+    {
+      "id": "metadata",
+      "label": "Metadata",
+      "items": [
+        "metadata"
+      ]
+    },
+    {
+      "id": "data-quality",
+      "label": "Data Quality",
+      "items": [
+        "data-quality"
+      ]
+    },
+    {
+      "id": "observability",
+      "label": "Observability",
+      "items": [
+        "observability"
+      ]
+    },
+    {
+      "id": "administration",
+      "label": "Administration",
+      "items": [
+        "administration"
+      ]
+    },
+    {
+      "id": "troubleshooting",
+      "label": "Troubleshooting",
+      "items": [
+        "troubleshooting"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "sidebarId": "apiSidebar",
+  "sections": [
+    {
+      "id": "authentication",
+      "label": "Authentication",
+      "items": ["authentication"]
+    },
+    {
+      "id": "rest-endpoints",
+      "label": "REST Endpoints",
+      "items": ["rest-endpoints"]
+    },
+    {
+      "id": "webhooks",
+      "label": "Webhooks",
+      "items": ["webhooks"]
+    },
+    {
+      "id": "sdk-examples",
+      "label": "SDK Examples",
+      "items": ["sdk-examples"]
+    },
+    {
+      "id": "error-codes",
+      "label": "Error Codes",
+      "items": ["error-codes"]
+    }
+  ]
+}

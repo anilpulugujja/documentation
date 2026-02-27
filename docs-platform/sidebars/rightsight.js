@@ -1,10 +1,5 @@
+const sidebar = require('./rightsight.json');
+
 module.exports = {
-  rightsightSidebar: [
-    'overview',
-    'monitoring',
-    'alerts',
-    'ai-enrichment',
-    'dashboards',
-    'configuration',
-  ],
+  [sidebar.sidebarId]: sidebar.sections.flatMap((section) => section.items),
 };

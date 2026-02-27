@@ -45,6 +45,11 @@
               "path": "/datatrust/7.6/datatrust/7.6/replace-with-page-title"
             },
             {
+              "id": "test",
+              "path": "/datatrust/7.6/datatrust/7.6/t",
+              "sidebar": "datatrustSidebar"
+            },
+            {
               "id": "troubleshooting",
               "path": "/datatrust/7.6/troubleshooting",
               "sidebar": "datatrustSidebar"

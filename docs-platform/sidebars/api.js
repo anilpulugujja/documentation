@@ -1,9 +1,5 @@
+const sidebar = require('./api.json');
+
 module.exports = {
-  apiSidebar: [
-    'authentication',
-    'rest-endpoints',
-    'webhooks',
-    'sdk-examples',
-    'error-codes',
-  ],
+  [sidebar.sidebarId]: sidebar.sections.flatMap((section) => section.items),
 };

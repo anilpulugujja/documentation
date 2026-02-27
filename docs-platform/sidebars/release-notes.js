@@ -1,3 +1,5 @@
+const sidebar = require('./release-notes.json');
+
 module.exports = {
-  releaseNotesSidebar: ['7-6', '7-5', '7-0'],
+  [sidebar.sidebarId]: sidebar.sections.flatMap((section) => section.items),
 };

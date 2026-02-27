@@ -12,6 +12,7 @@ export type Collection = {
   relativePath: string;
   absolutePath: string;
   slugPrefix?: string;
+  sidebarFile?: string;
 };
 
 const collectionCache: Record<string, Collection> = {};
@@ -26,6 +27,7 @@ export const getCollections = (): Collection[] => {
     collectionCache[item.id] = {
       ...item,
       absolutePath,
+      sidebarFile: item.sidebarFile,
     };
   }
 

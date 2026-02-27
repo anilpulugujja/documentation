@@ -1,0 +1,35 @@
+{
+  "sidebarId": "rightsightSidebar",
+  "sections": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "items": ["overview"]
+    },
+    {
+      "id": "monitoring",
+      "label": "Monitoring",
+      "items": ["monitoring"]
+    },
+    {
+      "id": "alerts",
+      "label": "Alerts",
+      "items": ["alerts"]
+    },
+    {
+      "id": "ai-enrichment",
+      "label": "AI Enrichment",
+      "items": ["ai-enrichment"]
+    },
+    {
+      "id": "dashboards",
+      "label": "Dashboards",
+      "items": ["dashboards"]
+    },
+    {
+      "id": "configuration",
+      "label": "Configuration",
+      "items": ["configuration"]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "sidebarId": "datamarketSidebar",
+  "sections": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "items": ["overview"]
+    },
+    {
+      "id": "marketplace-setup",
+      "label": "Marketplace Setup",
+      "items": ["marketplace-setup"]
+    },
+    {
+      "id": "data-publishing",
+      "label": "Data Publishing",
+      "items": ["data-publishing"]
+    },
+    {
+      "id": "data-consumption",
+      "label": "Data Consumption",
+      "items": ["data-consumption"]
+    },
+    {
+      "id": "governance",
+      "label": "Governance",
+      "items": ["governance"]
+    },
+    {
+      "id": "access-control",
+      "label": "Access Control",
+      "items": ["access-control"]
+    },
+    {
+      "id": "integrations",
+      "label": "Integrations",
+      "items": ["integrations"]
+    }
+  ]
+}

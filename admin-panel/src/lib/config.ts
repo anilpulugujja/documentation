@@ -8,6 +8,7 @@ export const PATHS = {
   versionedRoot: path.join(docsPlatformRoot, 'datatrust_versioned_docs'),
   staticRoot: path.join(docsPlatformRoot, 'static', 'img'),
   templateRoot: path.join(docsPlatformRoot, 'docs', 'templates'),
+  sidebarRoot: path.join(docsPlatformRoot, 'sidebars'),
 };
 
 export const SESSION_COOKIE = 'grd_admin_session';
@@ -18,8 +19,9 @@ export const defaultCollections = [
     label: 'DataTrust (7.6 current)',
     relativePath: 'docs/datatrust',
     version: '7.6',
-    product: 'DataTrust',
+   product: 'DataTrust',
     slugPrefix: '/datatrust/7.6',
+    sidebarFile: 'sidebars/datatrust.json',
   },
   {
     id: 'rightsight-current',
@@ -28,6 +30,7 @@ export const defaultCollections = [
     version: 'Latest',
     product: 'RightSight',
     slugPrefix: '/rightsight',
+    sidebarFile: 'sidebars/rightsight.json',
   },
   {
     id: 'datamarket-current',
@@ -36,6 +39,7 @@ export const defaultCollections = [
     version: 'Latest',
     product: 'DataMarket',
     slugPrefix: '/datamarket',
+    sidebarFile: 'sidebars/datamarket.json',
   },
   {
     id: 'api-current',
@@ -44,6 +48,7 @@ export const defaultCollections = [
     version: '7.6',
     product: 'API',
     slugPrefix: '/api',
+    sidebarFile: 'sidebars/api.json',
   },
   {
     id: 'release-notes',
@@ -52,6 +57,7 @@ export const defaultCollections = [
     version: '7.6',
     product: 'Release Notes',
     slugPrefix: '/release-notes',
+    sidebarFile: 'sidebars/release-notes.json',
   },
   {
     id: 'datatrust-7-0',
@@ -60,6 +66,7 @@ export const defaultCollections = [
     version: '7.0',
     product: 'DataTrust',
     slugPrefix: '/datatrust/7.0',
+    sidebarFile: 'sidebars/datatrust.json',
   },
   {
     id: 'templates',
@@ -68,6 +75,7 @@ export const defaultCollections = [
     version: 'N/A',
     product: 'Templates',
     slugPrefix: '/templates',
+    sidebarFile: undefined,
   },
 ];
 

@@ -1,11 +1,5 @@
+const sidebar = require('./datatrust.json');
+
 module.exports = {
-  datatrustSidebar: [
-    'getting-started',
-    'installation',
-    'metadata',
-    'data-quality',
-    'observability',
-    'administration',
-    'troubleshooting',
-  ],
+  [sidebar.sidebarId]: sidebar.sections.flatMap((section) => section.items),
 };
