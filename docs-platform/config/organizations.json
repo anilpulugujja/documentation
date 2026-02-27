@@ -1,0 +1,21 @@
+[
+  {
+    "id": "getrightdata",
+    "slug": "getrightdata",
+    "displayName": "GetRightData",
+    "defaultProduct": "datatrust",
+    "theme": {
+      "logoLight": "img/logos/grd-light.svg",
+      "logoDark": "img/logos/grd-dark.svg",
+      "primary": "#4338CA",
+      "secondary": "#6366F1"
+    },
+    "products": [
+      "datatrust",
+      "rightsight",
+      "datamarket",
+      "api",
+      "release-notes"
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_platform=self.webpackChunkdocs_platform||[]).push([[2901],{6228(e){e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"getrightdata-release-notes"}')}}]);

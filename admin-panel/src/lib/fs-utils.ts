@@ -9,6 +9,10 @@ export type Collection = {
   label: string;
   version: string;
   product: string;
+  orgId?: string;
+  orgSlug?: string;
+  productId?: string;
+  productSlug?: string;
   relativePath: string;
   absolutePath: string;
   slugPrefix?: string;

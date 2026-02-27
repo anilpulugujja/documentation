@@ -51,7 +51,85 @@ export default {
       ],
       "defaultRegion": "us",
       "defaultLanguage": "en"
-    }
+    },
+    "organizations": [
+      {
+        "id": "getrightdata",
+        "slug": "getrightdata",
+        "displayName": "GetRightData",
+        "defaultProduct": "datatrust",
+        "theme": {
+          "logoLight": "img/logos/grd-light.svg",
+          "logoDark": "img/logos/grd-dark.svg",
+          "primary": "#4338CA",
+          "secondary": "#6366F1"
+        },
+        "products": [
+          "datatrust",
+          "rightsight",
+          "datamarket",
+          "api",
+          "release-notes"
+        ]
+      }
+    ],
+    "products": [
+      {
+        "id": "datatrust",
+        "displayName": "DataTrust",
+        "slug": "datatrust",
+        "entryDoc": "getting-started",
+        "versioning": {
+          "type": "versioned",
+          "current": "7.6",
+          "archived": [
+            "7.0"
+          ],
+          "label": "7.6"
+        }
+      },
+      {
+        "id": "rightsight",
+        "displayName": "RightSight",
+        "slug": "rightsight",
+        "entryDoc": "overview",
+        "versioning": {
+          "type": "latest",
+          "label": "Latest"
+        }
+      },
+      {
+        "id": "datamarket",
+        "displayName": "DataMarket",
+        "slug": "datamarket",
+        "entryDoc": "overview",
+        "versioning": {
+          "type": "latest",
+          "label": "Latest"
+        }
+      },
+      {
+        "id": "api",
+        "displayName": "API Reference",
+        "slug": "api",
+        "entryDoc": "authentication",
+        "versioning": {
+          "type": "latest",
+          "label": "Latest"
+        }
+      },
+      {
+        "id": "release-notes",
+        "displayName": "Release Notes",
+        "slug": "release-notes",
+        "entryDoc": "7-6",
+        "versioning": {
+          "type": "latest",
+          "label": "Latest"
+        }
+      }
+    ],
+    "defaultOrgId": "getrightdata"
   },
   "themes": [],
   "presets": [
@@ -75,11 +153,11 @@ export default {
     [
       "@docusaurus/plugin-content-docs",
       {
-        "id": "datatrust",
-        "path": "docs/datatrust",
-        "routeBasePath": "datatrust",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/datatrust.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "id": "getrightdata-datatrust",
+        "path": "organizations/getrightdata/products/datatrust/docs",
+        "routeBasePath": "getrightdata/datatrust",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/datatrust/sidebar.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/",
         "showLastUpdateAuthor": true,
         "showLastUpdateTime": true,
         "includeCurrentVersion": true,
@@ -100,49 +178,81 @@ export default {
     [
       "@docusaurus/plugin-content-docs",
       {
-        "id": "rightsight",
-        "path": "docs/rightsight",
-        "routeBasePath": "rightsight",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/rightsight.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "id": "getrightdata-rightsight",
+        "path": "organizations/getrightdata/products/rightsight/docs",
+        "routeBasePath": "getrightdata/rightsight",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/rightsight/sidebar.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/",
         "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true
+        "showLastUpdateTime": true,
+        "includeCurrentVersion": true,
+        "lastVersion": "current",
+        "versions": {
+          "current": {
+            "label": "Latest",
+            "path": "latest"
+          }
+        }
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
-        "id": "datamarket",
-        "path": "docs/datamarket",
-        "routeBasePath": "datamarket",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/datamarket.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "id": "getrightdata-datamarket",
+        "path": "organizations/getrightdata/products/datamarket/docs",
+        "routeBasePath": "getrightdata/datamarket",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/datamarket/sidebar.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datamarket/docs/",
         "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true
+        "showLastUpdateTime": true,
+        "includeCurrentVersion": true,
+        "lastVersion": "current",
+        "versions": {
+          "current": {
+            "label": "Latest",
+            "path": "latest"
+          }
+        }
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
-        "id": "api",
-        "path": "docs/api",
-        "routeBasePath": "api",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/api.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "id": "getrightdata-api",
+        "path": "organizations/getrightdata/products/api/docs",
+        "routeBasePath": "getrightdata/api",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/api/sidebar.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/api/docs/",
         "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true
+        "showLastUpdateTime": true,
+        "includeCurrentVersion": true,
+        "lastVersion": "current",
+        "versions": {
+          "current": {
+            "label": "Latest",
+            "path": "latest"
+          }
+        }
       }
     ],
     [
       "@docusaurus/plugin-content-docs",
       {
-        "id": "release-notes",
-        "path": "docs/release-notes",
-        "routeBasePath": "release-notes",
-        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/sidebars/release-notes.js",
-        "editUrl": "https://github.com/GetRightData/docs/edit/main/",
+        "id": "getrightdata-release-notes",
+        "path": "organizations/getrightdata/products/release-notes/docs",
+        "routeBasePath": "getrightdata/release-notes",
+        "sidebarPath": "/Users/anilpulugujja/Documents/Projects/Active/DocumentationProject/documentation/docs-platform/organizations/getrightdata/products/release-notes/sidebar.js",
+        "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/release-notes/docs/",
         "showLastUpdateAuthor": true,
-        "showLastUpdateTime": true
+        "showLastUpdateTime": true,
+        "includeCurrentVersion": true,
+        "lastVersion": "current",
+        "versions": {
+          "current": {
+            "label": "Latest",
+            "path": "latest"
+          }
+        }
       }
     ],
     [
@@ -176,47 +286,47 @@ export default {
       "items": [
         {
           "type": "docSidebar",
-          "docsPluginId": "datatrust",
+          "docsPluginId": "getrightdata-datatrust",
           "sidebarId": "datatrustSidebar",
           "label": "DataTrust",
-          "to": "/datatrust/7.6/getting-started",
+          "to": "/getrightdata/datatrust/7.6/getting-started",
           "position": "left"
         },
         {
           "type": "docSidebar",
-          "docsPluginId": "rightsight",
+          "docsPluginId": "getrightdata-rightsight",
           "sidebarId": "rightsightSidebar",
           "label": "RightSight",
-          "to": "/rightsight/overview",
+          "to": "/getrightdata/rightsight/latest/overview",
           "position": "left"
         },
         {
           "type": "docSidebar",
-          "docsPluginId": "datamarket",
+          "docsPluginId": "getrightdata-datamarket",
           "sidebarId": "datamarketSidebar",
           "label": "DataMarket",
-          "to": "/datamarket/overview",
+          "to": "/getrightdata/datamarket/latest/overview",
           "position": "left"
         },
         {
           "type": "docSidebar",
-          "docsPluginId": "api",
+          "docsPluginId": "getrightdata-api",
           "sidebarId": "apiSidebar",
           "label": "API",
-          "to": "/api/authentication",
+          "to": "/getrightdata/api/latest/authentication",
           "position": "left"
         },
         {
           "type": "docSidebar",
-          "docsPluginId": "release-notes",
+          "docsPluginId": "getrightdata-release-notes",
           "sidebarId": "releaseNotesSidebar",
           "label": "Release Notes",
-          "to": "/release-notes/7-6",
+          "to": "/getrightdata/release-notes/latest/7-6",
           "position": "left"
         },
         {
           "type": "docsVersionDropdown",
-          "docsPluginId": "datatrust",
+          "docsPluginId": "getrightdata-datatrust",
           "position": "right",
           "dropdownItemsAfter": [
             {
@@ -241,15 +351,15 @@ export default {
           "items": [
             {
               "label": "DataTrust",
-              "to": "/datatrust/7.6/getting-started"
+              "to": "/getrightdata/datatrust/7.6/getting-started"
             },
             {
               "label": "RightSight",
-              "to": "/rightsight/overview"
+              "to": "/getrightdata/rightsight/latest/overview"
             },
             {
               "label": "DataMarket",
-              "to": "/datamarket/overview"
+              "to": "/getrightdata/datamarket/latest/overview"
             }
           ]
         },
@@ -258,11 +368,11 @@ export default {
           "items": [
             {
               "label": "API Reference",
-              "to": "/api/authentication"
+              "to": "/getrightdata/api/latest/authentication"
             },
             {
               "label": "Release Notes",
-              "to": "/release-notes/7-6"
+              "to": "/getrightdata/release-notes/latest/7-6"
             },
             {
               "label": "Status",

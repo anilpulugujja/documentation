@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocs_platform=self.webpackChunkdocs_platform||[]).push([[7152],{3560(s){s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"datatrust"}')}}]);

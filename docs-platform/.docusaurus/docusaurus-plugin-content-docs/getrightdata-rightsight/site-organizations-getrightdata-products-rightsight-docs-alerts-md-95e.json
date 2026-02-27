@@ -1,0 +1,45 @@
+{
+  "id": "alerts",
+  "title": "Alerting & Routing",
+  "description": "Send actionable notifications when monitors detect anomalies.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/alerts.md",
+  "sourceDirName": ".",
+  "slug": "/alerts",
+  "permalink": "/getrightdata/rightsight/latest/alerts",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/alerts.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "alerts",
+      "permalink": "/getrightdata/rightsight/latest/tags/alerts"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Alerting & Routing",
+    "description": "Send actionable notifications when monitors detect anomalies.",
+    "sidebar_label": "Alerts",
+    "tags": [
+      "rightsight",
+      "alerts"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Monitoring",
+    "permalink": "/getrightdata/rightsight/latest/monitoring"
+  },
+  "next": {
+    "title": "AI Enrichment",
+    "permalink": "/getrightdata/rightsight/latest/ai-enrichment"
+  }
+}

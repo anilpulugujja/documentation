@@ -1,0 +1,35 @@
+{
+  "id": "7-6",
+  "title": "Release Notes 7.6",
+  "description": "Highlights for the 7.6 platform release.",
+  "source": "@site/organizations/getrightdata/products/release-notes/docs/7-6.md",
+  "sourceDirName": ".",
+  "slug": "/7-6",
+  "permalink": "/getrightdata/release-notes/latest/7-6",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/release-notes/docs/organizations/getrightdata/products/release-notes/docs/7-6.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "release-notes",
+      "permalink": "/getrightdata/release-notes/latest/tags/release-notes"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Release Notes 7.6",
+    "description": "Highlights for the 7.6 platform release.",
+    "sidebar_label": "7.6",
+    "tags": [
+      "release-notes"
+    ]
+  },
+  "sidebar": "releaseNotesSidebar",
+  "next": {
+    "title": "7.5",
+    "permalink": "/getrightdata/release-notes/latest/7-5"
+  }
+}

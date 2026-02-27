@@ -2,6 +2,90 @@
 const { themes } = require('prism-react-renderer');
 const lightCodeTheme = themes.github;
 const darkCodeTheme = themes.dracula;
+const organizations = require('./config/organizations.json');
+const products = require('./config/products.json');
+
+const productCatalog = new Map(products.map((product) => [product.id, product]));
+
+const getProduct = (productId) => {
+  const product = productCatalog.get(productId);
+  if (!product) {
+    throw new Error(`Unknown product "${productId}" referenced in organizations config.`);
+  }
+  return product;
+};
+
+const createDocsPlugins = () => {
+  const plugins = [];
+  organizations.forEach((org) => {
+    org.products.forEach((productId) => {
+      const product = getProduct(productId);
+      const productRoot = `organizations/${org.id}/products/${product.id}`;
+      const pluginId = `${org.id}-${product.id}`;
+      const baseRoute = `${org.slug}/${product.slug}`;
+      const pluginOptions = {
+        id: pluginId,
+        path: `${productRoot}/docs`,
+        routeBasePath: baseRoute,
+        sidebarPath: require.resolve(`./${productRoot}/sidebar.js`),
+        editUrl: `https://github.com/GetRightData/docs/edit/main/${productRoot}/docs/`,
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+      };
+
+      if (product.versioning.type === 'versioned') {
+        const { current, archived = [] } = product.versioning;
+        pluginOptions.includeCurrentVersion = true;
+        pluginOptions.lastVersion = 'current';
+        pluginOptions.versions = {
+          current: {
+            label: current,
+            path: current,
+          },
+        };
+        archived.forEach((versionLabel) => {
+          pluginOptions.versions[versionLabel] = {
+            label: `${versionLabel} (Archived)`,
+            path: versionLabel,
+            banner: 'unmaintained',
+          };
+        });
+      } else {
+        const label = product.versioning.label || 'Latest';
+        pluginOptions.includeCurrentVersion = true;
+        pluginOptions.lastVersion = 'current';
+        pluginOptions.versions = {
+          current: {
+            label,
+            path: 'latest',
+          },
+        };
+      }
+
+      plugins.push(['@docusaurus/plugin-content-docs', pluginOptions]);
+    });
+  });
+  return plugins;
+};
+
+const docsPlugins = createDocsPlugins();
+const defaultOrg = organizations[0];
+if (!defaultOrg) {
+  throw new Error('At least one organization must be defined in config/organizations.json');
+}
+
+const buildDocLink = (org, product, docSlug) => {
+  if (product.versioning.type === 'versioned') {
+    return `/${org.slug}/${product.slug}/${product.versioning.current}/${docSlug}`;
+  }
+  return `/${org.slug}/${product.slug}/latest/${docSlug}`;
+};
+
+const getDefaultOrgProductLink = (productId) => {
+  const product = getProduct(productId);
+  const docSlug = product.entryDoc || 'overview';
+  return buildDocLink(defaultOrg, product, docSlug);
+};
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -44,6 +128,9 @@ const config = {
       defaultRegion: 'us',
       defaultLanguage: 'en',
     },
+    organizations,
+    products,
+    defaultOrgId: defaultOrg.id,
   },
   themes: [],
   presets: [
@@ -66,96 +153,34 @@ const config = {
     ],
   ],
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'datatrust',
-        path: 'docs/datatrust',
-        routeBasePath: 'datatrust',
-        sidebarPath: require.resolve('./sidebars/datatrust.js'),
-        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        includeCurrentVersion: true,
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: '7.6',
-            path: '7.6',
-          },
-          '7.0': {
-            label: '7.0 (Archived)',
-            path: '7.0',
-            banner: 'unmaintained',
-          },
-        },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'rightsight',
-        path: 'docs/rightsight',
-        routeBasePath: 'rightsight',
-        sidebarPath: require.resolve('./sidebars/rightsight.js'),
-        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'datamarket',
-        path: 'docs/datamarket',
-        routeBasePath: 'datamarket',
-        sidebarPath: require.resolve('./sidebars/datamarket.js'),
-        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'api',
-        path: 'docs/api',
-        routeBasePath: 'api',
-        sidebarPath: require.resolve('./sidebars/api.js'),
-        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'release-notes',
-        path: 'docs/release-notes',
-        routeBasePath: 'release-notes',
-        sidebarPath: require.resolve('./sidebars/release-notes.js'),
-        editUrl: 'https://github.com/GetRightData/docs/edit/main/',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-      },
-    ],
+    ...docsPlugins,
     [
       '@docusaurus/plugin-client-redirects',
       {
         createRedirects(existingPath) {
-          const mappings = [
-            { legacyPrefixes: ['/rightsight/7.6', '/rightsight/7.0'], targetPrefix: '/rightsight' },
-            { legacyPrefixes: ['/datamarket/7.6', '/datamarket/7.0'], targetPrefix: '/datamarket' },
-          ];
           const redirects = [];
-          mappings.forEach(({ legacyPrefixes, targetPrefix }) => {
-            if (existingPath.startsWith(targetPrefix)) {
-              const rest = existingPath.slice(targetPrefix.length);
-              legacyPrefixes.forEach((legacyPrefix) => {
-                redirects.push(`${legacyPrefix}${rest || ''}`);
+          const defaultOrgSlug = defaultOrg.slug;
+          organizations
+            .filter((org) => org.slug === defaultOrgSlug)
+            .forEach((org) => {
+              org.products.forEach((productId) => {
+                const product = getProduct(productId);
+                const productSlug = product.slug;
+                const orgPrefix = `/${org.slug}/${productSlug}`;
+                if (!existingPath.startsWith(orgPrefix)) {
+                  return;
+                }
+                const rest = existingPath.slice(orgPrefix.length);
+                if (product.versioning.type === 'versioned') {
+                  redirects.push(`/${productSlug}${rest}`);
+                } else {
+                  const restWithoutLatest = rest.startsWith('/latest')
+                    ? rest.replace('/latest', '')
+                    : rest;
+                  redirects.push(`/${productSlug}${restWithoutLatest}`);
+                }
               });
-            }
-          });
+            });
           return redirects;
         },
       },
@@ -180,53 +205,53 @@ const config = {
           srcDark: 'img/logo-dark.svg',
         },
         hideOnScroll: false,
-        items: [
-          {
-            type: 'docSidebar',
-            docsPluginId: 'datatrust',
-            sidebarId: 'datatrustSidebar',
-            label: 'DataTrust',
-            to: '/datatrust/7.6/getting-started',
-            position: 'left',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'rightsight',
-            sidebarId: 'rightsightSidebar',
-            label: 'RightSight',
-            to: '/rightsight/overview',
-            position: 'left',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'datamarket',
-            sidebarId: 'datamarketSidebar',
-            label: 'DataMarket',
-            to: '/datamarket/overview',
-            position: 'left',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'api',
-            sidebarId: 'apiSidebar',
-            label: 'API',
-            to: '/api/authentication',
-            position: 'left',
-          },
-          {
-            type: 'docSidebar',
-            docsPluginId: 'release-notes',
-            sidebarId: 'releaseNotesSidebar',
-            label: 'Release Notes',
-            to: '/release-notes/7-6',
-            position: 'left',
-          },
-          {
-            type: 'docsVersionDropdown',
-            docsPluginId: 'datatrust',
-            position: 'right',
-            dropdownItemsAfter: [
-              {
+      items: [
+        {
+          type: 'docSidebar',
+          docsPluginId: 'getrightdata-datatrust',
+          sidebarId: 'datatrustSidebar',
+          label: 'DataTrust',
+          to: getDefaultOrgProductLink('datatrust'),
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'getrightdata-rightsight',
+          sidebarId: 'rightsightSidebar',
+          label: 'RightSight',
+          to: getDefaultOrgProductLink('rightsight'),
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'getrightdata-datamarket',
+          sidebarId: 'datamarketSidebar',
+          label: 'DataMarket',
+          to: getDefaultOrgProductLink('datamarket'),
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'getrightdata-api',
+          sidebarId: 'apiSidebar',
+          label: 'API',
+          to: getDefaultOrgProductLink('api'),
+          position: 'left',
+        },
+        {
+          type: 'docSidebar',
+          docsPluginId: 'getrightdata-release-notes',
+          sidebarId: 'releaseNotesSidebar',
+          label: 'Release Notes',
+          to: getDefaultOrgProductLink('release-notes'),
+          position: 'left',
+        },
+        {
+          type: 'docsVersionDropdown',
+          docsPluginId: 'getrightdata-datatrust',
+          position: 'right',
+          dropdownItemsAfter: [
+            {
                 to: 'https://getrightdata.com',
                 label: 'getrightdata.com',
               },
@@ -245,16 +270,16 @@ const config = {
           {
             title: 'Products',
             items: [
-              { label: 'DataTrust', to: '/datatrust/7.6/getting-started' },
-              { label: 'RightSight', to: '/rightsight/overview' },
-              { label: 'DataMarket', to: '/datamarket/overview' },
+              { label: 'DataTrust', to: getDefaultOrgProductLink('datatrust') },
+              { label: 'RightSight', to: getDefaultOrgProductLink('rightsight') },
+              { label: 'DataMarket', to: getDefaultOrgProductLink('datamarket') },
             ],
           },
           {
             title: 'Resources',
             items: [
-              { label: 'API Reference', to: '/api/authentication' },
-              { label: 'Release Notes', to: '/release-notes/7-6' },
+              { label: 'API Reference', to: getDefaultOrgProductLink('api') },
+              { label: 'Release Notes', to: getDefaultOrgProductLink('release-notes') },
               { label: 'Status', href: 'https://status.getrightdata.com' },
             ],
           },

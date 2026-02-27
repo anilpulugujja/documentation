@@ -1,0 +1,45 @@
+{
+  "id": "data-consumption",
+  "title": "Consumer Experience",
+  "description": "Guide buyers through discovery, subscription, and delivery.",
+  "source": "@site/organizations/getrightdata/products/datamarket/docs/data-consumption.md",
+  "sourceDirName": ".",
+  "slug": "/data-consumption",
+  "permalink": "/getrightdata/datamarket/latest/data-consumption",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datamarket/docs/organizations/getrightdata/products/datamarket/docs/data-consumption.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/getrightdata/datamarket/latest/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "consumption",
+      "permalink": "/getrightdata/datamarket/latest/tags/consumption"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Consumer Experience",
+    "description": "Guide buyers through discovery, subscription, and delivery.",
+    "sidebar_label": "Data Consumption",
+    "tags": [
+      "datamarket",
+      "consumption"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Data Publishing",
+    "permalink": "/getrightdata/datamarket/latest/data-publishing"
+  },
+  "next": {
+    "title": "Governance",
+    "permalink": "/getrightdata/datamarket/latest/governance"
+  }
+}

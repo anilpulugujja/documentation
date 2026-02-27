@@ -1,0 +1,45 @@
+{
+  "id": "observability",
+  "title": "Observability",
+  "description": "Track scan health, connector uptime, and lineage events.",
+  "source": "@site/getrightdata-datatrust_versioned_docs/version-7.0/observability.md",
+  "sourceDirName": ".",
+  "slug": "/observability",
+  "permalink": "/getrightdata/datatrust/7.0/observability",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/getrightdata-datatrust_versioned_docs/version-7.0/observability.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/getrightdata/datatrust/7.0/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "observability",
+      "permalink": "/getrightdata/datatrust/7.0/tags/observability"
+    }
+  ],
+  "version": "7.0",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Observability",
+    "description": "Track scan health, connector uptime, and lineage events.",
+    "sidebar_label": "Observability",
+    "tags": [
+      "datatrust",
+      "observability"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Data Quality",
+    "permalink": "/getrightdata/datatrust/7.0/data-quality"
+  },
+  "next": {
+    "title": "Administration",
+    "permalink": "/getrightdata/datatrust/7.0/administration"
+  }
+}

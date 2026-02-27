@@ -1,0 +1,41 @@
+{
+  "id": "overview",
+  "title": "RightSight Overview",
+  "description": "Unified observability for streaming data products and AI signals.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/overview.md",
+  "sourceDirName": ".",
+  "slug": "/overview",
+  "permalink": "/getrightdata/rightsight/latest/overview",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/overview.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "overview",
+      "permalink": "/getrightdata/rightsight/latest/tags/overview"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "RightSight Overview",
+    "description": "Unified observability for streaming data products and AI signals.",
+    "sidebar_label": "Overview",
+    "tags": [
+      "rightsight",
+      "overview"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "next": {
+    "title": "Monitoring",
+    "permalink": "/getrightdata/rightsight/latest/monitoring"
+  }
+}

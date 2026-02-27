@@ -1,57 +1,56 @@
 {
   "docusaurus-plugin-content-docs": {
-    "datatrust": {
-      "path": "/datatrust",
+    "getrightdata-datatrust": {
+      "path": "/getrightdata/datatrust",
       "versions": [
         {
           "name": "current",
           "label": "7.6",
           "isLast": true,
-          "path": "/datatrust/7.6",
+          "path": "/getrightdata/datatrust/7.6",
           "mainDocId": "getting-started",
           "docs": [
             {
               "id": "administration",
-              "path": "/datatrust/7.6/administration",
+              "path": "/getrightdata/datatrust/7.6/administration",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "data-quality",
-              "path": "/datatrust/7.6/data-quality",
+              "path": "/getrightdata/datatrust/7.6/data-quality",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "getting-started",
-              "path": "/datatrust/7.6/getting-started",
+              "path": "/getrightdata/datatrust/7.6/getting-started",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "installation",
-              "path": "/datatrust/7.6/installation",
+              "path": "/getrightdata/datatrust/7.6/installation",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "metadata",
-              "path": "/datatrust/7.6/metadata",
+              "path": "/getrightdata/datatrust/7.6/metadata",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "observability",
-              "path": "/datatrust/7.6/observability",
+              "path": "/getrightdata/datatrust/7.6/observability",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "replace-with-page-title",
-              "path": "/datatrust/7.6/datatrust/7.6/replace-with-page-title"
+              "path": "/getrightdata/datatrust/7.6/getrightdata/datatrust/7.6/replace-with-page-title"
             },
             {
               "id": "test",
-              "path": "/datatrust/7.6/datatrust/7.6/t",
-              "sidebar": "datatrustSidebar"
+              "path": "/getrightdata/datatrust/7.6/getrightdata/datatrust/7.6/t"
             },
             {
               "id": "troubleshooting",
-              "path": "/datatrust/7.6/troubleshooting",
+              "path": "/getrightdata/datatrust/7.6/troubleshooting",
               "sidebar": "datatrustSidebar"
             }
           ],
@@ -59,7 +58,7 @@
           "sidebars": {
             "datatrustSidebar": {
               "link": {
-                "path": "/datatrust/7.6/getting-started",
+                "path": "/getrightdata/datatrust/7.6/getting-started",
                 "label": "getting-started"
               }
             }
@@ -69,42 +68,42 @@
           "name": "7.0",
           "label": "7.0 (Archived)",
           "isLast": false,
-          "path": "/datatrust/7.0",
+          "path": "/getrightdata/datatrust/7.0",
           "mainDocId": "getting-started",
           "docs": [
             {
               "id": "administration",
-              "path": "/datatrust/7.0/administration",
+              "path": "/getrightdata/datatrust/7.0/administration",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "data-quality",
-              "path": "/datatrust/7.0/data-quality",
+              "path": "/getrightdata/datatrust/7.0/data-quality",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "getting-started",
-              "path": "/datatrust/7.0/getting-started",
+              "path": "/getrightdata/datatrust/7.0/getting-started",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "installation",
-              "path": "/datatrust/7.0/installation",
+              "path": "/getrightdata/datatrust/7.0/installation",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "metadata",
-              "path": "/datatrust/7.0/metadata",
+              "path": "/getrightdata/datatrust/7.0/metadata",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "observability",
-              "path": "/datatrust/7.0/observability",
+              "path": "/getrightdata/datatrust/7.0/observability",
               "sidebar": "datatrustSidebar"
             },
             {
               "id": "troubleshooting",
-              "path": "/datatrust/7.0/troubleshooting",
+              "path": "/getrightdata/datatrust/7.0/troubleshooting",
               "sidebar": "datatrustSidebar"
             }
           ],
@@ -112,7 +111,7 @@
           "sidebars": {
             "datatrustSidebar": {
               "link": {
-                "path": "/datatrust/7.0/getting-started",
+                "path": "/getrightdata/datatrust/7.0/getting-started",
                 "label": "getting-started"
               }
             }
@@ -121,44 +120,44 @@
       ],
       "breadcrumbs": true
     },
-    "rightsight": {
-      "path": "/rightsight",
+    "getrightdata-rightsight": {
+      "path": "/getrightdata/rightsight",
       "versions": [
         {
           "name": "current",
-          "label": "Next",
+          "label": "Latest",
           "isLast": true,
-          "path": "/rightsight",
+          "path": "/getrightdata/rightsight/latest",
           "mainDocId": "overview",
           "docs": [
             {
               "id": "ai-enrichment",
-              "path": "/rightsight/ai-enrichment",
+              "path": "/getrightdata/rightsight/latest/ai-enrichment",
               "sidebar": "rightsightSidebar"
             },
             {
               "id": "alerts",
-              "path": "/rightsight/alerts",
+              "path": "/getrightdata/rightsight/latest/alerts",
               "sidebar": "rightsightSidebar"
             },
             {
               "id": "configuration",
-              "path": "/rightsight/configuration",
+              "path": "/getrightdata/rightsight/latest/configuration",
               "sidebar": "rightsightSidebar"
             },
             {
               "id": "dashboards",
-              "path": "/rightsight/dashboards",
+              "path": "/getrightdata/rightsight/latest/dashboards",
               "sidebar": "rightsightSidebar"
             },
             {
               "id": "monitoring",
-              "path": "/rightsight/monitoring",
+              "path": "/getrightdata/rightsight/latest/monitoring",
               "sidebar": "rightsightSidebar"
             },
             {
               "id": "overview",
-              "path": "/rightsight/overview",
+              "path": "/getrightdata/rightsight/latest/overview",
               "sidebar": "rightsightSidebar"
             }
           ],
@@ -166,7 +165,7 @@
           "sidebars": {
             "rightsightSidebar": {
               "link": {
-                "path": "/rightsight/overview",
+                "path": "/getrightdata/rightsight/latest/overview",
                 "label": "overview"
               }
             }
@@ -175,49 +174,49 @@
       ],
       "breadcrumbs": true
     },
-    "datamarket": {
-      "path": "/datamarket",
+    "getrightdata-datamarket": {
+      "path": "/getrightdata/datamarket",
       "versions": [
         {
           "name": "current",
-          "label": "Next",
+          "label": "Latest",
           "isLast": true,
-          "path": "/datamarket",
+          "path": "/getrightdata/datamarket/latest",
           "mainDocId": "overview",
           "docs": [
             {
               "id": "access-control",
-              "path": "/datamarket/access-control",
+              "path": "/getrightdata/datamarket/latest/access-control",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "data-consumption",
-              "path": "/datamarket/data-consumption",
+              "path": "/getrightdata/datamarket/latest/data-consumption",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "data-publishing",
-              "path": "/datamarket/data-publishing",
+              "path": "/getrightdata/datamarket/latest/data-publishing",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "governance",
-              "path": "/datamarket/governance",
+              "path": "/getrightdata/datamarket/latest/governance",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "integrations",
-              "path": "/datamarket/integrations",
+              "path": "/getrightdata/datamarket/latest/integrations",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "marketplace-setup",
-              "path": "/datamarket/marketplace-setup",
+              "path": "/getrightdata/datamarket/latest/marketplace-setup",
               "sidebar": "datamarketSidebar"
             },
             {
               "id": "overview",
-              "path": "/datamarket/overview",
+              "path": "/getrightdata/datamarket/latest/overview",
               "sidebar": "datamarketSidebar"
             }
           ],
@@ -225,7 +224,7 @@
           "sidebars": {
             "datamarketSidebar": {
               "link": {
-                "path": "/datamarket/overview",
+                "path": "/getrightdata/datamarket/latest/overview",
                 "label": "overview"
               }
             }
@@ -234,39 +233,39 @@
       ],
       "breadcrumbs": true
     },
-    "api": {
-      "path": "/api",
+    "getrightdata-api": {
+      "path": "/getrightdata/api",
       "versions": [
         {
           "name": "current",
-          "label": "Next",
+          "label": "Latest",
           "isLast": true,
-          "path": "/api",
+          "path": "/getrightdata/api/latest",
           "mainDocId": "authentication",
           "docs": [
             {
               "id": "authentication",
-              "path": "/api/authentication",
+              "path": "/getrightdata/api/latest/authentication",
               "sidebar": "apiSidebar"
             },
             {
               "id": "error-codes",
-              "path": "/api/error-codes",
+              "path": "/getrightdata/api/latest/error-codes",
               "sidebar": "apiSidebar"
             },
             {
               "id": "rest-endpoints",
-              "path": "/api/rest-endpoints",
+              "path": "/getrightdata/api/latest/rest-endpoints",
               "sidebar": "apiSidebar"
             },
             {
               "id": "sdk-examples",
-              "path": "/api/sdk-examples",
+              "path": "/getrightdata/api/latest/sdk-examples",
               "sidebar": "apiSidebar"
             },
             {
               "id": "webhooks",
-              "path": "/api/webhooks",
+              "path": "/getrightdata/api/latest/webhooks",
               "sidebar": "apiSidebar"
             }
           ],
@@ -274,7 +273,7 @@
           "sidebars": {
             "apiSidebar": {
               "link": {
-                "path": "/api/authentication",
+                "path": "/getrightdata/api/latest/authentication",
                 "label": "authentication"
               }
             }
@@ -283,29 +282,29 @@
       ],
       "breadcrumbs": true
     },
-    "release-notes": {
-      "path": "/release-notes",
+    "getrightdata-release-notes": {
+      "path": "/getrightdata/release-notes",
       "versions": [
         {
           "name": "current",
-          "label": "Next",
+          "label": "Latest",
           "isLast": true,
-          "path": "/release-notes",
+          "path": "/getrightdata/release-notes/latest",
           "mainDocId": "7-6",
           "docs": [
             {
               "id": "7-0",
-              "path": "/release-notes/7-0",
+              "path": "/getrightdata/release-notes/latest/7-0",
               "sidebar": "releaseNotesSidebar"
             },
             {
               "id": "7-5",
-              "path": "/release-notes/7-5",
+              "path": "/getrightdata/release-notes/latest/7-5",
               "sidebar": "releaseNotesSidebar"
             },
             {
               "id": "7-6",
-              "path": "/release-notes/7-6",
+              "path": "/getrightdata/release-notes/latest/7-6",
               "sidebar": "releaseNotesSidebar"
             }
           ],
@@ -313,7 +312,7 @@
           "sidebars": {
             "releaseNotesSidebar": {
               "link": {
-                "path": "/release-notes/7-6",
+                "path": "/getrightdata/release-notes/latest/7-6",
                 "label": "7-6"
               }
             }

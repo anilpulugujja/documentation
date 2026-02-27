@@ -1,0 +1,45 @@
+{
+  "id": "access-control",
+  "title": "Access Control Model",
+  "description": "Manage roles, entitlements, and license keys for DataMarket.",
+  "source": "@site/organizations/getrightdata/products/datamarket/docs/access-control.md",
+  "sourceDirName": ".",
+  "slug": "/access-control",
+  "permalink": "/getrightdata/datamarket/latest/access-control",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datamarket/docs/organizations/getrightdata/products/datamarket/docs/access-control.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/getrightdata/datamarket/latest/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "access-control",
+      "permalink": "/getrightdata/datamarket/latest/tags/access-control"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Access Control Model",
+    "description": "Manage roles, entitlements, and license keys for DataMarket.",
+    "sidebar_label": "Access Control",
+    "tags": [
+      "datamarket",
+      "access-control"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Governance",
+    "permalink": "/getrightdata/datamarket/latest/governance"
+  },
+  "next": {
+    "title": "Integrations",
+    "permalink": "/getrightdata/datamarket/latest/integrations"
+  }
+}

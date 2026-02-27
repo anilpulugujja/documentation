@@ -1,0 +1,59 @@
+{
+  "sidebarId": "rightsightSidebar",
+  "items": [
+    {
+      "type": "category",
+      "id": "overview",
+      "label": "Overview",
+      "items": [
+        "overview"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "monitoring",
+      "label": "Monitoring",
+      "items": [
+        "monitoring"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "alerts",
+      "label": "Alerts",
+      "items": [
+        "alerts"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "ai-enrichment",
+      "label": "AI Enrichment",
+      "items": [
+        "ai-enrichment"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "dashboards",
+      "label": "Dashboards",
+      "items": [
+        "dashboards"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "configuration",
+      "label": "Configuration",
+      "items": [
+        "configuration"
+      ]
+    },
+    {
+      "type": "category",
+      "id": "admin-console",
+      "label": "Admin Console",
+      "items": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "id": "data-publishing",
+  "title": "Publishing Data Products",
+  "description": "Turn curated datasets into catalog-ready offers with pricing and SLAs.",
+  "source": "@site/organizations/getrightdata/products/datamarket/docs/data-publishing.md",
+  "sourceDirName": ".",
+  "slug": "/data-publishing",
+  "permalink": "/getrightdata/datamarket/latest/data-publishing",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datamarket/docs/organizations/getrightdata/products/datamarket/docs/data-publishing.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datamarket",
+      "permalink": "/getrightdata/datamarket/latest/tags/datamarket"
+    },
+    {
+      "inline": true,
+      "label": "publishing",
+      "permalink": "/getrightdata/datamarket/latest/tags/publishing"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Publishing Data Products",
+    "description": "Turn curated datasets into catalog-ready offers with pricing and SLAs.",
+    "sidebar_label": "Data Publishing",
+    "tags": [
+      "datamarket",
+      "publishing"
+    ]
+  },
+  "sidebar": "datamarketSidebar",
+  "previous": {
+    "title": "Marketplace Setup",
+    "permalink": "/getrightdata/datamarket/latest/marketplace-setup"
+  },
+  "next": {
+    "title": "Data Consumption",
+    "permalink": "/getrightdata/datamarket/latest/data-consumption"
+  }
+}

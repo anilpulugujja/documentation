@@ -1,0 +1,37 @@
+{
+  "id": "test",
+  "title": "test",
+  "description": "One-sentence summary (~160 characters).",
+  "source": "@site/organizations/getrightdata/products/datatrust/docs/test.md",
+  "sourceDirName": ".",
+  "slug": "/getrightdata/datatrust/7.6/t",
+  "permalink": "/getrightdata/datatrust/7.6/getrightdata/datatrust/7.6/t",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/organizations/getrightdata/products/datatrust/docs/test.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "product",
+      "permalink": "/getrightdata/datatrust/7.6/tags/product"
+    },
+    {
+      "inline": true,
+      "label": "category",
+      "permalink": "/getrightdata/datatrust/7.6/tags/category"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "test",
+    "description": "One-sentence summary (~160 characters).",
+    "sidebar_label": "test",
+    "slug": "/getrightdata/datatrust/7.6/t",
+    "tags": [
+      "product",
+      "category"
+    ]
+  }
+}

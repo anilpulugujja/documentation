@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs_platform=self.webpackChunkdocs_platform||[]).push([[5450],{4829(a){a.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"getrightdata-datamarket"}')}}]);

@@ -1,0 +1,45 @@
+{
+  "id": "ai-enrichment",
+  "title": "AI Enrichment",
+  "description": "Use AI-led investigations to summarize anomalies and suggest fixes.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/ai-enrichment.md",
+  "sourceDirName": ".",
+  "slug": "/ai-enrichment",
+  "permalink": "/getrightdata/rightsight/latest/ai-enrichment",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/ai-enrichment.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "ai",
+      "permalink": "/getrightdata/rightsight/latest/tags/ai"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "AI Enrichment",
+    "description": "Use AI-led investigations to summarize anomalies and suggest fixes.",
+    "sidebar_label": "AI Enrichment",
+    "tags": [
+      "rightsight",
+      "ai"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Alerts",
+    "permalink": "/getrightdata/rightsight/latest/alerts"
+  },
+  "next": {
+    "title": "Dashboards",
+    "permalink": "/getrightdata/rightsight/latest/dashboards"
+  }
+}

@@ -14,7 +14,7 @@ Use this template when drafting docs outside the admin panel or when collaborati
 
 - [Download raw Markdown template](/templates/markdown-upload-template.md)
 - File size limit during upload is **2 MB**.
-- Keep screenshots in `static/img` and reference them via `/img/...` paths.
+- Keep screenshots in `static/img` (e.g. `static/img/screenshots/`) and reference them via `/img/screenshots/...` or `/img/...` paths. Use the `<RoundedImage>` component with a `caption` for annotated screenshots. See the [Contributing Guide](/contributing#product-screenshots-with-annotations).
 
 ## Frontmatter Requirements
 

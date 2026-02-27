@@ -2,13 +2,15 @@
 
 :root {
   --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --ifm-color-primary: #4f46e5;
-  --ifm-color-primary-dark: #3730a3;
-  --ifm-color-primary-darker: #312e81;
-  --ifm-color-primary-darkest: #1e1b4b;
-  --ifm-color-primary-light: #7c7eed;
-  --ifm-color-primary-lighter: #a5a6f5;
-  --ifm-color-primary-lightest: #d4d4ff;
+  --tenant-primary: #4f46e5;
+  --tenant-secondary: #6366f1;
+  --ifm-color-primary: var(--tenant-primary);
+  --ifm-color-primary-dark: var(--tenant-primary);
+  --ifm-color-primary-darker: var(--tenant-primary);
+  --ifm-color-primary-darkest: var(--tenant-primary);
+  --ifm-color-primary-light: var(--tenant-secondary);
+  --ifm-color-primary-lighter: var(--tenant-secondary);
+  --ifm-color-primary-lightest: var(--tenant-secondary);
   --ifm-background-color: #ffffff;
   --ifm-code-font-size: 94%;
   --ifm-container-width: 1280px;

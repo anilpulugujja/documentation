@@ -1,0 +1,41 @@
+{
+  "id": "error-codes",
+  "title": "Error Codes",
+  "description": "Understand API and delivery error responses with remediation tips.",
+  "source": "@site/organizations/getrightdata/products/api/docs/error-codes.md",
+  "sourceDirName": ".",
+  "slug": "/error-codes",
+  "permalink": "/getrightdata/api/latest/error-codes",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/api/docs/organizations/getrightdata/products/api/docs/error-codes.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "api",
+      "permalink": "/getrightdata/api/latest/tags/api"
+    },
+    {
+      "inline": true,
+      "label": "errors",
+      "permalink": "/getrightdata/api/latest/tags/errors"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Error Codes",
+    "description": "Understand API and delivery error responses with remediation tips.",
+    "sidebar_label": "Error Codes",
+    "tags": [
+      "api",
+      "errors"
+    ]
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "SDK Examples",
+    "permalink": "/getrightdata/api/latest/sdk-examples"
+  }
+}

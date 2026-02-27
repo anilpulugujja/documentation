@@ -1,0 +1,37 @@
+{
+  "id": "replace-with-page-title",
+  "title": "Replace with page title",
+  "description": "One-sentence summary (~160 characters).",
+  "source": "@site/organizations/getrightdata/products/datatrust/docs/replace-with-page-title.md",
+  "sourceDirName": ".",
+  "slug": "/getrightdata/datatrust/7.6/replace-with-page-title",
+  "permalink": "/getrightdata/datatrust/7.6/getrightdata/datatrust/7.6/replace-with-page-title",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/organizations/getrightdata/products/datatrust/docs/replace-with-page-title.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "product",
+      "permalink": "/getrightdata/datatrust/7.6/tags/product"
+    },
+    {
+      "inline": true,
+      "label": "category",
+      "permalink": "/getrightdata/datatrust/7.6/tags/category"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Replace with page title",
+    "description": "One-sentence summary (~160 characters).",
+    "sidebar_label": "Sidebar Label",
+    "slug": "/getrightdata/datatrust/7.6/replace-with-page-title",
+    "tags": [
+      "product",
+      "category"
+    ]
+  }
+}

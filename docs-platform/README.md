@@ -10,13 +10,22 @@ A premium multi-product Docusaurus Classic implementation powering the DataTrust
 ## Project Structure
 ```
 docs-platform/
-├── docs/                # Current (7.6) documentation
-├── versioned_docs/      # Archived 7.0 documentation snapshot
-├── src/                 # Theme overrides and shared components
-├── static/              # Images and downloadable assets
-├── sidebars.js          # Five sidebars (per product + API + release notes)
-├── docusaurus.config.js # Global site configuration
-└── vercel.json          # Deployment configuration
+├── organizations/
+│   └── getrightdata/
+│       └── products/
+│           ├── datatrust/
+│           │   ├── docs/                   # DataTrust 7.6 content
+│           │   ├── versioned_docs/         # Archived 7.0 content
+│           │   ├── versioned_sidebars/
+│           │   └── sidebar.json
+│           ├── rightsight/                 # Latest-only products mirror this layout (docs + sidebar)
+│           └── datamarket/
+├── config/                # organizations.json + products.json
+├── docs/templates/        # Authoring templates surfaced in the admin panel
+├── src/                   # Theme overrides and shared components
+├── static/                # Images and downloadable assets
+├── docusaurus.config.js   # Global site configuration + dynamic plugin loader
+└── vercel.json            # Deployment configuration
 ```
 
 ## Local Development
@@ -31,25 +40,24 @@ node scripts/check-slugs.mjs   # optional: verify product/version slugs
 > The repo currently does not contain a `node_modules` directory. Run `npm install` locally or in CI before building.
 
 ## Versioning Workflow
-- Current docs represent **v7.6** (default) and live under `docs/`.
-- Archived **v7.0** lives under `versioned_docs/version-7.0/`.
+- Current DataTrust docs represent **v7.6** and live under `organizations/getrightdata/products/datatrust/docs/`.
+- Archived **v7.0** lives under `organizations/getrightdata/products/datatrust/versioned_docs/version-7.0/`.
 - Add a new version:
   ```bash
   npm run docusaurus docs:version 7.7
-  # Update slugs in the newly created folder to /<product>/7.7/<page>
+  # Specify the plugin ID, e.g. -- --plugin getrightdata-datatrust 7.7
   ```
 - Remove a version:
   ```bash
   npm run docusaurus docs:version:delete 7.0
   ```
-- Always update `versions.json` and `versioned_sidebars/*` when adding/removing versions so the version dropdown stays accurate.
+- Always update `organizations/<org>/products/<product>/versions.json` (symlinked to `getrightdata-datatrust_versions.json`) plus the matching `versioned_sidebars` folder when adding/removing versions so the version dropdown stays accurate.
 
-## Editor Workflow
-- Use GitHub web UI or PRs to edit Markdown/MDX files.
-- Place assets under `static/img` and reference them as `/img/<filename>`.
+- Use GitHub web UI or PRs to edit Markdown/MDX files beneath `organizations/<org>/products/<product>/docs`.
+- Place assets under `static/img` (e.g. `static/img/screenshots/` for product screenshots) and reference them as `/img/<filename>` or `/img/screenshots/<filename>`. See [Contributing Guide](docs/contributing.md#product-screenshots-with-annotations) for screenshot and annotation guidelines.
 - Each doc includes frontmatter with `title`, `description`, `sidebar_label`, `slug`, and `tags`.
 - Use Docusaurus admonitions (`:::info`, `:::tip`, `:::warning`) and fenced code blocks with language hints.
-- Sidebars are managed centrally in `sidebars.js`. Add new doc IDs there to surface new pages.
+- Each product exposes a JSON sidebar definition at `organizations/<org>/products/<product>/sidebar.json`. Update those files (2-level nested categories) to surface new pages.
 - `docs/contributing.md` contains authoring guardrails plus templates for feature, API, and release notes content.
 
 ### Browser Admin Panel

@@ -1,0 +1,45 @@
+{
+  "id": "administration",
+  "title": "Administration",
+  "description": "Manage access, notifications, and integrations for DataTrust.",
+  "source": "@site/organizations/getrightdata/products/datatrust/docs/administration.md",
+  "sourceDirName": ".",
+  "slug": "/administration",
+  "permalink": "/getrightdata/datatrust/7.6/administration",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/datatrust/docs/organizations/getrightdata/products/datatrust/docs/administration.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "datatrust",
+      "permalink": "/getrightdata/datatrust/7.6/tags/datatrust"
+    },
+    {
+      "inline": true,
+      "label": "administration",
+      "permalink": "/getrightdata/datatrust/7.6/tags/administration"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Administration",
+    "description": "Manage access, notifications, and integrations for DataTrust.",
+    "sidebar_label": "Administration",
+    "tags": [
+      "datatrust",
+      "administration"
+    ]
+  },
+  "sidebar": "datatrustSidebar",
+  "previous": {
+    "title": "Observability",
+    "permalink": "/getrightdata/datatrust/7.6/observability"
+  },
+  "next": {
+    "title": "Troubleshooting",
+    "permalink": "/getrightdata/datatrust/7.6/troubleshooting"
+  }
+}

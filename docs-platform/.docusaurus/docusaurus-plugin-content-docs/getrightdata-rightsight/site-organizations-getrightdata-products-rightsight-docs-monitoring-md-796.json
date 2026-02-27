@@ -1,0 +1,45 @@
+{
+  "id": "monitoring",
+  "title": "Monitoring Streams",
+  "description": "Build monitors over metrics, traces, and business KPIs from streaming pipelines.",
+  "source": "@site/organizations/getrightdata/products/rightsight/docs/monitoring.md",
+  "sourceDirName": ".",
+  "slug": "/monitoring",
+  "permalink": "/getrightdata/rightsight/latest/monitoring",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/rightsight/docs/organizations/getrightdata/products/rightsight/docs/monitoring.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "rightsight",
+      "permalink": "/getrightdata/rightsight/latest/tags/rightsight"
+    },
+    {
+      "inline": true,
+      "label": "monitoring",
+      "permalink": "/getrightdata/rightsight/latest/tags/monitoring"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "Monitoring Streams",
+    "description": "Build monitors over metrics, traces, and business KPIs from streaming pipelines.",
+    "sidebar_label": "Monitoring",
+    "tags": [
+      "rightsight",
+      "monitoring"
+    ]
+  },
+  "sidebar": "rightsightSidebar",
+  "previous": {
+    "title": "Overview",
+    "permalink": "/getrightdata/rightsight/latest/overview"
+  },
+  "next": {
+    "title": "Alerts",
+    "permalink": "/getrightdata/rightsight/latest/alerts"
+  }
+}

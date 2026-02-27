@@ -1,0 +1,45 @@
+{
+  "id": "sdk-examples",
+  "title": "SDK Examples",
+  "description": "Quick starts for Python and TypeScript clients.",
+  "source": "@site/organizations/getrightdata/products/api/docs/sdk-examples.md",
+  "sourceDirName": ".",
+  "slug": "/sdk-examples",
+  "permalink": "/getrightdata/api/latest/sdk-examples",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/GetRightData/docs/edit/main/organizations/getrightdata/products/api/docs/organizations/getrightdata/products/api/docs/sdk-examples.md",
+  "tags": [
+    {
+      "inline": true,
+      "label": "api",
+      "permalink": "/getrightdata/api/latest/tags/api"
+    },
+    {
+      "inline": true,
+      "label": "sdk",
+      "permalink": "/getrightdata/api/latest/tags/sdk"
+    }
+  ],
+  "version": "current",
+  "lastUpdatedBy": null,
+  "lastUpdatedAt": null,
+  "frontMatter": {
+    "title": "SDK Examples",
+    "description": "Quick starts for Python and TypeScript clients.",
+    "sidebar_label": "SDK Examples",
+    "tags": [
+      "api",
+      "sdk"
+    ]
+  },
+  "sidebar": "apiSidebar",
+  "previous": {
+    "title": "Webhooks",
+    "permalink": "/getrightdata/api/latest/webhooks"
+  },
+  "next": {
+    "title": "Error Codes",
+    "permalink": "/getrightdata/api/latest/error-codes"
+  }
+}
