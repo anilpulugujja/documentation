@@ -205,6 +205,10 @@ blockquote {
   margin: 1.5rem 0;
 }
 
+.theme-doc-markdown h1:first-of-type {
+  display: none;
+}
+
 .docMainContainer {
   max-width: 1320px;
   margin: 0 auto;
