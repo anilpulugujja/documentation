@@ -1,12 +1,19 @@
-export type SidebarSection = {
+export type SidebarDocItem = string;
+
+export type SidebarCategory = {
+  type: 'category';
   id: string;
   label: string;
-  items: string[];
+  items: SidebarNode[];
+  collapsible?: boolean;
+  collapsed?: boolean;
 };
+
+export type SidebarNode = SidebarCategory | SidebarDocItem;
 
 export type SidebarDefinition = {
   sidebarId: string;
-  sections: SidebarSection[];
+  items: SidebarNode[];
 };
 
 export type PublishPosition =

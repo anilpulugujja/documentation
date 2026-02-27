@@ -1,7 +1,8 @@
 {
   "sidebarId": "releaseNotesSidebar",
-  "sections": [
+  "items": [
     {
+      "type": "category",
       "id": "release-notes",
       "label": "Release Notes",
       "items": ["7-6", "7-5", "7-0"]

@@ -1,28 +1,33 @@
 {
   "sidebarId": "apiSidebar",
-  "sections": [
+  "items": [
     {
+      "type": "category",
       "id": "authentication",
       "label": "Authentication",
       "items": ["authentication"]
     },
     {
-      "id": "rest-endpoints",
+      "type": "category",
+      "id": "rest",
       "label": "REST Endpoints",
       "items": ["rest-endpoints"]
     },
     {
+      "type": "category",
       "id": "webhooks",
       "label": "Webhooks",
       "items": ["webhooks"]
     },
     {
-      "id": "sdk-examples",
+      "type": "category",
+      "id": "sdk",
       "label": "SDK Examples",
       "items": ["sdk-examples"]
     },
     {
-      "id": "error-codes",
+      "type": "category",
+      "id": "errors",
       "label": "Error Codes",
       "items": ["error-codes"]
     }

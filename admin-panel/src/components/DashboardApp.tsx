@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import slugify from "slugify";
 
-import type { SidebarSection } from "@/types/sidebar";
+import type { SidebarNode, SidebarCategory } from "@/types/sidebar";
 
 type Collection = {
   id: string;
@@ -65,6 +65,26 @@ const toDocId = (value: string) =>
     .replace(/\.mdx?$/, "")
     .replace(/^\/+/, "");
 
+const isSidebarCategory = (node: SidebarNode): node is SidebarCategory =>
+  typeof node === "object" && node !== null && (node as SidebarCategory).type === "category";
+
+const findCategoryByPath = (nodes: SidebarNode[], path: string[]): SidebarCategory | null => {
+  if (!path.length) {
+    return null;
+  }
+  let currentNodes = nodes;
+  let target: SidebarCategory | null = null;
+  for (const id of path) {
+    const match = currentNodes.find((node) => isSidebarCategory(node) && node.id === id);
+    if (!match) {
+      return null;
+    }
+    target = match as SidebarCategory;
+    currentNodes = target.items;
+  }
+  return target;
+};
+
 const DashboardApp = () => {
   const [collections, setCollections] = useState<Collection[]>([]);
   const [selectedCollection, setSelectedCollection] = useState<string>();
@@ -91,9 +111,12 @@ const DashboardApp = () => {
   const [notification, setNotification] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [warnings, setWarnings] = useState<string[]>([]);
-  const [sidebarSections, setSidebarSections] = useState<SidebarSection[]>([]);
-  const [publishedDocs, setPublishedDocs] = useState<Record<string, string>>({});
-  const [selectedSectionId, setSelectedSectionId] = useState<string>("");
+  const [sidebarItems, setSidebarItems] = useState<SidebarNode[]>([]);
+  const [publishedDocs, setPublishedDocs] = useState<
+    Record<string, { path: { id: string; label: string }[] }>
+  >({});
+  const [selectedModuleId, setSelectedModuleId] = useState<string>("");
+  const [selectedSubmoduleId, setSelectedSubmoduleId] = useState<string>("");
   const [positionMode, setPositionMode] = useState<"end" | "top" | "before">("end");
   const [beforeDocId, setBeforeDocId] = useState<string>("");
   const [publishState, setPublishState] = useState<"idle" | "publishing" | "unpublishing">("idle");
@@ -105,6 +128,15 @@ const DashboardApp = () => {
     () => (selectedFile ? toDocId(selectedFile) : ""),
     [selectedFile],
   );
+  const moduleCategories = useMemo(
+    () => sidebarItems.filter((node) => isSidebarCategory(node)) as SidebarCategory[],
+    [sidebarItems],
+  );
+  const submoduleCategories = useMemo(() => {
+    const module = moduleCategories.find((entry) => entry.id === selectedModuleId);
+    if (!module) return [];
+    return module.items.filter(isSidebarCategory) as SidebarCategory[];
+  }, [moduleCategories, selectedModuleId]);
 
   const buildSlugSegment = useCallback((value?: string) => {
     if (!value) return "";
@@ -151,6 +183,142 @@ const DashboardApp = () => {
     [normalizeSlug],
   );
 
+  const sendCategoryRequest = useCallback(
+    async (
+      method: "POST" | "DELETE",
+      body: Record<string, unknown>,
+    ): Promise<{ items?: SidebarNode[]; publishedDocs?: Record<string, { path: { id: string; label: string }[] }> } | null> => {
+      if (!selectedCollection) {
+        setError("Select a collection first.");
+        return null;
+      }
+      const res = await fetch("/api/sidebars/categories", {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          collectionId: selectedCollection,
+          ...body,
+        }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError(data.error ?? "Unable to update categories.");
+        return null;
+      }
+      setError("");
+      return data;
+    },
+    [selectedCollection],
+  );
+
+  const handleCreateModule = async () => {
+    const label = window.prompt("Module name");
+    if (!label?.trim()) return;
+    const result = await sendCategoryRequest("POST", {
+      action: "create",
+      parentPath: [],
+      label: label.trim(),
+    });
+    if (result && selectedCollection) {
+      setSidebarItems(result.items ?? []);
+      setPublishedDocs(result.publishedDocs ?? {});
+      fetchSidebar(selectedCollection);
+    }
+  };
+
+  const handleCreateSubmodule = async () => {
+    if (!selectedModuleId) {
+      setError("Choose a module before creating a submodule.");
+      return;
+    }
+    const label = window.prompt("Submodule name");
+    if (!label?.trim()) return;
+    const result = await sendCategoryRequest("POST", {
+      action: "create",
+      parentPath: [selectedModuleId],
+      label: label.trim(),
+    });
+    if (result && selectedCollection) {
+      setSidebarItems(result.items ?? []);
+      setPublishedDocs(result.publishedDocs ?? {});
+      fetchSidebar(selectedCollection);
+    }
+  };
+
+  const handleRenameCategory = async (path: string[], currentLabel: string) => {
+    const label = window.prompt("New name", currentLabel);
+    if (!label?.trim()) return;
+    const result = await sendCategoryRequest("POST", {
+      action: "rename",
+      path,
+      label: label.trim(),
+    });
+    if (result && selectedCollection) {
+      setSidebarItems(result.items ?? []);
+      setPublishedDocs(result.publishedDocs ?? {});
+      fetchSidebar(selectedCollection);
+    }
+  };
+
+  const handleDeleteCategory = async (path: string[]) => {
+    const confirmed = window.confirm("Remove this category? Only empty categories can be deleted.");
+    if (!confirmed) return;
+    const result = await sendCategoryRequest("DELETE", { path });
+    if (result && selectedCollection) {
+      setSidebarItems(result.items ?? []);
+      setPublishedDocs(result.publishedDocs ?? {});
+      fetchSidebar(selectedCollection);
+    }
+  };
+
+  const renderNavigationNodes = (nodes: SidebarNode[], parentPath: string[] = []) => {
+    if (!nodes.length) return null;
+    return (
+      <ul className="mt-2 space-y-1">
+        {nodes.map((node) => {
+          if (isSidebarCategory(node)) {
+            const path = [...parentPath, node.id];
+            const isModule = parentPath.length === 0;
+            return (
+              <li key={path.join("/")}>
+                <div className="flex items-center justify-between rounded-lg px-2 py-1 text-sm font-semibold text-slate-600">
+                  <span>
+                    {node.label}
+                    {isModule && <span className="ml-2 text-[10px] uppercase text-slate-400">Module</span>}
+                  </span>
+                  <div className="flex gap-1 text-[11px]">
+                    <button
+                      type="button"
+                      onClick={() => handleRenameCategory(path, node.label)}
+                      className="text-indigo-600 hover:underline"
+                    >
+                      Rename
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteCategory(path)}
+                      className="text-slate-400 hover:text-red-500"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </div>
+                <div className="pl-3 border-l border-slate-100">
+                  {renderNavigationNodes(node.items, path)}
+                </div>
+              </li>
+            );
+          }
+          return (
+            <li key={`${parentPath.join("/")}/${node}`} className="pl-4 text-xs text-slate-500">
+              {node}
+            </li>
+          );
+        })}
+      </ul>
+    );
+  };
+
   const formatFieldValue = (key: string) => {
     if (key === "tags") {
       const tagsValue = frontmatter.tags;
@@ -188,14 +356,14 @@ const DashboardApp = () => {
       const res = await fetch(`/api/sidebars?${params.toString()}`);
       if (res.ok) {
         const data = await res.json();
-        setSidebarSections(data.sections ?? []);
+        setSidebarItems(data.items ?? []);
         setPublishedDocs(data.publishedDocs ?? {});
       } else {
-        setSidebarSections([]);
+        setSidebarItems([]);
         setPublishedDocs({});
       }
     } catch {
-      setSidebarSections([]);
+      setSidebarItems([]);
       setPublishedDocs({});
     }
   }, []);
@@ -239,7 +407,7 @@ const DashboardApp = () => {
         directory: "",
       }));
     } else {
-      setSidebarSections([]);
+      setSidebarItems([]);
       setPublishedDocs({});
     }
   }, [selectedCollection, fetchTree, fetchSidebar]);
@@ -253,28 +421,47 @@ const DashboardApp = () => {
 
   useEffect(() => {
     if (!currentDocId) {
-      setSelectedSectionId("");
       return;
     }
-    const publishedSection = publishedDocs[currentDocId];
-    if (publishedSection) {
-      setSelectedSectionId(publishedSection);
+    const path = publishedDocs[currentDocId];
+    if (path?.length) {
+      setSelectedModuleId(path[0]?.id ?? "");
+      setSelectedSubmoduleId(path[1]?.id ?? "");
       if (positionMode === "before") {
         setBeforeDocId("");
         setPositionMode("end");
       }
       return;
     }
-    if (!selectedSectionId && sidebarSections.length) {
-      setSelectedSectionId(sidebarSections[0].id);
+    if (!selectedModuleId && moduleCategories.length) {
+      setSelectedModuleId(moduleCategories[0].id);
     }
-  }, [
-    currentDocId,
-    publishedDocs,
-    sidebarSections,
-    selectedSectionId,
-    positionMode,
-  ]);
+  }, [currentDocId, publishedDocs, moduleCategories, selectedModuleId, positionMode]);
+
+  useEffect(() => {
+    if (!selectedModuleId) {
+      setSelectedSubmoduleId("");
+      return;
+    }
+    if (!submoduleCategories.length) {
+      setSelectedSubmoduleId("");
+      return;
+    }
+    if (!selectedSubmoduleId) {
+      setSelectedSubmoduleId(submoduleCategories[0].id);
+    }
+  }, [selectedModuleId, submoduleCategories, selectedSubmoduleId]);
+
+  const targetDocOptions = useMemo(() => {
+    if (!selectedModuleId) return [];
+    const path = [selectedModuleId];
+    if (selectedSubmoduleId) {
+      path.push(selectedSubmoduleId);
+    }
+    const category = findCategoryByPath(sidebarItems, path);
+    if (!category) return [];
+    return category.items.filter((node) => typeof node === "string") as string[];
+  }, [sidebarItems, selectedModuleId, selectedSubmoduleId]);
 
   useEffect(() => {
     if (positionMode !== "before") {
@@ -283,14 +470,12 @@ const DashboardApp = () => {
       }
       return;
     }
-    const sectionItems =
-      sidebarSections.find((section) => section.id === selectedSectionId)?.items ?? [];
-    if (sectionItems.length && !beforeDocId) {
-      setBeforeDocId(sectionItems[0]);
-    } else if (!sectionItems.length) {
+    if (targetDocOptions.length && !beforeDocId) {
+      setBeforeDocId(targetDocOptions[0]);
+    } else if (!targetDocOptions.length) {
       setBeforeDocId("");
     }
-  }, [beforeDocId, positionMode, selectedSectionId, sidebarSections]);
+  }, [beforeDocId, positionMode, targetDocOptions]);
 
   const fetchDocument = async (collectionId: string, filePath: string) => {
     setLoadingState("loading");
@@ -525,17 +710,25 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
   };
 
   const handlePublish = async () => {
-    if (!selectedCollection || !selectedFile || !currentDocId || !selectedSectionId) {
+    if (!selectedCollection || !selectedFile || !currentDocId) {
       setError("Select a document and sidebar destination before publishing.");
+      return;
+    }
+    if (!selectedModuleId) {
+      setError("Choose a module before publishing.");
       return;
     }
     setPublishState("publishing");
     setNotification("");
     setError("");
+    const targetPath = [selectedModuleId];
+    if (selectedSubmoduleId) {
+      targetPath.push(selectedSubmoduleId);
+    }
     const payload: Record<string, unknown> = {
       collectionId: selectedCollection,
       docId: currentDocId,
-      sectionId: selectedSectionId,
+      targetPath,
       relativePath: selectedFile,
     };
     if (positionMode === "top") {
@@ -554,12 +747,14 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
         setPublishedDocs(data.publishedDocs ?? {});
-        setNotification(
-          `Published under ${
-            sidebarSections.find((section) => section.id === selectedSectionId)?.label ??
-            "selected section"
-          }.`,
-        );
+        const moduleLabel =
+          moduleCategories.find((module) => module.id === selectedModuleId)?.label ??
+          selectedModuleId;
+        const subLabel =
+          submoduleCategories.find((sub) => sub.id === selectedSubmoduleId)?.label ??
+          selectedSubmoduleId;
+        const placementLabel = subLabel ? `${moduleLabel} → ${subLabel}` : moduleLabel;
+        setNotification(`Published under ${placementLabel}.`);
         fetchSidebar(selectedCollection);
       } else {
         setError(data.error ?? "Unable to publish document.");
@@ -666,10 +861,8 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
     window.location.href = "/login";
   };
 
-  const publishedSectionId = currentDocId ? publishedDocs[currentDocId] : undefined;
-  const publishedSectionLabel = publishedSectionId
-    ? sidebarSections.find((section) => section.id === publishedSectionId)?.label
-    : undefined;
+  const publishedPath = currentDocId ? publishedDocs[currentDocId] : undefined;
+  const publishedSectionLabel = publishedPath?.map((entry) => entry.label).join(" → ");
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-slate-100">
@@ -751,7 +944,16 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
                       : "bg-white text-slate-600 hover:bg-slate-50"
                   }`}
                 >
-                  <span className="truncate">{node.name}</span>
+                  <span className="flex flex-col text-left">
+                    <span className="truncate">{node.name}</span>
+                    {node.type === "file" && publishedDocs[toDocId(node.path)] && (
+                      <span className="text-[11px] text-slate-400">
+                        {publishedDocs[toDocId(node.path)]
+                          ?.map((entry) => entry.label)
+                          .join(" → ")}
+                      </span>
+                    )}
+                  </span>
                   <span
                     className={`text-xs ${
                       node.type === "directory"
@@ -774,6 +976,28 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
               )}
             </div>
           </div>
+          <div className="mt-6 border-t border-slate-100 pt-4">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-semibold text-slate-600">Navigation</h3>
+                <p className="text-xs text-slate-500">Modules and submodules</p>
+              </div>
+              <button
+                type="button"
+                onClick={handleCreateModule}
+                className="rounded-full border border-slate-300 px-3 py-1 text-xs font-semibold text-slate-600"
+              >
+                New module
+              </button>
+            </div>
+            <div className="mt-3 max-h-64 overflow-y-auto">
+              {sidebarItems.length ? (
+                renderNavigationNodes(sidebarItems)
+              ) : (
+                <p className="text-xs text-slate-500">No modules yet.</p>
+              )}
+            </div>
+          </div>
         </section>
 
         <section className="glass-panel p-6">
@@ -788,13 +1012,13 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
             {currentDocId && (
               <span
                 className={`mt-1 inline-flex items-center rounded-full px-2 py-0.5 text-xs font-semibold ${
-                  publishedSectionId
+                  publishedPath?.length
                     ? "bg-emerald-50 text-emerald-700"
                     : "bg-amber-50 text-amber-700"
                 }`}
               >
-                {publishedSectionId
-                  ? `Published in ${publishedSectionLabel ?? publishedSectionId}`
+                {publishedPath?.length
+                  ? `Published in ${publishedSectionLabel ?? ""}`
                   : "Draft"}
               </span>
             )}
@@ -1113,22 +1337,64 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
               )}
             </div>
             <div className="mt-4 space-y-3">
-              <div>
-                <label className="text-xs font-semibold uppercase text-slate-500">
-                  Section
-                </label>
-                <select
-                  className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
-                  value={selectedSectionId}
-                  onChange={(event) => setSelectedSectionId(event.target.value)}
-                >
-                  <option value="">Select a section</option>
-                  {sidebarSections.map((section) => (
-                    <option key={section.id} value={section.id}>
-                      {section.label}
-                    </option>
-                  ))}
-                </select>
+              <div className="grid gap-3 md:grid-cols-2">
+                <div>
+                  <label className="text-xs font-semibold uppercase text-slate-500">
+                    Module
+                  </label>
+                  <div className="mt-1 flex gap-2">
+                    <select
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={selectedModuleId}
+                      onChange={(event) => {
+                        setSelectedModuleId(event.target.value);
+                        setSelectedSubmoduleId("");
+                      }}
+                    >
+                      <option value="">Select a module</option>
+                      {moduleCategories.map((module) => (
+                        <option key={module.id} value={module.id}>
+                          {module.label}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      onClick={handleCreateModule}
+                      className="rounded-xl border border-slate-300 px-3 text-xs font-semibold text-slate-600"
+                    >
+                      New
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <label className="text-xs font-semibold uppercase text-slate-500">
+                    Submodule
+                  </label>
+                  <div className="mt-1 flex gap-2">
+                    <select
+                      className="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
+                      value={selectedSubmoduleId}
+                      onChange={(event) => setSelectedSubmoduleId(event.target.value)}
+                      disabled={!selectedModuleId}
+                    >
+                      <option value="">(None)</option>
+                      {submoduleCategories.map((sub) => (
+                        <option key={sub.id} value={sub.id}>
+                          {sub.label}
+                        </option>
+                      ))}
+                    </select>
+                    <button
+                      type="button"
+                      onClick={handleCreateSubmodule}
+                      disabled={!selectedModuleId}
+                      className="rounded-xl border border-slate-300 px-3 text-xs font-semibold text-slate-600 disabled:opacity-60"
+                    >
+                      New
+                    </button>
+                  </div>
+                </div>
               </div>
               <div className="grid gap-3 md:grid-cols-2">
                 <div>
@@ -1154,11 +1420,10 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
                       className="mt-1 w-full rounded-xl border border-slate-200 px-3 py-2 text-sm"
                       value={beforeDocId}
                       onChange={(event) => setBeforeDocId(event.target.value)}
+                      disabled={!targetDocOptions.length}
                     >
                       <option value="">Select reference doc</option>
-                      {(sidebarSections.find((section) => section.id === selectedSectionId)?.items ??
-                        []
-                      ).map((docId) => (
+                      {targetDocOptions.map((docId) => (
                         <option key={docId} value={docId}>
                           {docId}
                         </option>
@@ -1176,15 +1441,19 @@ const mergeImportedMetadata = (metadata: ImportMetadata = {}) => {
                   onClick={handlePublish}
                   disabled={
                     !currentDocId ||
-                    !selectedSectionId ||
+                    !selectedModuleId ||
                     publishState !== "idle" ||
                     !selectedCollection
                   }
                   className="flex-1 rounded-xl bg-indigo-600 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-200 disabled:opacity-60"
                 >
-                  {publishState === "publishing" ? "Publishing…" : publishedSectionId ? "Update placement" : "Publish"}
+                  {publishState === "publishing"
+                    ? "Publishing…"
+                    : publishedPath?.length
+                      ? "Update placement"
+                      : "Publish"}
                 </button>
-                {publishedSectionId && (
+                {publishedPath?.length && (
                   <button
                     type="button"
                     onClick={handleUnpublish}

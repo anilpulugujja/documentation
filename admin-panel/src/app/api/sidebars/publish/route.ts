@@ -9,7 +9,7 @@ import { PublishPosition } from "@/types/sidebar";
 const publishSchema = z.object({
   collectionId: z.string().min(1),
   docId: z.string().min(1),
-  sectionId: z.string().min(1),
+  targetPath: z.array(z.string()).max(2).optional(),
   relativePath: z.string().min(1),
   position: z
     .union([
@@ -70,12 +70,13 @@ export async function POST(request: NextRequest) {
     ensureSlugMatchesCollection(doc.frontmatter?.slug, collection.slugPrefix);
 
     const position = toPosition(parseResult.data.position);
-    insertDoc(definition, parseResult.data.sectionId, parseResult.data.docId, position);
+    const targetPath = parseResult.data.targetPath ?? [];
+    insertDoc(definition, targetPath, parseResult.data.docId, position);
     await writeSidebar(filePath, definition);
 
     return NextResponse.json({
       publishedDocs: flattenPublishedDocs(definition),
-      sectionId: parseResult.data.sectionId,
+      targetPath,
     });
   } catch (error) {
     console.error("Publish failed", error);

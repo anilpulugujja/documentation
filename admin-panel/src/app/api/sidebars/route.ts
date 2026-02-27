@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
     const publishedDocs = flattenPublishedDocs(definition);
     return NextResponse.json({
       sidebarId: definition.sidebarId,
-      sections: definition.sections,
+      items: definition.items,
       publishedDocs,
     });
   } catch (error) {
